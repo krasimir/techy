@@ -1,0 +1,29 @@
+{
+  "name": "techy",
+  "version": "0.0.1",
+  "homepage": "",
+  "description": "Flat CMS based on Gulp and AbsurdJS",
+  "main": "",
+  "author": {
+    "name": "Krasimir Tsonev",
+    "email": "info@krasimirtsonev.com",
+    "url": "http://krasimirtsonev.com"
+  },
+  "license": "MIT",
+  "dependencies": {
+    
+  },
+  "devDependencies": {
+    
+  },
+  "keywords": [
+    "flat",
+    "cms",
+    "gulp",
+    "absurdjs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/krasimir/techy.git"
+  }
+}
