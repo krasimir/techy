@@ -1,7 +1,5 @@
-# Hello
+@techy.postopen('OMG, it looks like that it works.');
 
-This is a test page.
+# Holla
 
-@techy.head()
-
-dsa
+@techy.postclose();

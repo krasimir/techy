@@ -1,8 +1,10 @@
 module.exports = function(api) {
-	api.add({
-		body: {
-			fz: '20px',
-			mar: '20px'
-		}
-	})
+	api.import([
+		__dirname + '/common.js',
+		__dirname + '/landing.js',
+		__dirname + '/pages/content.js',
+		__dirname + '/pages/footer.js',
+		__dirname + '/pages/nav.js',
+		__dirname + '/pages/sitemap.js'
+	]);
 }
