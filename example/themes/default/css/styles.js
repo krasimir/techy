@@ -1,10 +1,17 @@
 module.exports = function(api) {
+	api.settings = {
+		bgColor: '#FFF',
+		textColor: '#4E4E4E',
+		borderColor: '#999',
+		brandColor1: '#DC4141'
+	};
 	api.import([
-		__dirname + '/common.js',
-		__dirname + '/landing.js',
-		__dirname + '/pages/content.js',
-		__dirname + '/pages/footer.js',
-		__dirname + '/pages/nav.js',
-		__dirname + '/pages/sitemap.js'
+		__dirname + '/common/base.js',
+		__dirname + '/common/titles.js',
+		__dirname + '/common/scroller.js',
+		__dirname + '/elements/menu.js',
+		__dirname + '/elements/content.js',
+		__dirname + '/elements/code.js',
+		__dirname + '/elements/footer.js'
 	]);
 }
