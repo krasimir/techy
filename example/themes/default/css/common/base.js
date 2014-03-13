@@ -5,9 +5,9 @@ module.exports = function(api) {
 			hei: '100%',
 			pad: 0,
 			mar: 0,
-			fz: '18px',
-			lh: '24px',
-			ff: "'Average Sans', sans-serif",
+			fz: api.settings.fontSize,
+			lh: api.settings.lineHeight,
+			ff: api.settings.font,
 			color: api.settings.textColor,
 			bg: api.settings.bgColor
 		},
@@ -21,8 +21,12 @@ module.exports = function(api) {
 			}
 		},
 		p: {
-			fz: '24px',
-			lh: '34px'
+			fz: api.settings.fontSize,
+			lh: api.settings.lineHeight,
+			'@media all and (max-width: 600px)': {
+				fz: api.settings.lowFontSize,
+				lh: api.settings.lowLineHeight
+			}
 		},
 		hr: {
 			bdb: 'n',

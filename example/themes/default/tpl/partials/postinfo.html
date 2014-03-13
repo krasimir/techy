@@ -1,0 +1,8 @@
+<div class="post-info">
+	<p class="date"><% this.date %></p>
+	<p class="tags">
+		<% for(var i=0; i<this.tags.length; i++) { %>
+			<a href="<% this.tagURL + this.tags[i].toLowerCase().replace(/ /g, '-') %>"><i class="fa fa-tags"></i> <% this.tags[i] %></a>
+		<% } %>
+	</p>
+</div>

@@ -5,7 +5,7 @@ module.exports = function(api) {
 		},
 		'.content-container': {
 			pos: 'r',
-			maw: '740px',
+			maw: api.settings.contentWidth,
 			mar: '0 auto',
 			padding: '30px'
 		}
