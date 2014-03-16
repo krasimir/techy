@@ -23,6 +23,7 @@ module.exports = function(api) {
 				pos: 'a',
 				left: '50%',
 				mar: '-8px 0 0 -15px',
+				'.fa': { d: 'b' },
 				'@media all and (max-width: 500px)': {
 					d: 'n'
 				}

@@ -25,3 +25,5 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula est vita
 * Option B
 * Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula est vitae nunc dapibus, id ultricies arcu elementum. In hac habitasse platea dictumst. Ut at laoreet dolor. Maecenas dapibus erat ut hendrerit euismod. Praesent fermentum orci sed egestas luctus. 
 * Option C
+
+The layout is @techy.get('layout');.

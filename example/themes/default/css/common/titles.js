@@ -1,8 +1,8 @@
 module.exports = function(api) {
 	api.add({
 		h1: {
-			fz: '70px',
-			lh: '80px',
+			fz: '60px',
+			lh: '70px',
 			pad: '0 0 40px 0',
 			mar: '50px 0 30px 0',
 			ta: 'c',

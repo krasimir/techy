@@ -6,8 +6,7 @@ module.exports = function(api) {
 			list: 'c',
 			li: {
 				mar: 0,
-				pad: 0,
-				fz: '24px'
+				pad: 0
 			}
 		}
 	})

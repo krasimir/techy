@@ -2,7 +2,6 @@ absurd.component("Content", {
 	css: {
 		'.content': {
 			wid: '100%',
-			hei: '100%',
 			'@media all and (max-width: 1000px)': {
 				wid: '100%'
 			}
