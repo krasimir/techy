@@ -1,3 +1,3 @@
-@techy.set('layout', 'layouts/basic');
+<% set('layout', 'layouts/basic') %>
 
 # My title
