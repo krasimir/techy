@@ -16,4 +16,5 @@ var compare = function(root) {
 describe("Techy testing", function() {
 	compare(__dirname + "/md-to-html");
 	compare(__dirname + "/with-layout");
+	compare(__dirname + "/set-get");
 });
