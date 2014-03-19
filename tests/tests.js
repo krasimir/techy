@@ -20,4 +20,5 @@ describe("Techy testing", function() {
 	compare(__dirname + "/custom-templates", "should use custom templates");
 	compare(__dirname + "/custom-layout", "should use custom layout");
 	compare(__dirname + "/custom-method", "should use a custom method");
+	// compare(__dirname + "/num-of-pages", "should use numofpages method");
 });
