@@ -24,7 +24,8 @@
     "html-entities": "1.0.10",
     "glob": "3.2.9",
     "ncp": "0.5.0",
-    "colors": "0.6.2"
+    "colors": "0.6.2",
+    "expect.js": "0.3.1"
   },
   "devDependencies": {
     
