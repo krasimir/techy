@@ -10,4 +10,4 @@
 
 ## Testing
 
-`mocha ./tests/tests.js`
+`mocha ./tests/tests.js --reporter spec`
