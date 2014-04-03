@@ -1,29 +1,7 @@
-@techy.set('layout', 'layouts/post');
-@techy.set('title', 'A simple DOM library in 20 lines');
-@techy.set('date', {date: 13, month: 0, year: 2014});
-@techy.set('tags', ['JavaScript', 'HTML5']);
+<% set('layout', 'layouts/techy') %>
 
-# @techy.get('title');
+# Hello, I'm Techy
 
-@techy.postinfo();
+I'm a super simple Flat CMS. If you don't want to use a database to store your content I could help you. Write everything in [Markdown](https://daringfireball.net/projects/markdown/) format and I'll convert it to HTML.
 
-There are @techy.numofpages(); pages published on [this site](/). And here is `inline code` which is used in a sentence.
-
-	var techy = 'super cool';
-
-You could also post a quote:
-
-> First solve the problem, then write the code.
-
-## Second title here
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula est vitae nunc dapibus, id ultricies arcu elementum. In hac habitasse platea dictumst. Ut at laoreet dolor. Maecenas dapibus erat ut hendrerit euismod. Praesent fermentum orci sed egestas luctus. 
-
-- - -
-
-* Option A
-* Option B
-* Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi vehicula est vitae nunc dapibus, id ultricies arcu elementum. In hac habitasse platea dictumst. Ut at laoreet dolor. Maecenas dapibus erat ut hendrerit euismod. Praesent fermentum orci sed egestas luctus. 
-* Option C
-
-The layout is @techy.get('layout');.
+<div class="full-img"></div>

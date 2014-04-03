@@ -1,4 +1,5 @@
 module.exports = function(api) {
+
 	api.settings = {
 		// colors
 		bgColor: '#FFF',
@@ -12,18 +13,28 @@ module.exports = function(api) {
 		lowFontSize: '18px',
 		lineHeight: '34px',
 		lowLineHeight: '28px',
-		// dimentions
-		contentWidth: '740px'
+		// layouts
+		layouts: {
+			techy: {
+				gap: '20px',
+				contentWidth: '740px'
+			},
+			post: {
+				contentWidth: '740px'
+			}
+		}
 	};
+
 	api.import([
 		__dirname + '/common/base.js',
 		__dirname + '/common/titles.js',
 		__dirname + '/common/scroller.js',
 		__dirname + '/common/list.js',
-		__dirname + '/elements/menu.js',
-		__dirname + '/elements/content.js',
-		__dirname + '/elements/code.js',
-		__dirname + '/elements/footer.js',
-		__dirname + '/elements/postinfo.js'
+		__dirname + '/common/code.js',
+		__dirname + '/common/grids.js',
+		__dirname + '/layouts/basic.js',
+		__dirname + '/layouts/techy.js',
+		__dirname + '/layouts/post.js'
 	]);
+
 }

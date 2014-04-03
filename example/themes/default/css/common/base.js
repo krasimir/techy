@@ -14,6 +14,7 @@ module.exports = function(api) {
 		a: {
 			fw: 'b',
 			color: api.settings.textColor,
+			bdb: 'dotted 1px ' + api.lighten(api.settings.borderColor, 30),
 			ted: 'n',
 			'&:hover': {
 				color: api.settings.brandColor1,

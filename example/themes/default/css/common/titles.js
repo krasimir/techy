@@ -5,7 +5,6 @@ module.exports = function(api) {
 			lh: '70px',
 			pad: '0 0 40px 0',
 			mar: '50px 0 30px 0',
-			ta: 'c',
 			'@media all and (max-width: 600px)': {
 				fz: '40px',
 				lh: '40px',
