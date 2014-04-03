@@ -1,18 +1,21 @@
 module.exports = function(api) {
 
 	api.settings = {
+
 		// colors
 		bgColor: '#FFF',
 		textColor: '#313131',
 		textColorLight: '#C1C1C1',
 		borderColor: '#999',
 		brandColor1: '#DC4141',
+
 		// text
 		font: "'Average Sans', sans-serif",
 		fontSize: '20px',
 		lowFontSize: '18px',
 		lineHeight: '34px',
 		lowLineHeight: '28px',
+
 		// layouts
 		layouts: {
 			techy: {
@@ -23,6 +26,7 @@ module.exports = function(api) {
 				contentWidth: '740px'
 			}
 		}
+		
 	};
 
 	api.import([

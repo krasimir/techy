@@ -2,7 +2,8 @@ module.exports = function(api) {
 	var settings = api.settings.layouts.techy;
 	api.add({
 		'.techy': {
-			'p, h1, h2, h3, h4, h5, h6': {
+			pb: '40px',
+			'p, h1, h2, h3, h4, h5, h6, pre[class*="language-"]': {
 				maw: settings.contentWidth,
 				ml: 'a',
 				mr: 'a',
@@ -14,7 +15,9 @@ module.exports = function(api) {
 				wid: '100%',
 				hei: '360px',
 				bg: 'url(/public/img/techy.jpg) no-repeat center',
-				bgz: 'cover'
+				bgz: 'cover',
+				mt: '40px',
+				mb: '40px'
 			}
 		}
 	});
