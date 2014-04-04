@@ -36,7 +36,7 @@ module.exports = function(api) {
 		__dirname + '/common/list.js',
 		__dirname + '/common/code.js',
 		__dirname + '/common/grids.js',
-		__dirname + '/layouts/basic.js'
+		__dirname + '/basic.js'
 	]);
 
 }

@@ -1,4 +1,5 @@
 module.exports = function(api) {
+	var settings = api.settings.layouts.techy;
 	api.add({
 		'body, html': {
 			wid: '100%',
@@ -31,7 +32,9 @@ module.exports = function(api) {
 		},
 		hr: {
 			bdb: 'n',
-			bdt: 'solid 4px ' + api.lighten(api.settings.borderColor, 50)
+			bdt: 'solid 6px ' + api.lighten(api.settings.borderColor, 50),
+			mt: settings.gapb,
+			mb: settings.gapb
 		},
 		blockquote: {
 			bdl: 'solid 4px #999',
