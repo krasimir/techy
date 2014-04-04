@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Techy - The geeky way of writing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/public/font-awesome-4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/public/styles.css">
+    <link rel="stylesheet" href="/public/prism/prism.css" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' type='text/css'>
+</head>
+
+<body>
+    <div class="techy">
+        <p>
+        </p>
+        <h1 id="hello-i-m-techy-br-small-the-geeky-way-of-writing-small-">Hello, I'm Techy<br /><small>The geeky way of writing</small></h1>
+        <p>I'm a super simple Flat CMS based on <a href="http://nodejs.org">Node.js</a> (<a href="http://gulpjs.com/">Gulp.js</a> and <a href="http://absurdjs.com/">AbsurdJS</a>). If you don't want to use a database to store your content I could help you. Write
+            everything in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> format and I'll convert it to HTML.</p>
+        <div class="full-img"></div>
+
+        <h2 id="the-concept">The concept</h2>
+        <p>In the content driven web site (like a blog for example) the writing should be really easy. Markdown language gives us the simplicity which we need. However, sometimes converting <em>.md</em> files to <em>.html</em> files is not enough. Techy is an
+            instrument which uses Markdown as a base but also makes your pages programmable. For example:</p>
+        <pre><code class="language-javascript">&lt;% set('name', 'Big Joe') %>
+
+# Article title
+
+> author: &lt;% get('name') %>
+
+Hello, my name is &lt;% get('name') %>. I'm a web developer.
+</code></pre>
+        <p>is transformed to:</p>
+        <pre><code class="language-javascript">&lt;h1 id="article-title">Article title&lt;/h1>
+&lt;blockquote>
+    &lt;p>author: Big Joe&lt;/p>
+&lt;/blockquote>
+&lt;p>Hello, my name is Big Joe. I'm a web developer.&lt;/p>
+</code></pre>
+        <p>In other words, there are JavaScript expressions which you may write between <code class="language-javascript"><%</code> and <code class="language-javascript">%></code> and basically fetch information based on other files in your codebase. For example
+            generating a site map or showing the latest added Markdowns.</p>
+        <h2 id="simple-usage">Simple usage</h2>
+        <p>Install Techy from the command line onto your system by running the following command:</p>
+        <pre><code class="language-javascript">npm install -g techy
+</code></pre>
+        <p>Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type <code class="language-javascript">techy</code> and press <em>Enter</em> in the same folder you will see all the materials coverted to HTML.</p>
+        <p>Techy is not only generating HTML markup. It puts your writings into a nicely formated layout.</p>
+        <hr>
+        <p>Checkout the documentaiton <a href="/docs"><i class="fa fa-book"></i> here</a> or fork the Techy project <a href="https://github.com/krasimir/techy"><i class="fa fa-github"></i> at GitHub</a>.</p>
+    </div>
+    <script src="/public/prism/prism.js"></script>
+    <script src="/public/absurd.organic.min.js"></script>
+    <script src="/public/absurd.min.js"></script>
+    <script src="/public/scripts.js"></script>
+</body>
+
+</html>
