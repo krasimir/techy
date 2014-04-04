@@ -117,6 +117,40 @@ some text
 </code></pre>
             </div>
         </div>
+        <!-- ---------------------------------- template -->
+
+        <div class="grid grid-2">
+            <div class="grid-column">
+                <blockquote>
+                    <p>numofpages()</p>
+                </blockquote>
+                <p>Returns the number of the pages.</p>
+            </div>
+            <div class="grid-column">
+                <pre><code class="language-javascript">There are &lt;% numofpages() %> pages.
+</code></pre>
+            </div>
+        </div>
+        <!-- ---------------------------------- template -->
+
+        <div class="grid grid-2">
+            <div class="grid-column">
+                <blockquote>
+                    <p>template(file, data)</p>
+                </blockquote>
+                <p>Injects a HTML content. The second parameter is an hash object. Data which is applied to the template.</p>
+            </div>
+            <div class="grid-column">
+                <pre><code class="language-javascript">// tpl/partials/footer.html
+&lt;div class="footer">
+    &lt;p>&lt;% footerText %>&lt;/p>
+&lt;/footer>
+
+// index.md
+&lt;% template('partials/footer', { footerText: 'sample text' }) %>
+</code></pre>
+            </div>
+        </div>
     </div>
     <script src="/themes/techy/public/prism/prism.js"></script>
     <script src="/themes/techy/public/absurd.organic.min.js"></script>

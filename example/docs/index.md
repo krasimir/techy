@@ -129,15 +129,41 @@ Gets a variable initialized with `set` function.
 
 .grid-column
 
-> template(file, data)
+> numofpages()
 
-Injects a HTML content. The second parameter is an object which is applied 
+Returns the number of the pages.
 
 .
 
 .grid-column
 
-	The title is &lt;% get('title') %>.
+	There are &lt;% numofpages() %> pages.
+
+.
+
+.
+
+<!-- ---------------------------------- template --> 
+
+.grid grid-2
+
+.grid-column
+
+> template(file, data)
+
+Injects a HTML content. The second parameter is an hash object. Data which is applied to the template.
+
+.
+
+.grid-column
+
+	// tpl/partials/footer.html
+	&lt;div class="footer">
+		&lt;p>&lt;% footerText %>&lt;/p>
+	&lt;/footer>
+
+	// index.md
+	&lt;% template('partials/footer', { footerText: 'sample text' }) %>
 
 .
 
