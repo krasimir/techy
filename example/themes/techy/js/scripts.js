@@ -1,1 +1,0 @@
-absurd = Absurd();
