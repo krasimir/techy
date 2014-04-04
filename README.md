@@ -36,4 +36,4 @@ Techy is not only generating HTML markup. It puts your writings into a nicely fo
 
 ---
 
-Checkout the full documentaiton [here](/http://krasimir.github.io/techy/docs).
+Checkout the full documentaiton [here](http://krasimir.github.io/techy/docs).
