@@ -6,21 +6,21 @@ I'm a super simple Flat CMS based on [Node.js](http://nodejs.org) ([Gulp.js](htt
 
 In the content driven web site (like a blog for example) the writing should be really easy. Markdown language gives us the simplicity which we need. However, sometimes converting *.md* files to *.html* files is not enough. Techy is an instrument which uses Markdown as a base but also makes your pages programmable. For example:
 
-	&lt;% set('name', 'Big Joe') %>
+	<% set('name', 'Big Joe') %>
 
 	# Article title
 
-	> author: &lt;% get('name') %>
+	> author: <% get('name') %>
 
-	Hello, my name is &lt;% get('name') %>. I'm a web developer.
+	Hello, my name is <% get('name') %>. I'm a web developer.
 
 is transformed to:
 
-	&lt;h1 id="article-title">Article title&lt;/h1>
-	&lt;blockquote>
-	    &lt;p>author: Big Joe&lt;/p>
-	&lt;/blockquote>
-	&lt;p>Hello, my name is Big Joe. I'm a web developer.&lt;/p>
+	<h1 id="article-title">Article title</h1>
+	<blockquote>
+	    <p>author: Big Joe</p>
+	</blockquote>
+	<p>Hello, my name is Big Joe. I'm a web developer.</p>
 
 In other words, there are JavaScript expressions which you may write between `<%` and `%>` and basically fetch information based on other files in your codebase. For example generating a site map or showing the latest added Markdowns.
 

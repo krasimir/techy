@@ -122,3 +122,23 @@ Gets a variable initialized with `set` function.
 .
 
 .
+
+<!-- ---------------------------------- template --> 
+
+.grid grid-2
+
+.grid-column
+
+> template(file, data)
+
+Injects a HTML content. The second parameter is an object which is applied 
+
+.
+
+.grid-column
+
+	The title is &lt;% get('title') %>.
+
+.
+
+.
