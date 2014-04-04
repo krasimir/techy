@@ -14,7 +14,7 @@ module.exports = function(api) {
 			'.full-img': {
 				wid: '100%',
 				hei: '360px',
-				bg: 'url(/public/img/techy.jpg) no-repeat center',
+				bg: 'url(/themes/techy/public/img/techy.jpg) no-repeat center',
 				bgz: 'cover',
 				mt: '40px',
 				mb: '40px'
