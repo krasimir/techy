@@ -3,7 +3,7 @@
   "version": "0.0.5",
   "homepage": "http://krasimir.github.io/techy",
   "description": "Flat CMS based on Gulp and AbsurdJS",
-  "main": "./+lib/index.js",
+  "main": "./lib/index.js",
   "author": {
     "name": "Krasimir Tsonev",
     "email": "info@krasimirtsonev.com",
