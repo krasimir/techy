@@ -1,4 +1,3 @@
-<% set('layout', 'layouts/techy') %>
 <% set('title', 'Techy / Documentation') %>
 
 # Documentation<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Techy's home page](/techy)</small>

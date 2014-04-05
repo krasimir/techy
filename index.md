@@ -1,4 +1,3 @@
-<% set('layout', 'layouts/techy') %>
 <% set('title', 'Techy - The geeky way of writing') %>
 
 # Hello, I'm Techy<br /><small>The geeky way of writing</small>
