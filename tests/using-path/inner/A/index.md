@@ -1,0 +1,1 @@
+The path of this page is <% get('path') %>.

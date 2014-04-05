@@ -1,3 +1,3 @@
-<% set('layout', 'layouts/basic') %>
+<% set('layout', 'custom-layout') %>
 
 # My title
