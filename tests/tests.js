@@ -44,4 +44,6 @@ describe("Techy testing", function() {
 	compare(__dirname + "/custom-method", "should use a custom method");
 	compare(__dirname + "/num-of-pages", "should use numofpages method");
 	compare(__dirname + "/using-path", "should use path method");
+	compare(__dirname + "/access-page-by-name", "should get a page by name");
+	compare(__dirname + "/master-config", "should use a master config");
 });

@@ -1,1 +1,5 @@
-The path of this page is <% get('path') %>.
+The `paths` object:
+
+* root: `<% get('paths').root %>`
+* self: `<% get('paths').self %>`
+* file: `<% get('paths').file %>`
