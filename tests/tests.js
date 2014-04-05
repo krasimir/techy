@@ -46,4 +46,5 @@ describe("Techy testing", function() {
 	compare(__dirname + "/using-path", "should use path method");
 	compare(__dirname + "/access-page-by-name", "should get a page by name");
 	compare(__dirname + "/master-config", "should use a master config");
+	compare(__dirname + "/html-usage", "should use html");
 });
