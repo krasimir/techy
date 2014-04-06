@@ -17,18 +17,20 @@
 
         <hr>
         <h1 id="hello-i-m-techy">Hello, I'm Techy</h1>
-        <p>I'm a super simple Flat CMS based on <a href="http://nodejs.org">Node.js</a> (<a href="http://gulpjs.com/">Gulp.js</a> and <a href="http://absurdjs.com/">AbsurdJS</a>). If you don't want to use a database to store your content I could help you. Write
-            everything in <a href="https://daringfireball.net/projects/markdown/">Markdown</a> format and I'll convert it to HTML.</p>
+        <p>I love <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and I can turn it to a beautifully looking HTML layouts. I'm build and distributed as a <a href="http://nodejs.org">Node.js</a> module. <a href="http://gulpjs.com/">Gulp.js</a> and
+            <a
+            href="http://absurdjs.com/">AbsurdJS</a>are the base which I'm staying on. If you don't want to use a database to store your content I can help you. Write everything in Markdown format and I'll convert it to HTML.</p>
+        <hr>
         <h2 id="the-concept">The concept</h2>
-        <p>In the content driven web site (like a blog for example) the writing should be really easy. Markdown language gives us the simplicity which we need. However, sometimes converting <em>.md</em> files to <em>.html</em> files is not enough. Techy is an
-            instrument which uses Markdown as a base but also makes your pages programmable. For example:</p>
-        <pre><code class="language-javascript">&lt;% set('name', 'Big Joe') %>
+        <p>In the content driven web site (like a blog for example) the writing should be really easy and fluent. Markdown language gives us the simplicity which we need. However, sometimes converting <em>.md</em> files to <em>.html</em> files is not enough.
+            Techy is an instrument which uses Markdown as a base but also makes your pages programmable. For example:</p>
+        <pre><code class="language-javascript">&lt;% set('username', 'Big Joe') %>
 
 # Article title
 
 > author: &lt;% get('name') %>
 
-Hello, my name is &lt;% get('name') %>. I'm a web developer.
+Hello, my name is &lt;% get('username') %>. I'm a web developer.
 </code></pre>
         <p>is transformed to:</p>
         <pre><code class="language-javascript">&lt;h1 id="article-title">Article title&lt;/h1>
@@ -40,13 +42,13 @@ Hello, my name is &lt;% get('name') %>. I'm a web developer.
         <p>In other words, there are JavaScript expressions which you may write between <code class="language-javascript"><%</code> and <code class="language-javascript">%></code> and basically fetch information based on other files in your codebase. For example
             generating a site map or showing the latest added Markdowns.</p>
         <h2 id="simple-usage">Simple usage</h2>
-        <p>Install Techy from the command line onto your system by running the following command:</p>
+        <p>Install Techy from the command line by running the following:</p>
         <pre><code class="language-javascript">npm install -g techy
 </code></pre>
-        <p>Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type <code class="language-javascript">techy</code> and press <em>Enter</em> in the same folder you will see all the materials coverted to HTML.</p>
+        <p>Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type <code class="language-javascript">techy</code> in the same folder and press <em>Enter</em> you will see all the materials converted to HTML.</p>
         <p>Techy is not only generating HTML markup. It puts your writings into a nicely formated layout.</p>
         <hr>
-        <p>Checkout the documentaiton <a href="/techy/docs"><i class="fa fa-book"></i> here</a> or fork the Techy project <a href="https://github.com/krasimir/techy"><i class="fa fa-github"></i> at GitHub</a>.</p>
+        <p>Checkout the documentaiton <a href="/techy/docs"><i class="fa fa-book"></i> here</a> or fork the Techy project <a href="https://github.com/krasimir/techy">in <i class="fa fa-github"></i> GitHub</a>.</p>
     </div>
     <script src="themes/techy/public/prism/prism.js"></script>
     <script src="themes/techy/public/absurd.organic.min.js"></script>

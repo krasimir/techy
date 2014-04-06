@@ -6,19 +6,21 @@
 
 # Hello, I'm Techy
 
-I'm a super simple Flat CMS based on [Node.js](http://nodejs.org) ([Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/)). If you don't want to use a database to store your content I could help you. Write everything in [Markdown](https://daringfireball.net/projects/markdown/) format and I'll convert it to HTML.
+I love [Markdown](https://daringfireball.net/projects/markdown/) and I can turn it to a beautifully looking HTML layouts. I'm build and distributed as a [Node.js](http://nodejs.org) module. [Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/) are the base which I'm staying on. If you don't want to use a database to store your content I can help you. Write everything in Markdown format and I'll convert it to HTML.
+
+---
 
 ## The concept
 
-In the content driven web site (like a blog for example) the writing should be really easy. Markdown language gives us the simplicity which we need. However, sometimes converting *.md* files to *.html* files is not enough. Techy is an instrument which uses Markdown as a base but also makes your pages programmable. For example:
+In the content driven web site (like a blog for example) the writing should be really easy and fluent. Markdown language gives us the simplicity which we need. However, sometimes converting *.md* files to *.html* files is not enough. Techy is an instrument which uses Markdown as a base but also makes your pages programmable. For example:
 
-	&lt;% set('name', 'Big Joe') %>
+	&lt;% set('username', 'Big Joe') %>
 
 	# Article title
 
 	> author: &lt;% get('name') %>
 
-	Hello, my name is &lt;% get('name') %>. I'm a web developer.
+	Hello, my name is &lt;% get('username') %>. I'm a web developer.
 
 is transformed to:
 
@@ -32,14 +34,14 @@ In other words, there are JavaScript expressions which you may write between `<%
 
 ## Simple usage
 
-Install Techy from the command line onto your system by running the following command:
+Install Techy from the command line by running the following:
 
 	npm install -g techy
 
-Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type `techy` and press *Enter* in the same folder you will see all the materials coverted to HTML.
+Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type `techy` in the same folder and press *Enter* you will see all the materials converted to HTML.
 
 Techy is not only generating HTML markup. It puts your writings into a nicely formated layout.
 
 ---
 
-Checkout the documentaiton [<i class="fa fa-book"></i> here](/techy/docs) or fork the Techy project [<i class="fa fa-github"></i> at GitHub](https://github.com/krasimir/techy).
+Checkout the documentaiton [<i class="fa fa-book"></i> here](/techy/docs) or fork the Techy project [in <i class="fa fa-github"></i> GitHub](https://github.com/krasimir/techy).
