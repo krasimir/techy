@@ -6,16 +6,27 @@
 
 .grid
 
+* [How it works](#how-it-works)
 * [Theming](#theming)
 	* [Layout](#layout)
 	* [CSS](#css)
 	* [JavaScript](#javascript)
 	* [Templates](#templates)
+	* [Writing HTML](#writing-html)
+	* [Accessing another page](#accessing-another-page)
+	* [Master config](#master-config)
+	* [Writing your own functions](#writing-your-own-functions)
 * [API](#api)
 
 .
 
 ---
+
+## How it works
+
+First, Techy checks the current selected theme. It then converts your Markdown file to HTML. Gets the layout from the `tpl` directory and replaces `&lt;% get('content') %>` with your content. It also executes the expressions in the code. They work on both places - Markdown or HTML. Like for example, `&lt;% get('paths').root %>` in the `basic.html` is replaced with an emptry string. That's because `page.md` is located in the root of the project. If it is a file in nested folder then the path will be set properly.
+
+<div class="how-it-works-img"></div>
 
 ## Theming
 
@@ -69,6 +80,78 @@ No matter what you do you will need some kind of partial system. I.e. save a pie
 	&lt;% template('footer.html') %>
 
 Will check for `/themes/[your theme]/tpl/footer.html` or just for `/footer.html` and if it finds the file will import its content.
+
+### Writing HTML
+
+You may need to add a valid HTML markup to the page. But at the same time continue writing Markdown between your tags. Here is a limited feature that you could use.
+
+.grid grid-2
+
+.grid-column code-left
+
+The following code:
+
+	.foo bar
+
+	Sample text here.
+
+	.
+
+.
+
+.grid-column
+
+Is converted to
+
+	&lt;div class="foo bar">
+		&lt;p>Sample text here.&lt;/p>
+	&lt;/div>
+
+.
+
+.
+
+### Accessing another page
+
+By using `&lt; set('key', 'value') %>` you are basically creating a variable for the current page. If you give it a name you are able to access all its properties from the other pages. For example:
+
+	// A.md
+	&lt;% set('name', 'PageA') %>
+	&lt;% set('numOfProducts', 42) %>
+
+	// B.md
+	There are &lt;% page('PageA').get('numOfProducts') %> products in total.
+
+### Master config
+
+There is a way to define variables which will be available for all the pages. Create a file `Techy.js` in the main project's directory. Here is an example:
+
+	// Techy.js
+	module.exports = function() {
+		return {
+			globalSetting: 'I\'m a global'
+		}
+	}
+
+	// page.md
+	The value of the global setting is &lt;% globalSetting %>.
+
+The function that is exported should return an object. The properties of that object are defined as global variables in your pages.
+
+### Writing your own functions
+
+Every JavaScript file which ends on `techy.js` is considered as a Techy function. For example:
+
+	// myown.techy.js
+	module.exports = function() {
+		return 'My Name is ' + this.get('username');
+	}
+
+	// page.md
+	&lt;% set('username', 'John') %>
+	Hi, how are you &lt;% myown() %>!
+
+`this` keyword inside the function points to the page. So, all the methods which you normally use in the Markdown file are available.
 
 ---
 
@@ -167,3 +250,80 @@ Injects a HTML content. The second parameter is an hash object. Data which is ap
 .
 
 .
+
+<!-- ---------------------------------- linkto --> 
+
+.grid grid-2
+
+.grid-column
+
+> linkto(page)
+
+Get a path to specific page
+
+.
+
+.grid-column
+
+	// inner/A/B/page.md
+	&lt;% set('name', 'MyPage') %>
+
+	// index.md
+	&lt;a href="&lt;% linkto('MyPage') %>">page&lt;/a>
+
+	// resulted index.html
+	&lt;a href="inner/A/B/page.html">page&lt;/a>
+
+.
+
+.
+
+<!-- ---------------------------------- page --> 
+
+.grid grid-2
+
+.grid-column
+
+> page(page)
+
+Get an access to another page
+
+.
+
+.grid-column
+
+	// A.md
+	&lt;% set('name', 'MyPage') %>
+	&lt;% set('somethingCustom', 'value') %>
+
+	// B.md
+	&lt;% page('MyPage').get('somethingCustom') %>
+.
+
+.
+
+<!-- ---------------------------------- pages --> 
+
+.grid grid-2
+
+.grid-column
+
+> page(page)
+
+Get an access to all the pages in the project. Returns an array.
+
+.
+
+.grid-column
+
+	// page.md
+	&lt;% pages().length %>
+.
+
+.
+
+---
+
+<% template('social') %>
+<% template('footer') %>
+<% template('ga') %>

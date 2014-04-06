@@ -48,7 +48,43 @@ Hello, my name is &lt;% get('username') %>. I'm a web developer.
         <p>Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type <code class="language-javascript">techy</code> in the same folder and press <em>Enter</em> you will see all the materials converted to HTML.</p>
         <p>Techy is not only generating HTML markup. It puts your writings into a nicely formated layout.</p>
         <hr>
-        <p>Checkout the documentaiton <a href="/techy/docs"><i class="fa fa-book"></i> here</a> or fork the Techy project <a href="https://github.com/krasimir/techy">in <i class="fa fa-github"></i> GitHub</a>.</p>
+        <p>Checkout the full documentaiton <a href="/techy/docs"><i class="fa fa-book"></i> here</a> or fork the Techy project <a href="https://github.com/krasimir/techy">in <i class="fa fa-github"></i> GitHub</a>.</p>
+        <div class="social">
+            <!-- Twitter --><a href="https://twitter.com/share" class="twitter-share-button" data-via="KrasimirTsonev" data-hashtags="Techy">Tweet</a>
+            <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + '://platform.twitter.com/widgets.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, 'script', 'twitter-wjs');
+            </script>
+            <!-- GitHub -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=krasimir&repo=techy&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        </div>
+        <hr>
+        <div class="grid footer-small">The page which you are looking right now is also generated with Techy.
+            <br />If you are interested, checkout how the code looks like <a href="https://github.com/krasimir/techy/tree/gh-pages">here</a>.
+            <br />
+            <br />Made with <a href="http://gulpjs.com/">Gulp</a> and <a href="http://absurdjs.com">AbsurdJS</a>.</div>
+        <script>
+            (function(i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function() {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+            ga('create', 'UA-1621908-4', 'krasimir.github.io');
+            ga('send', 'pageview');
+        </script>
     </div>
     <script src="themes/techy/public/prism/prism.js"></script>
     <script src="themes/techy/public/absurd.organic.min.js"></script>
