@@ -1,10 +1,12 @@
 <% set('title', 'Techy - The geeky way of writing') %>
 
-# Hello, I'm Techy<br /><small>The geeky way of writing</small>
+<div class="full-img"></div>
+
+---
+
+# Hello, I'm Techy
 
 I'm a super simple Flat CMS based on [Node.js](http://nodejs.org) ([Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/)). If you don't want to use a database to store your content I could help you. Write everything in [Markdown](https://daringfireball.net/projects/markdown/) format and I'll convert it to HTML.
-
-<div class="full-img"></div>
 
 ## The concept
 
@@ -41,6 +43,3 @@ Techy is not only generating HTML markup. It puts your writings into a nicely fo
 ---
 
 Checkout the documentaiton [<i class="fa fa-book"></i> here](/techy/docs) or fork the Techy project [<i class="fa fa-github"></i> at GitHub](https://github.com/krasimir/techy).
-
-
-

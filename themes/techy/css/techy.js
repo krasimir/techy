@@ -12,12 +12,16 @@ module.exports = function(api) {
 				pr: settings.gap
 			},
 			'.full-img': {
-				wid: '100%',
-				hei: '360px',
-				bg: 'url(/themes/techy/public/img/techy.jpg) no-repeat center',
+				maw: '1000px',
+				hei: '600px',
+				bg: 'url(img/landing.jpg) no-repeat center',
 				bgz: 'cover',
-				mt: settings.gapb,
-				mb: settings.gapb
+				ml: 'a',
+				mr: 'a',
+				'@media all and (max-width: 930px)': { hei: '500px' },
+				'@media all and (max-width: 770px)': { hei: '400px' },
+				'@media all and (max-width: 620px)': { hei: '300px' },
+				'@media all and (max-width: 470px)': { hei: '400px' }
 			},
 			h1: {
 				lh: '40px',
