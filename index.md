@@ -18,7 +18,7 @@ In the content driven web site (like a blog for example) the writing should be r
 
 	# Article title
 
-	> author: &lt;% get('name') %>
+	> author: &lt;% get('username') %>
 
 	Hello, my name is &lt;% get('username') %>. I'm a web developer.
 
