@@ -47,4 +47,5 @@ describe("Techy testing", function() {
 	compare(__dirname + "/access-page-by-name", "should get a page by name");
 	compare(__dirname + "/master-config", "should use a master config");
 	compare(__dirname + "/html-usage", "should use html");
+	compare(__dirname + "/skip-node_modules", "should skip node_modules");
 });
