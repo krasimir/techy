@@ -24,7 +24,7 @@
 
 ## How it works
 
-First, Techy checks the current selected theme. It then converts your Markdown file to HTML. Gets the layout from the `tpl` directory and replaces `&lt;% get('content') %>` with your content. It also executes the expressions in the code. They work on both places - Markdown or HTML. Like for example, `&lt;% get('paths').root %>` in the `basic.html` is replaced with an emptry string. That's because `page.md` is located in the root of the project. If it is a file in nested folder then the path will be set properly.
+First, Techy checks the current selected theme. It then converts your Markdown file to HTML. Gets the layout from the `tpl` directory and replaces `&lt;% get('content') %>` with your content. It also executes the expressions in the code. They work on both places - Markdown or HTML. Like for example, `&lt;% get('paths').root %>` in the `basic.html` is replaced with an empty string. That's because `page.md` is located in the root of the project. If it is a file in nesting folder then the path will be set properly.
 
 <div class="how-it-works-img"></div>
 
@@ -36,7 +36,7 @@ Once you run `techy` you get a `themes` folder copied. It's located in the same 
 
 ### Layout
 
-The layout is HTML file which contains the placeholder for the content coming from your Markdown files. You are able to specify a different layout by using the following expression:
+The layout is HTML file that contains the placeholder for the content coming from your Markdown files. You are able to specify a different layout by using the following expression:
 
 	&lt;% set('layout', 'layouts/custom-layout.html') %> 
 
@@ -75,7 +75,7 @@ Techy uses *gulp-concat* and *gulp-uglify* to produce the JavaScript needed for 
 
 ### Templates
 
-No matter what you do you will need some kind of partial system. I.e. save a piece of code and inject it in several places. For such cases Techy provides the `template` method. The function searches for templates in `/themes/[your theme]/tpl` directory. For example:
+No matter what you do you will need some partial system. I.e. save a piece of code and inject it in several places. For such cases, Techy provides the `template` method. The function searches for templates in `/themes/[your theme]/tpl` directory. For example:
 
 	&lt;% template('footer.html') %>
 
@@ -113,7 +113,7 @@ Is converted to
 
 ### Accessing another page
 
-By using `&lt; set('key', 'value') %>` you are basically creating a variable for the current page. If you give it a name you are able to access all its properties from the other pages. For example:
+By using `&lt; set('key', 'value') %>` you are basically creating a variable for the current page. If you give it a name, you are able to access all its properties from the other pages. For example:
 
 	// A.md
 	&lt;% set('name', 'PageA') %>
@@ -124,7 +124,7 @@ By using `&lt; set('key', 'value') %>` you are basically creating a variable for
 
 ### Master config
 
-There is a way to define variables which will be available for all the pages. Create a file `Techy.js` in the main project's directory. Here is an example:
+There is a way to define variables that will be available for all the pages. Create a file `Techy.js` in the main project's directory. Here is an example:
 
 	// Techy.js
 	module.exports = function() {
