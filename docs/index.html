@@ -29,15 +29,15 @@
                         </li>
                         <li><a href="#templates">Templates</a>
                         </li>
-                        <li><a href="#writing-html">Writing HTML</a>
-                        </li>
-                        <li><a href="#accessing-another-page">Accessing another page</a>
-                        </li>
-                        <li><a href="#master-config">Master config</a>
-                        </li>
-                        <li><a href="#writing-your-own-functions">Writing your own functions</a>
-                        </li>
                     </ul>
+                </li>
+                <li><a href="#writing-html">Writing HTML</a>
+                </li>
+                <li><a href="#accessing-another-page">Accessing another page</a>
+                </li>
+                <li><a href="#master-config">Master config</a>
+                </li>
+                <li><a href="#writing-your-own-functions">Writing your own functions</a>
                 </li>
                 <li><a href="#api">API</a>
                 </li>
@@ -93,7 +93,7 @@ some text
         <pre><code class="language-javascript">&lt;% template('footer.html') %>
 </code></pre>
         <p>Will check for <code class="language-javascript">/themes/[your theme]/tpl/footer.html</code> or just for <code class="language-javascript">/footer.html</code> and if it finds the file will import its content.</p>
-        <h3 id="writing-html">Writing HTML</h3>
+        <h2 id="writing-html">Writing HTML</h2>
         <p>You may need to add a valid HTML markup to the page. But at the same time continue writing Markdown between your tags. Here is a limited feature that you could use.</p>
         <div class="grid grid-2">
             <div class="grid-column code-left">
@@ -113,7 +113,7 @@ Sample text here.
 </code></pre>
             </div>
         </div>
-        <h3 id="accessing-another-page">Accessing another page</h3>
+        <h2 id="accessing-another-page">Accessing another page</h2>
         <p>By using <code class="language-javascript">&lt; set('key', 'value') %></code> you are basically creating a variable for the current page. If you give it a name, you are able to access all its properties from the other pages. For example:</p>
         <pre><code class="language-javascript">// A.md
 &lt;% set('name', 'PageA') %>
@@ -122,7 +122,7 @@ Sample text here.
 // B.md
 There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 </code></pre>
-        <h3 id="master-config">Master config</h3>
+        <h2 id="master-config">Master config</h2>
         <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">Techy.js</code> in the main project's directory. Here is an example:</p>
         <pre><code class="language-javascript">// Techy.js
 module.exports = function() {
@@ -135,7 +135,7 @@ module.exports = function() {
 The value of the global setting is &lt;% globalSetting %>.
 </code></pre>
         <p>The function that is exported should return an object. The properties of that object are defined as global variables in your pages.</p>
-        <h3 id="writing-your-own-functions">Writing your own functions</h3>
+        <h2 id="writing-your-own-functions">Writing your own functions</h2>
         <p>Every JavaScript file which ends on <code class="language-javascript">techy.js</code> is considered as a Techy function. For example:</p>
         <pre><code class="language-javascript">// myown.techy.js
 module.exports = function() {

@@ -12,10 +12,10 @@
 	* [CSS](#css)
 	* [JavaScript](#javascript)
 	* [Templates](#templates)
-	* [Writing HTML](#writing-html)
-	* [Accessing another page](#accessing-another-page)
-	* [Master config](#master-config)
-	* [Writing your own functions](#writing-your-own-functions)
+* [Writing HTML](#writing-html)
+* [Accessing another page](#accessing-another-page)
+* [Master config](#master-config)
+* [Writing your own functions](#writing-your-own-functions)
 * [API](#api)
 
 .
@@ -81,7 +81,7 @@ No matter what you do you will need some partial system. I.e. save a piece of co
 
 Will check for `/themes/[your theme]/tpl/footer.html` or just for `/footer.html` and if it finds the file will import its content.
 
-### Writing HTML
+## Writing HTML
 
 You may need to add a valid HTML markup to the page. But at the same time continue writing Markdown between your tags. Here is a limited feature that you could use.
 
@@ -111,7 +111,7 @@ Is converted to
 
 .
 
-### Accessing another page
+## Accessing another page
 
 By using `&lt; set('key', 'value') %>` you are basically creating a variable for the current page. If you give it a name, you are able to access all its properties from the other pages. For example:
 
@@ -122,7 +122,7 @@ By using `&lt; set('key', 'value') %>` you are basically creating a variable for
 	// B.md
 	There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 
-### Master config
+## Master config
 
 There is a way to define variables that will be available for all the pages. Create a file `Techy.js` in the main project's directory. Here is an example:
 
@@ -138,7 +138,7 @@ There is a way to define variables that will be available for all the pages. Cre
 
 The function that is exported should return an object. The properties of that object are defined as global variables in your pages.
 
-### Writing your own functions
+## Writing your own functions
 
 Every JavaScript file which ends on `techy.js` is considered as a Techy function. For example:
 
