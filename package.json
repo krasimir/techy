@@ -1,6 +1,6 @@
 {
   "name": "techy",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "homepage": "http://krasimir.github.io/techy",
   "description": "Flat CMS based on Gulp and AbsurdJS",
   "main": "./lib/index.js",
@@ -17,6 +17,8 @@
     "gulp-concat": "2.1.7",
     "gulp-jshint": "1.4.0",
     "gulp-uglify": "0.2.0",
+    "gulp-less": "1.2.3",
+    "gulp-sass": "0.7.1",
     "through2": "0.4.1",
     "gulp-util": "2.2.14",
     "marked": "0.3.1",

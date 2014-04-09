@@ -16,7 +16,7 @@ var deleteFolderRecursive = function(path) {
 	}
 };
 
-var compare = function(root, desc) {
+var compare = function(root, desc, asserts) {
 	it(desc, function(done) {
 		deleteFolderRecursive(root + '/public');
 		deleteFolderRecursive(root + '/themes');
@@ -24,7 +24,11 @@ var compare = function(root, desc) {
 			var exprected = fs.readFileSync(root + '/expected.html').toString('utf8').replace(/(\r|\n)/g, '');
 			var actual = fs.readFileSync(root + '/page.html').toString('utf8').replace(/(\r|\n)/g, '');
 			expect(exprected).to.be(actual);
-			done();
+			if(asserts) {
+				asserts(done);
+			} else {
+				done();
+			}
 		}, true);
 		// done();
 	});
@@ -49,4 +53,28 @@ describe("Techy testing", function() {
 	compare(__dirname + "/html-usage", "should use html");
 	compare(__dirname + "/skip-node_modules", "should skip node_modules");
 	compare(__dirname + "/linkto", "should use linkto");
+	compare(__dirname + "/css_absurd", "should use Absurd", function(done) {
+		var exprectedCSS = fs.readFileSync(__dirname + '/css_absurd/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_absurd/themes/empty/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		expect(exprectedCSS).to.be(actualCSS);
+		done();
+	});
+	compare(__dirname + "/css_less", "should use LESS", function(done) {
+		var exprectedCSS = fs.readFileSync(__dirname + '/css_less/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_less/themes/empty/public/styling.css').toString('utf8').replace(/(\r|\n)/g, '');
+		expect(exprectedCSS).to.be(actualCSS);
+		done();
+	});
+	compare(__dirname + "/css_sass", "should use SASS", function(done) {
+		var exprectedCSS = fs.readFileSync(__dirname + '/css_sass/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_sass/themes/empty/public/styling.css').toString('utf8').replace(/(\r|\n)/g, '');
+		expect(exprectedCSS).to.be(actualCSS);
+		done();
+	});
+	compare(__dirname + "/css_css", "should use plain css", function(done) {
+		var exprectedCSS = fs.readFileSync(__dirname + '/css_css/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_css/themes/empty/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		expect(exprectedCSS).to.be(actualCSS);
+		done();
+	});
 });
