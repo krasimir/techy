@@ -67,16 +67,7 @@ You will get:
 
 ### CSS
 
-The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is `/themes/[your theme]/css/styles.js`. The compiled styles are always put in `/themes/[your theme]/public` folder. If you want to change the default preprocessor you have to add `Techy.js` file in the main project's directory with the following content:
-
-	module.exports = function() {
-		return {
-			css: {
-				preprocessor: [type of the preprocessor],
-				index: [path to the main file, glob pattern or directory]
-			}
-		}
-	}
+a
 
 ### JavaScript
 

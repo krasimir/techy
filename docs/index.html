@@ -85,18 +85,7 @@ some text
 &lt;/div>
 </code></pre>
         <h3 id="css">CSS</h3>
-        <p>The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is <code class="language-javascript">/themes/[your theme]/css/styles.js</code>.
-            The compiled styles are always put in <code class="language-javascript">/themes/[your theme]/public</code> folder. If you want to change the default preprocessor you have to add <code class="language-javascript">Techy.js</code> file in the main
-            project's directory with the following content:</p>
-        <pre><code class="language-javascript">module.exports = function() {
-    return {
-        css: {
-            preprocessor: [type of the preprocessor],
-            index: [path to the main file, glob pattern or directory]
-        }
-    }
-}
-</code></pre>
+        <p>a</p>
         <h3 id="javascript">JavaScript</h3>
         <p>Techy uses <em>gulp-concat</em> and <em>gulp-uglify</em> to produce the JavaScript needed for the pages. Just put your scripts in <code class="language-javascript">/themes/[your theme]/js</code> directory and they will be merged into <code class="language-javascript">/themes/[your theme]/public/scripts.js</code>
         </p>
