@@ -67,7 +67,68 @@ You will get:
 
 ### CSS
 
-The CSS styles in Techy are written with [AbsurdJS](http://absurdjs.com/pages/css-preprocessing/). The main file is `/themes/[your theme]/css/styles.js`. The final, compiled styles are saved in `/themes/[your theme]/public/styles.css` and that's the file that should be used in the layouts.
+The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is `/themes/[your theme]/css/styles.js`. The compiled styles are always put in `/themes/[your theme]/public` folder. If you want to change the default preprocessor you have to add `Techy.js` file in the main project's directory with the following content:
+
+	module.exports = function() {
+		return {
+			css: {
+				preprocessor: [type of the preprocessor],
+				index: [path to the main file, glob pattern or directory]
+			}
+		}
+	}
+
+#### AbsurdJS as CSS preprocessor
+
+[`gulp-absurd`](https://github.com/krasimir/gulp-absurd) module is used.
+
+	module.exports = function() {
+		return {
+			css: {
+				preprocessor: 'absurd',
+				index: 'absurd/styles.js'
+			}
+		}
+	}
+
+#### LESS as CSS preprocessor
+
+[`gulp-less`](https://github.com/plus3network/gulp-less) module is used.
+
+	module.exports = function() {
+		return {
+			css: {
+				preprocessor: 'less',
+				index: 'less/styles.less'
+			}
+		}
+	}
+
+#### SASS as CSS preprocessor
+
+[`gulp-sass`](https://github.com/dlmanning/gulp-sass) module is used.
+
+	module.exports = function() {
+		return {
+			css: {
+				preprocessor: 'sass',
+				index: 'sass/*.scss'
+			}
+		}
+	}
+
+#### No CSS preprocessor, plain CSS files
+
+The `index` property accepts glob pattern. All the files matching that pattern are concatenated.
+
+	module.exports = function() {
+		return {
+			css: {
+				preprocessor: 'none',
+				index: 'css/**/*.css'
+			}
+		}
+	}
 
 ### JavaScript
 

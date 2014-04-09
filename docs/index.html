@@ -85,9 +85,62 @@ some text
 &lt;/div>
 </code></pre>
         <h3 id="css">CSS</h3>
-        <p>The CSS styles in Techy are written with <a href="http://absurdjs.com/pages/css-preprocessing/">AbsurdJS</a>. The main file is <code class="language-javascript">/themes/[your theme]/css/styles.js</code>. The final, compiled styles are saved in
-            <code
-            class="language-javascript">/themes/[your theme]/public/styles.css</code>and that's the file that should be used in the layouts.</p>
+        <p>The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is <code class="language-javascript">/themes/[your theme]/css/styles.js</code>.
+            The compiled styles are always put in <code class="language-javascript">/themes/[your theme]/public</code> folder. If you want to change the default preprocessor you have to add <code class="language-javascript">Techy.js</code> file in the main
+            project's directory with the following content:</p>
+        <pre><code class="language-javascript">module.exports = function() {
+    return {
+        css: {
+            preprocessor: [type of the preprocessor],
+            index: [path to the main file, glob pattern or directory]
+        }
+    }
+}
+</code></pre>
+        <h4 id="absurdjs-as-css-preprocessor">AbsurdJS as CSS preprocessor</h4>
+        <p><a href="https://github.com/krasimir/gulp-absurd"><code class="language-javascript">gulp-absurd</code></a> module is used.</p>
+        <pre><code class="language-javascript">module.exports = function() {
+    return {
+        css: {
+            preprocessor: 'absurd',
+            index: 'absurd/styles.js'
+        }
+    }
+}
+</code></pre>
+        <h4 id="less-as-css-preprocessor">LESS as CSS preprocessor</h4>
+        <p><a href="https://github.com/plus3network/gulp-less"><code class="language-javascript">gulp-less</code></a> module is used.</p>
+        <pre><code class="language-javascript">module.exports = function() {
+    return {
+        css: {
+            preprocessor: 'less',
+            index: 'less/styles.less'
+        }
+    }
+}
+</code></pre>
+        <h4 id="sass-as-css-preprocessor">SASS as CSS preprocessor</h4>
+        <p><a href="https://github.com/dlmanning/gulp-sass"><code class="language-javascript">gulp-sass</code></a> module is used.</p>
+        <pre><code class="language-javascript">module.exports = function() {
+    return {
+        css: {
+            preprocessor: 'sass',
+            index: 'sass/*.scss'
+        }
+    }
+}
+</code></pre>
+        <h4 id="no-css-preprocessor-plain-css-files">No CSS preprocessor, plain CSS files</h4>
+        <p>The <code class="language-javascript">index</code> property accepts glob pattern. All the files matching that pattern are concatenated.</p>
+        <pre><code class="language-javascript">module.exports = function() {
+    return {
+        css: {
+            preprocessor: 'none',
+            index: 'css/**/*.css'
+        }
+    }
+}
+</code></pre>
         <h3 id="javascript">JavaScript</h3>
         <p>Techy uses <em>gulp-concat</em> and <em>gulp-uglify</em> to produce the JavaScript needed for the pages. Just put your scripts in <code class="language-javascript">/themes/[your theme]/js</code> directory and they will be merged into <code class="language-javascript">/themes/[your theme]/public/scripts.js</code>
         </p>
