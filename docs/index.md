@@ -78,58 +78,6 @@ The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By defau
 		}
 	}
 
-#### AbsurdJS as CSS preprocessor
-
-[`gulp-absurd`](https://github.com/krasimir/gulp-absurd) module is used.
-
-	module.exports = function() {
-		return {
-			css: {
-				preprocessor: 'absurd',
-				index: 'absurd/styles.js'
-			}
-		}
-	}
-
-#### LESS as CSS preprocessor
-
-[`gulp-less`](https://github.com/plus3network/gulp-less) module is used.
-
-	module.exports = function() {
-		return {
-			css: {
-				preprocessor: 'less',
-				index: 'less/styles.less'
-			}
-		}
-	}
-
-#### SASS as CSS preprocessor
-
-[`gulp-sass`](https://github.com/dlmanning/gulp-sass) module is used.
-
-	module.exports = function() {
-		return {
-			css: {
-				preprocessor: 'sass',
-				index: 'sass/*.scss'
-			}
-		}
-	}
-
-#### No CSS preprocessor, plain CSS files
-
-The `index` property accepts glob pattern. All the files matching that pattern are concatenated.
-
-	module.exports = function() {
-		return {
-			css: {
-				preprocessor: 'none',
-				index: 'css/**/*.css'
-			}
-		}
-	}
-
 ### JavaScript
 
 Techy uses *gulp-concat* and *gulp-uglify* to produce the JavaScript needed for the pages. Just put your scripts in `/themes/[your theme]/js` directory and they will be merged into `/themes/[your theme]/public/scripts.js`
