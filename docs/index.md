@@ -217,7 +217,7 @@ Every JavaScript file which ends on `techy.js` is considered as a Techy function
 
 ## Using Yaml Front Matter
 
-If you ever use [Jekyll](http://jekyllrb.com/) you are probably familiar with [Yaml Front Matter](http://jekyllrb.com/docs/frontmatter/). It gives you the ability to define settings for the current page. All you have to do is to put some Yaml in the beginning of the file wrapped in `---`. For example:
+If you ever used [Jekyll](http://jekyllrb.com/) you are probably familiar with [Yaml Front Matter](http://jekyllrb.com/docs/frontmatter/). It gives you the ability to define settings for the current page. All you have to do is to put some Yaml in the beginning of the file wrapped in `---`. For example:
 
 	---
 	username: Derek Worthen
