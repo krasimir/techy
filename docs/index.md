@@ -16,6 +16,7 @@
 * [Accessing another page](#accessing-another-page)
 * [Master config](#master-config)
 * [Writing your own functions](#writing-your-own-functions)
+* [Using Yaml Front Matter](#using-yaml-front-matter)
 * [API](#api)
 
 .
@@ -185,7 +186,7 @@ By using `&lt; set('key', 'value') %>` you are basically creating a variable for
 
 ## Master config
 
-There is a way to define variables that will be available for all the pages. Create a file `Techy.js` in the main project's directory. Here is an example:
+There is a way to define variables that will be available for all the pages. Create a file `TechyFile.js` or `Techy.js` in the main project's directory. The directory where you run the `techy` command. Here is an example:
 
 	// Techy.js
 	module.exports = function() {
@@ -213,6 +214,50 @@ Every JavaScript file which ends on `techy.js` is considered as a Techy function
 	Hi, how are you &lt;% myown() %>!
 
 `this` keyword inside the function points to the page. So, all the methods which you normally use in the Markdown file are available.
+
+## Using Yaml Front Matter
+
+If you ever use [Jekyll](http://jekyllrb.com/) you are probably familiar with [Yaml Front Matter](http://jekyllrb.com/docs/frontmatter/). It gives you the ability to define settings for the current page. All you have to do is to put some Yaml in the beginning of the file wrapped in `---`. For example:
+
+	---
+	username: Derek Worthen
+	age: young
+	contact: 
+	 email: email@domain.com
+	 address: some location
+	pets: 
+	 - cats
+	 - dogs
+	 - bats
+	match: !!js/regexp /pattern/gim
+	run: !!js/function function(a) { return a.toUpperCase(); }
+	---
+
+	# Hello world
+
+	Hello, my name is &lt;% get('username') %>.
+	My address is &lt;% get('contact').address %>.
+	I love &lt;% get('run')(get('pets')[1]) %>.
+
+The rows in the beginning are translated to the following JSON:
+
+	{ 
+		username: 'Derek Worthen',
+		age: 'young',
+		contact: { email: 'email@domain.com', address: 'some location' },
+		pets: [ 'cats', 'dogs', 'bats' ],
+		match: /pattern/gim,
+		run: function(a) { return a.toUpperCase(); }
+	}
+
+And later all the properties of the above object are set as properties of the current page. That's why the result is:
+
+	&lt;h1 id="hello-world">Hello world&lt;/h1>
+	&lt;p>
+		Hello, my name is Derek Worthen. 
+		My address is some location.
+		I love DOGS.
+	&lt;/p>
 
 ---
 

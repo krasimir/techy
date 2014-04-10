@@ -43,6 +43,8 @@
                 </li>
                 <li><a href="#writing-your-own-functions">Writing your own functions</a>
                 </li>
+                <li><a href="#using-yaml-front-matter">Using Yaml Front Matter</a>
+                </li>
                 <li><a href="#api">API</a>
                 </li>
             </ul>
@@ -180,7 +182,8 @@ Sample text here.
 There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 </code></pre>
         <h2 id="master-config">Master config</h2>
-        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">Techy.js</code> in the main project's directory. Here is an example:</p>
+        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> or <code class="language-javascript">Techy.js</code> in the main project's directory. The directory where
+            you run the <code class="language-javascript">techy</code> command. Here is an example:</p>
         <pre><code class="language-javascript">// Techy.js
 module.exports = function() {
     return {
@@ -204,6 +207,47 @@ module.exports = function() {
 Hi, how are you &lt;% myown() %>!
 </code></pre>
         <p><code class="language-javascript">this</code> keyword inside the function points to the page. So, all the methods which you normally use in the Markdown file are available.</p>
+        <h2 id="using-yaml-front-matter">Using Yaml Front Matter</h2>
+        <p>If you ever use <a href="http://jekyllrb.com/">Jekyll</a> you are probably familiar with <a href="http://jekyllrb.com/docs/frontmatter/">Yaml Front Matter</a>. It gives you the ability to define settings for the current page. All you have to do is
+            to put some Yaml in the beginning of the file wrapped in <code class="language-javascript">---</code>. For example:</p>
+        <pre><code class="language-javascript">---
+username: Derek Worthen
+age: young
+contact: 
+ email: email@domain.com
+ address: some location
+pets: 
+ - cats
+ - dogs
+ - bats
+match: !!js/regexp /pattern/gim
+run: !!js/function function(a) { return a.toUpperCase(); }
+---
+
+# Hello world
+
+Hello, my name is &lt;% get('username') %>.
+My address is &lt;% get('contact').address %>.
+I love &lt;% get('run')(get('pets')[1]) %>.
+</code></pre>
+        <p>The rows in the beginning are translated to the following JSON:</p>
+        <pre><code class="language-javascript">{ 
+    username: 'Derek Worthen',
+    age: 'young',
+    contact: { email: 'email@domain.com', address: 'some location' },
+    pets: [ 'cats', 'dogs', 'bats' ],
+    match: /pattern/gim,
+    run: function(a) { return a.toUpperCase(); }
+}
+</code></pre>
+        <p>And later all the properties of the above object are set as properties of the current page. That's why the result is:</p>
+        <pre><code class="language-javascript">&lt;h1 id="hello-world">Hello world&lt;/h1>
+&lt;p>
+    Hello, my name is Derek Worthen. 
+    My address is some location.
+    I love DOGS.
+&lt;/p>
+</code></pre>
         <hr>
         <h2 id="api">API</h2>
         <p>Here is a list with all the build-in methods which you can use.</p>
