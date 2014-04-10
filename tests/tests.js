@@ -77,4 +77,5 @@ describe("Techy testing", function() {
 		expect(exprectedCSS).to.be(actualCSS);
 		done();
 	});
+	compare(__dirname + "/master-config-TechyFile.js", "should use a master config");
 });
