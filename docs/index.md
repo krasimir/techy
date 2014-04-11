@@ -68,7 +68,7 @@ You will get:
 
 ### CSS
 
-The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is `/themes/[your theme]/css/styles.js`. The compiled styles are always put in `/themes/[your theme]/public` folder. If you want to change the default preprocessor you have to add `Techy.js` file in the main project's directory with the following content:
+The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is `/themes/[your theme]/css/styles.js`. The compiled styles are always put in `/themes/[your theme]/public` folder. If you want to change the default preprocessor you have to add `TechyFile.js` file in the main project's directory with the following content:
 
 	module.exports = function() {
 		return {
@@ -186,9 +186,9 @@ By using `&lt; set('key', 'value') %>` you are basically creating a variable for
 
 ## Master config
 
-There is a way to define variables that will be available for all the pages. Create a file `TechyFile.js` or `Techy.js` in the main project's directory. The directory where you run the `techy` command. Here is an example:
+There is a way to define variables that will be available for all the pages. Create a file `TechyFile.js` in the main project's directory. The directory where you run the `techy` command. Here is an example:
 
-	// Techy.js
+	// TechyFile.js
 	module.exports = function() {
 		return {
 			globalSetting: 'I\'m a global'
@@ -202,9 +202,9 @@ The function that is exported should return an object. The properties of that ob
 
 ## Writing your own functions
 
-Every JavaScript file which ends on `techy.js` is considered as a Techy function. For example:
+Every JavaScript file which ends on `techyFile.js` is considered as a Techy function. For example:
 
-	// myown.techy.js
+	// myown.techyFile.js
 	module.exports = function() {
 		return 'My Name is ' + this.get('username');
 	}

@@ -88,8 +88,8 @@ some text
 </code></pre>
         <h3 id="css">CSS</h3>
         <p>The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is <code class="language-javascript">/themes/[your theme]/css/styles.js</code>.
-            The compiled styles are always put in <code class="language-javascript">/themes/[your theme]/public</code> folder. If you want to change the default preprocessor you have to add <code class="language-javascript">Techy.js</code> file in the main
-            project's directory with the following content:</p>
+            The compiled styles are always put in <code class="language-javascript">/themes/[your theme]/public</code> folder. If you want to change the default preprocessor you have to add <code class="language-javascript">TechyFile.js</code> file in the
+            main project's directory with the following content:</p>
         <pre><code class="language-javascript">module.exports = function() {
     return {
         css: {
@@ -182,9 +182,9 @@ Sample text here.
 There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 </code></pre>
         <h2 id="master-config">Master config</h2>
-        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> or <code class="language-javascript">Techy.js</code> in the main project's directory. The directory where
-            you run the <code class="language-javascript">techy</code> command. Here is an example:</p>
-        <pre><code class="language-javascript">// Techy.js
+        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> in the main project's directory. The directory where you run the <code class="language-javascript">techy</code> command.
+            Here is an example:</p>
+        <pre><code class="language-javascript">// TechyFile.js
 module.exports = function() {
     return {
         globalSetting: 'I\'m a global'
@@ -196,8 +196,8 @@ The value of the global setting is &lt;% globalSetting %>.
 </code></pre>
         <p>The function that is exported should return an object. The properties of that object are defined as global variables in your pages.</p>
         <h2 id="writing-your-own-functions">Writing your own functions</h2>
-        <p>Every JavaScript file which ends on <code class="language-javascript">techy.js</code> is considered as a Techy function. For example:</p>
-        <pre><code class="language-javascript">// myown.techy.js
+        <p>Every JavaScript file which ends on <code class="language-javascript">techyFile.js</code> is considered as a Techy function. For example:</p>
+        <pre><code class="language-javascript">// myown.techyFile.js
 module.exports = function() {
     return 'My Name is ' + this.get('username');
 }
