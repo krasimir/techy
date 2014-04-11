@@ -1,6 +1,6 @@
 {
   "name": "techy",
-  "version": "0.0.26",
+  "version": "0.0.27",
   "homepage": "http://krasimir.github.io/techy",
   "description": "Flat CMS based on Gulp and AbsurdJS",
   "main": "./lib/index.js",

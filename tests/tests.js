@@ -29,7 +29,7 @@ var compare = function(root, desc, asserts) {
 			} else {
 				done();
 			}
-		}, true);
+		}, {noLogging: true});
 		// done();
 	});
 	it("should have js and css compiled", function(done) {
