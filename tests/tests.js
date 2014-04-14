@@ -79,4 +79,13 @@ describe("Techy testing", function() {
 	});
 	compare(__dirname + "/master-config-TechyFile.js", "should use a master config with TechyFile.js");
 	compare(__dirname + "/using-yaml", "should use yaml");
+	compare(__dirname + "/process-other-files", "should process other type of files", function(done) {
+		var actual = fs.readFileSync(__dirname + "/process-other-files/A/C/styles.css").toString('utf8');
+		var expected = fs.readFileSync(__dirname + "/process-other-files/A/C/styles.css.expected").toString('utf8');
+		expect(actual).to.be(expected);
+		actual = fs.readFileSync(__dirname + "/process-other-files/A/custom.html").toString('utf8');
+		expected = fs.readFileSync(__dirname + "/process-other-files/A/custom.html.expected").toString('utf8');
+		expect(actual).to.be(expected);
+		done();
+	});
 });
