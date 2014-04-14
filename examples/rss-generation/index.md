@@ -129,8 +129,10 @@ The resulted `feed.xml` contains all the three articles sorted by date:
 
 The full code of the example could be found [here](https://github.com/krasimir/techy/tree/gh-pages/examples/rss-generation/blog).
 
+<% template('social') %>
+
 ---
 
-<% template('social') %>
+<% template('disqus') %>
 <% template('footer') %>
 <% template('ga') %>
