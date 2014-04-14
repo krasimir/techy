@@ -56,3 +56,5 @@ Checkout the full documentaiton [<i class="fa fa-book"></i> here](/techy/docs) o
 <% template('footer') %>
 
 <% template('ga') %>
+
+<% template('ribbon') %>

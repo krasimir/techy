@@ -141,3 +141,4 @@ The full code of the example could be found [here](https://github.com/krasimir/t
 
 <% template('footer') %>
 <% template('ga') %>
+<% template('ribbon') %>

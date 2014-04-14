@@ -500,3 +500,4 @@ Get an access to all the pages in the project. Returns an array.
 <% template('social') %>
 <% template('footer') %>
 <% template('ga') %>
+<% template('ribbon') %>
