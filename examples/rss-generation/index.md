@@ -127,7 +127,7 @@ The resulted `feed.xml` contains all the three articles sorted by date:
 	  &lt;/channel>
 	&lt;/rss>
 
-The full code of the example could be found [here]().
+The full code of the example could be found [here](https://github.com/krasimir/techy/tree/gh-pages/examples/rss-generation/blog).
 
 ---
 
