@@ -67,7 +67,7 @@ Running `techy` command again brings `feed.xml` file. The next step is to fetch 
 	  &lt;/channel>
 	&lt;/rss>
 
-The actual generation of the items is happening in a custom function `rss`. Techy gives you ability to write such functions and put whatever you need there. All you have to do is to create a file with the function's name ending on `techy.js` and the library will include it in the global scope. The good thing is that it is executed in the context of the current page so for example `this.get` or `this.set` are valid methods.
+The actual generation of the items is happening in a custom function `rss`. Techy gives you ability to write such functions and put whatever you need there. All you have to do is to create a file with the function's name ending on `techy.js` and the library will include it in the global scope. It's also nice that it is executed in the context of the current page so for example `this.get` or `this.set` are valid methods.
 
 	// blog/rss.techy.js
 
