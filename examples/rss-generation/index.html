@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Techy / RSS generation</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../themes/techy/public/font-awesome-4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../themes/techy/public/styles.css">
+    <link rel="stylesheet" href="../../themes/techy/public/prism/prism.css" />
+    <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' type='text/css'>
+    <meta property="og:image" content="http://krasimir.github.io/techy/themes/techy/public/img/techy.jpg" />
+    <meta property="og:title" content="Techy - The geeky way of writing" />
+    <meta property="og:url" content="http://krasimir.github.io/techy/" />
+    <meta property="og:site_name" content="Techy - The geeky way of writing" />
+</head>
+
+<body>
+    <div class="techy">
+        <h1 id="rss-generation-br-small-i-class-fa-fa-arrow-circle-o-left-i-back-to-the-documentation-techy-docs-small-">RSS generation<br /><small><a href="/techy/docs"><i class="fa fa-arrow-circle-o-left"></i> Back to the documentation</a></small></h1>
+        <p>Using Techy as a blog platform leads to the need of RSS feed. And because every page is actually a separate object we are able to generate RSS pretty easily. Let's say that we have the following file structure:</p>
+        <pre><code class="language-javascript">/blog
+    /articles
+        /A.md
+        /B.md
+        /C.md
+</code></pre>
+        <p>The content of the Markdown files is as follows:</p>
+        <p>A.md</p>
+        <pre><code class="language-javascript">---
+title: Article A
+date: 10-04-2014
+---
+
+# &lt;% get('title') %>
+</code></pre>
+        <p>B.md</p>
+        <pre><code class="language-javascript">---
+title: Article B
+date: 02-04-2014
+---
+
+# &lt;% get('title') %>
+</code></pre>
+        <p>C.md</p>
+        <pre><code class="language-javascript">---
+title: Article C
+date: 22-02-2014
+---
+
+# &lt;% get('title') %>
+</code></pre>
+        <p>If we go to the <code class="language-javascript">blog</code> directory and run <code class="language-javascript">techy</code> command we will get three new files - <code class="language-javascript">A.html</code>, <code class="language-javascript">B.html</code> and
+            <code
+            class="language-javascript">C.html</code>. Ok, so far so good. We have our pages generated and the users are able to see them. But how</p>
+    </div>
+    <script src="../../themes/techy/public/prism/prism.js"></script>
+    <script src="../../themes/techy/public/absurd.organic.min.js"></script>
+    <script src="../../themes/techy/public/absurd.min.js"></script>
+    <script src="../../themes/techy/public/scripts.js"></script>
+</body>
+
+</html>
