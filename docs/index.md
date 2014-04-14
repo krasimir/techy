@@ -1,4 +1,6 @@
-<% set('title', 'Techy / Documentation') %>
+---
+title: Techy / Documentation
+---
 
 # Documentation<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Techy's home page](/techy)</small>
 
@@ -17,6 +19,10 @@
 * [Master config](#master-config)
 * [Writing your own functions](#writing-your-own-functions)
 * [Using Yaml Front Matter](#using-yaml-front-matter)
+* [Using Techy in Node.js script](#using-techy-in-node-js-script)
+* [Process non-markdown files](#process-non-markdown-files)
+* Examples
+	* [RSS reneration](/techy/examples/rss-generation)
 * [API](#api)
 
 .
@@ -200,6 +206,15 @@ There is a way to define variables that will be available for all the pages. Cre
 
 The function that is exported should return an object. The properties of that object are defined as global variables in your pages.
 
+There are few properties which have special meaning. 
+
+.grid
+
+* `css` - it defines the used CSS preprocessor. Read more about this [here](#css).
+* `process` - gives you ability to process non-markdown files. More info [here](#process-non-markdown-files).
+
+.
+
 ## Writing your own functions
 
 Every JavaScript file which ends on `techyFile.js` is considered as a Techy function. For example:
@@ -259,7 +274,59 @@ And later all the properties of the above object are set as properties of the cu
 		I love DOGS.
 	&lt;/p>
 
+## Using Techy in Node.js script
+
+Add `techy` to your dependencies in the `package.json` file. After that simply initialize the module. For example:
+
+	var Techy = require('techy');
+	Techy(__dirname + '/docs', 'default', function() {
+		this.watchFiles();
+	}, { myprop: 'my value' });
+
+`__dirname + '/docs'` is the directory which you want to be processed by Techy. `default` is the theme. 
+
+The third parameter is a function which is called once the module finishes its initial compilation. It's called with the context of the main's Techy class and there are few functions which you may use:
+
+.grid
+
+* `watchFiles`
+* `compilePages`
+* `compileCSS`
+* `compileJS`
+
+.
+
+The object which you pass after that callback is the [master configuration](#master-config) object.
+
+## Process non-markdown files
+
+The library could process not only Markdown, but any other file. However, you should describe these files in the [`TechyFile.js`](#master-config) file. The rule is that Techy removes the extension of your file and saves a new one with the new content. For example:
+
+	header.css.techy -> header.css
+	my-awesome.styles.css.blah -> my-awesome.styles.css
+	scripts.js.tttt -> scripts.js
+
+Here is an example how `TechyFile.js` may look like:
+
+	module.exports = function() {
+		return {
+			process: [
+				'**/*.techy',
+				'B/*.blah',
+				'A/**/styles.css.ttt'
+			]
+		}
+	}
+
+The trick is to set an array of Glob patters to `process` property.
+
 ---
+
+<!------------------------------------------------------------------------------------------ -->
+<!------------------------------------------------------------------------------------------ -->
+<!------------------------------------------------------------------------------------  API  -->
+<!------------------------------------------------------------------------------------------ -->
+<!------------------------------------------------------------------------------------------ -->
 
 ## API
 
