@@ -135,7 +135,7 @@ The full code of the example could be found [here](https://github.com/krasimir/t
 
 .grid
 
-<% template('disqus') %>
+<% disqus() %>
 
 .
 
