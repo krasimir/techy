@@ -5,8 +5,8 @@
     <link>http://example.com/</link>
     <description>My example channel</description>
     
-<item><title>Article A</title><link>articles/A.md</link></item>
-<item><title>Article B</title><link>articles/B.md</link></item>
-<item><title>Article C</title><link>articles/C.md</link></item>
+<item><title>Article B</title><link>http://example.com/blog/articles/B.html</link></item>
+<item><title>Article A</title><link>http://example.com/blog/articles/A.html</link></item>
+<item><title>Article C</title><link>http://example.com/blog/articles/C.html</link></item>
   </channel>
 </rss>

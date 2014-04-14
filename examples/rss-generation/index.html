@@ -37,7 +37,7 @@ date: 10-04-2014
         <p>B.md</p>
         <pre><code class="language-javascript">---
 title: Article B
-date: 02-04-2014
+date: 12-04-2014
 ---
 
 # &lt;% get('title') %>
@@ -50,9 +50,133 @@ date: 22-02-2014
 
 # &lt;% get('title') %>
 </code></pre>
+        <p>By using the <a href="/techy/docs/#using-yaml-front-matter">Yaml Front Matter</a> we are defining <code class="language-javascript">title</code> and <code class="language-javascript">date</code> properties for every page.</p>
         <p>If we go to the <code class="language-javascript">blog</code> directory and run <code class="language-javascript">techy</code> command we will get three new files - <code class="language-javascript">A.html</code>, <code class="language-javascript">B.html</code> and
             <code
-            class="language-javascript">C.html</code>. Ok, so far so good. We have our pages generated and the users are able to see them. But how</p>
+            class="language-javascript">C.html</code>. So far so good. We have our pages generated and the users are able to see them. Now, we need to write our RSS. Let's create a new file in the <code class="language-javascript">blog</code> directory called <code class="language-javascript">feed.xml.source</code>.
+                It will act as a template for the final file. Its extension is not <code class="language-javascript">.md</code> so Techy will not process it by default. We have to additionally point that out in the <code class="language-javascript">TechyFile.js</code> of
+                the project:</p>
+        <pre><code class="language-javascript">// blog/TechyFile.js
+
+module.exports = function() {
+    return {
+        process: [
+            'feed.xml.source'
+        ]
+    }
+}
+</code></pre>
+        <p>Running <code class="language-javascript">techy</code> command again brings <code class="language-javascript">feed.xml</code> file. The next step is to fetch all the pages in the blog and fill the xml with their titles and links. Here is how
+            <code
+            class="language-javascript">feed.xml.source</code>may look like:</p>
+        <pre><code class="language-javascript">&lt;?xml version="1.0"?>
+&lt;rss version="2.0">
+  &lt;channel>
+    &lt;title>Example Channel&lt;/title>
+    &lt;link>http://example.com&lt;/link>
+    &lt;description>My example channel&lt;/description>
+    &lt;% rss() %>
+  &lt;/channel>
+&lt;/rss>
+</code></pre>
+        <p>The actual generation of the items is happening in a custom function <code class="language-javascript">rss</code>. Techy gives you ability to write such functions and put whatever you need there. All you have to do is to create a file with the
+            function's name ending on <code class="language-javascript">techy.js</code> and the library will include it in the global scope. The good thing is that it is executed in the context of the current page so for example <code class="language-javascript">this.get</code> or
+            <code
+            class="language-javascript">this.set</code>are valid methods.</p>
+        <pre><code class="language-javascript">// blog/rss.techy.js
+
+module.exports = function() {
+    var rss = '',
+        pages = this.pages();
+
+    var sortByDate = function(page1, page2) {
+        var strToDate = function(str) {
+            var tmp = str.split('-');
+            return new Date(tmp[2], tmp[1], tmp[0]);
+        }
+        return strToDate(page1.get('date')) < strToDate(page2.get('date'));
+    }
+
+    pages.sort(sortByDate);
+
+    for(var i=0; i<pages.length, page=pages[i]; i++) {
+        rss += '\n<item>';
+        rss += '<title>' + page.get('title') + '</title>';
+        rss += '<link>http://example.com/blog/' + page.get('paths').url + '</link>';
+        rss += '</item>';
+    }
+    return rss;
+}
+</code></pre>
+        <p>Notice that we are sorting the pages by the variable <code class="language-javascript">date</code> which is defined in the Markdown files.</p>
+        <p>The final files tree looks like that:</p>
+        <pre><code class="language-javascript">/blog
+    /articles
+        /A.html
+        /A.md
+        /B.html
+        /B.md
+        /C.html
+        /C.md
+    /themes
+        // ... Techy's themes here
+    /feed.xml
+    /feed.xml.source
+    /rss.techy.js
+    /TechyFile.js
+</code></pre>
+        <p>The resulted <code class="language-javascript">feed.xml</code> contains all the three articles sorted by date:</p>
+        <pre><code class="language-javascript">&lt;?xml version="1.0"?>
+&lt;rss version="2.0">
+  &lt;channel>
+    &lt;title>Example Channel&lt;/title>
+    &lt;link>http://example.com/&lt;/link>
+    &lt;description>My example channel&lt;/description>
+    &lt;item>&lt;title>Article B&lt;/title>&lt;link>http://example.com/blog/articles/B.html&lt;/link>&lt;/item>
+    &lt;item>&lt;title>Article A&lt;/title>&lt;link>http://example.com/blog/articles/A.html&lt;/link>&lt;/item>
+    &lt;item>&lt;title>Article C&lt;/title>&lt;link>http://example.com/blog/articles/C.html&lt;/link>&lt;/item>
+  &lt;/channel>
+&lt;/rss>
+</code></pre>
+        <p>The full code of the example could be found <a href="">here</a>.</p>
+        <hr>
+        <p>
+            <div class="social">
+                <!-- Twitter --><a href="https://twitter.com/share" class="twitter-share-button" data-via="KrasimirTsonev" data-hashtags="Techy">Tweet</a>
+                <script>
+                    ! function(d, s, id) {
+                        var js, fjs = d.getElementsByTagName(s)[0],
+                            p = /^http:/.test(d.location) ? 'http' : 'https';
+                        if (!d.getElementById(id)) {
+                            js = d.createElement(s);
+                            js.id = id;
+                            js.src = p + '://platform.twitter.com/widgets.js';
+                            fjs.parentNode.insertBefore(js, fjs);
+                        }
+                    }(document, 'script', 'twitter-wjs');
+                </script>
+                <!-- GitHub -->
+                <iframe src="http://ghbtns.com/github-btn.html?user=krasimir&repo=techy&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+            </div>
+            <div class="grid footer-small">The page which you are looking right now is also generated with Techy.
+                <br />If you are interested, checkout how the code looks like <a href="https://github.com/krasimir/techy/tree/gh-pages">here</a>.
+                <br />
+                <br />Made with <a href="http://gulpjs.com/">Gulp</a> and <a href="http://absurdjs.com">AbsurdJS</a>.</div>
+            <script>
+                (function(i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function() {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-1621908-4', 'krasimir.github.io');
+                ga('send', 'pageview');
+            </script>
+        </p>
     </div>
     <script src="../../themes/techy/public/prism/prism.js"></script>
     <script src="../../themes/techy/public/absurd.organic.min.js"></script>
