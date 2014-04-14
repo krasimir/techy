@@ -80,16 +80,16 @@ The actual generation of the items is happening in a custom function `rss`. Tech
 	            var tmp = str.split('-');
 	            return new Date(tmp[2], tmp[1], tmp[0]);
 	        }
-	        return strToDate(page1.get('date')) < strToDate(page2.get('date'));
+	        return strToDate(page1.get('date')) &lt; strToDate(page2.get('date'));
 	    }
 
 	    pages.sort(sortByDate);
 
-	    for(var i=0; i<pages.length, page=pages[i]; i++) {
-	    	rss += '\n<item>';
-	    	rss += '<title>' + page.get('title') + '</title>';
-			rss += '<link>http://example.com/blog/' + page.get('paths').url + '</link>';
-			rss += '</item>';
+	    for(var i=0; i&lt;pages.length, page=pages[i]; i++) {
+	    	rss += '\n&lt;item>';
+	    	rss += '&lt;title>' + page.get('title') + '&lt;/title>';
+			rss += '&lt;link>http://example.com/blog/' + page.get('paths').url + '&lt;/link>';
+			rss += '&lt;/item>';
 	    }
 	    return rss;
 	}
