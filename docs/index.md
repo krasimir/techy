@@ -23,6 +23,7 @@ title: Techy / Documentation
 * [Process non-markdown files](#process-non-markdown-files)
 * Examples
 	* [RSS reneration](/techy/examples/rss-generation)
+	* [Use Techy as Gulp plugin](/techy/examples/gulp-plugin)
 * [API](#api)
 
 .
@@ -481,7 +482,7 @@ Get an access to another page
 
 .grid-column
 
-> page(page)
+> pages()
 
 Get an access to all the pages in the project. Returns an array.
 

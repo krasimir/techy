@@ -36,7 +36,7 @@ module.exports = function(api) {
 				'@media all and (max-width: 595px)': { hei: '200px' }
 			},
 			h1: {
-				lh: '40px',
+				lh: '60px',
 				mt: '80px',
 				small: { fz: '20px' }
 			},
