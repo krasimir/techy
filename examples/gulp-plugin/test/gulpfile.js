@@ -1,12 +1,12 @@
 var gulp = require('gulp');
-var Techy = require('techy');
+var Techy = require('techy').gulp({
+	root: __dirname,
+	theme: 'default'
+});
 
 gulp.task('compile', function() {
-	console.log('gulpfile.js: compile');
     gulp.src('./src/**/*.md')
-    .pipe(Techy.gulp({
-		root: __dirname
-	}))
+    .pipe(Techy())
     .pipe(gulp.dest('./dest'));
 });
 

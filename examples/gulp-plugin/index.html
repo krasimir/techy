@@ -18,22 +18,39 @@
 <body>
     <div class="techy">
         <h1 id="use-techy-as-gulp-plugin-br-small-i-class-fa-fa-arrow-circle-o-left-i-back-to-the-documentation-techy-docs-small-">Use Techy as Gulp plugin<br /><small><a href="/techy/docs"><i class="fa fa-arrow-circle-o-left"></i> Back to the documentation</a></small></h1>
-        <p>Techy is based on Gulp and it could be used as a Gulp plugin. All you have to do is to <code class="language-javascript">techy</code> module dependency in your <code class="language-javascript">package.json</code> file. Here is an example:</p>
+        <p>Techy is based on Gulp and it could be used as a Gulp plugin. All you have to do is to add <code class="language-javascript">techy</code> module as dependency in your <code class="language-javascript">package.json</code> file. Here is an example:</p>
         <pre><code class="language-javascript">var gulp = require('gulp');
-var Techy = require('techy').gulp({
-    root: __dirname
-});
+var Techy = require('techy').gulp();
 
 gulp.task('default', function() {
     gulp.src('./src/**/*.md')
-    .pipe(Techy)
+    .pipe(Techy())
     .pipe(gulp.dest('./dest'));
 });
 </code></pre>
-        <p>The <code class="language-javascript">.gulp</code> method accepts an object. The only one required property is <code class="language-javascript">root</code>. You may also use <code class="language-javascript">theme</code> to apply another theme. The
-            same object acts as a <a href="/techy/docs/#master-config">master config</a> so feel free to set <code class="language-javascript">css</code> or <code class="language-javascript">process</code> properties.</p>
-        <p>A little bit more complex example could be found <a href="https://github.com/krasimir/techy/tree/master/example/as-gulp-plugin">here</a>
-        </p>
+        <p>The <code class="language-javascript">.gulp</code> method may accept an object. It acts as a <a href="/techy/docs/#master-config">master config</a>. You could set <code class="language-javascript">root</code>, <code class="language-javascript">theme</code> or
+            even <code class="language-javascript">css</code> properties.</p>
+        <p>Here is an example which involves Gulp watcher.</p>
+        <pre><code class="language-javascript">var gulp = require('gulp');
+var Techy = require('techy').gulp({
+    root: __dirname,
+    theme: 'default'
+});
+
+gulp.task('compile', function() {
+    gulp.src('./src/**/*.md')
+    .pipe(Techy())
+    .pipe(gulp.dest('./dest'));
+});
+
+gulp.task('watchers', function() {
+    gulp.watch(['src/**/*.md'], ['compile']);
+});
+
+gulp.task('default', ['compile', 'watchers']);
+</code></pre>
+        <hr>
+        <p>A good example of using Techy as a Gulp plugin could be found <a href="https://github.com/krasimir/techy/tree/master/example/as-gulp-plugin">here</a>.</p>
         <div class="social">
             <!-- Twitter --><a href="https://twitter.com/share" class="twitter-share-button" data-via="KrasimirTsonev" data-hashtags="Techy">Tweet</a>
             <script>
