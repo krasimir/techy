@@ -21,11 +21,79 @@
         <p>Techy is based on Gulp and it could be used as a Gulp plugin. All you have to do is to <code class="language-javascript">techy</code> module dependency in your <code class="language-javascript">package.json</code> file. Here is an example:</p>
         <pre><code class="language-javascript">var gulp = require('gulp');
 var Techy = require('techy').gulp({
-    root: __dirname, // required
-    theme: 'default', // not required,
-    customVar: 'friend'
+    root: __dirname
 });
-</code></pre> 
+
+gulp.task('default', function() {
+    gulp.src('./src/**/*.md')
+    .pipe(Techy)
+    .pipe(gulp.dest('./dest'));
+});
+</code></pre>
+        <p>The <code class="language-javascript">.gulp</code> method accepts an object. The only one required property is <code class="language-javascript">root</code>. You may also use <code class="language-javascript">theme</code> to apply another theme. The
+            same object acts as a <a href="/techy/docs/#master-config">master config</a> so feel free to set <code class="language-javascript">css</code> or <code class="language-javascript">process</code> properties.</p>
+        <p>A little bit more complex example could be found <a href="https://github.com/krasimir/techy/tree/master/example/as-gulp-plugin">here</a>
+        </p>
+        <div class="social">
+            <!-- Twitter --><a href="https://twitter.com/share" class="twitter-share-button" data-via="KrasimirTsonev" data-hashtags="Techy">Tweet</a>
+            <script>
+                ! function(d, s, id) {
+                    var js, fjs = d.getElementsByTagName(s)[0],
+                        p = /^http:/.test(d.location) ? 'http' : 'https';
+                    if (!d.getElementById(id)) {
+                        js = d.createElement(s);
+                        js.id = id;
+                        js.src = p + '://platform.twitter.com/widgets.js';
+                        fjs.parentNode.insertBefore(js, fjs);
+                    }
+                }(document, 'script', 'twitter-wjs');
+            </script>
+            <!-- GitHub -->
+            <iframe src="http://ghbtns.com/github-btn.html?user=krasimir&repo=techy&type=watch&count=true" allowtransparency="true" frameborder="0" scrolling="0" width="100" height="20"></iframe>
+        </div>
+        <hr>
+        <div class="grid">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_shortname = 'techy-nodejs';
+                var disqus_identifier = "/techy/examples/gulp-plugin";
+                var disqus_url = "http://krasimir.github.io/techy/examples/gulp-plugin";
+                var disqus_title = "/techy/examples/gulp-plugin";
+                (function() {
+                    var dsq = document.createElement('script');
+                    dsq.type = 'text/javascript';
+                    dsq.async = true;
+                    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+            </noscript><a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+        </div>
+        <p>
+            <div class="grid footer-small">The page which you are looking right now is also generated with Techy.
+                <br />If you are interested, checkout how the code looks like <a href="https://github.com/krasimir/techy/tree/gh-pages">here</a>.
+                <br />
+                <br />Made with <a href="http://gulpjs.com/">Gulp</a> and <a href="http://absurdjs.com">AbsurdJS</a>.</div>
+            <script>
+                (function(i, s, o, g, r, a, m) {
+                    i['GoogleAnalyticsObject'] = r;
+                    i[r] = i[r] || function() {
+                        (i[r].q = i[r].q || []).push(arguments)
+                    }, i[r].l = 1 * new Date();
+                    a = s.createElement(o), m = s.getElementsByTagName(o)[0];
+                    a.async = 1;
+                    a.src = g;
+                    m.parentNode.insertBefore(a, m)
+                })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+                ga('create', 'UA-1621908-4', 'krasimir.github.io');
+                ga('send', 'pageview');
+            </script>
+            <a href="https://github.com/krasimir/techy">
+                <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67"
+                alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
+            </a>
+        </p>
     </div>
     <script src="../../themes/techy/public/prism/prism.js"></script>
     <script src="../../themes/techy/public/absurd.organic.min.js"></script>
