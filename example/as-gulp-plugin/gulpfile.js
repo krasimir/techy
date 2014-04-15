@@ -1,11 +1,17 @@
 var gulp = require('gulp');
-var Techy = require(__dirname + '/../../lib/index.js').gulp({
-	root: __dirname, // required
+var Techy = require(__dirname + '/../../lib/index.js').gulp({	
 	customVar: 'friend'
 });
 
-gulp.task('default', function() {
-    gulp.src('./src/**/*.md')
-    .pipe(Techy)
+gulp.task('compile', function() {
+    gulp.src('./src/**/*.*')
+    .pipe(Techy())
     .pipe(gulp.dest('./dest'));
 });
+
+gulp.task('watchers', function() {
+	gulp.watch(['src/**/*.*', 'themes/default/css/**/*.js'], ['compile']);
+});
+
+gulp.task('default', ['compile', 'watchers']);
+
