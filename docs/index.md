@@ -343,8 +343,9 @@ Here is a list with all the build-in methods which you can use.
 
 It sets a variable to the current page. There are few special keys which you may use:
 
-* layout - sets the layout of the page
+* layout - sets the layout of the page (use `none` for no layout)
 * date - sets the page's publish date
+* noSave - prevent Techy from saving the file (valid values `true` or `false`)
 
 .
 
