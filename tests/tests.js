@@ -89,4 +89,10 @@ describe("Techy testing", function() {
 		done();
 	});
 	compare(__dirname + "/using-none-as-layout", "should use none as layout");
+	compare(__dirname + "/markdown-partials", "should use markdown as partial", function(done) {
+		expect(fs.existsSync(__dirname + '/markdown-partials/A.html')).to.equal(false);
+		expect(fs.existsSync(__dirname + '/markdown-partials/B.html')).to.equal(false);
+		expect(fs.existsSync(__dirname + '/markdown-partials/C.html')).to.equal(true);
+		done();
+	});
 });
