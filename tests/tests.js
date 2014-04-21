@@ -88,4 +88,5 @@ describe("Techy testing", function() {
 		expect(actual).to.be(expected);
 		done();
 	});
+	compare(__dirname + "/using-none-as-layout", "should use none as layout");
 });
