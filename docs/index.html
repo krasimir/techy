@@ -193,6 +193,7 @@ Sample text here.
 // B.md
 There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 </code></pre>
+        <p>If you need to get all the pages you could use <a href="#api"><code class="language-javascript">pages</code></a> method.</p>
         <h2 id="master-config">Master config</h2>
         <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> in the main project's directory. The directory where you run the <code class="language-javascript">techy</code> command.
             Here is an example:</p>
@@ -432,13 +433,22 @@ scripts.js.tttt -> scripts.js
         <div class="grid grid-2">
             <div class="grid-column">
                 <blockquote>
-                    <p>pages()</p>
+                    <p>pages(filter, sortby)</p>
                 </blockquote>
                 <p>Get an access to all the pages in the project. Returns an array.</p>
             </div>
             <div class="grid-column">
-                <pre><code class="language-javascript">// page.md
-&lt;% pages().length %>
+                <pre><code class="language-javascript">// all the pages
+&lt;% pages() %>
+
+// all the pages in specific directory
+&lt;% pages('articles/js') %>
+
+// all the pages matching regex
+&lt;% pages(/article\.(js|html)/) %>
+
+// sorting by `date` property
+&lt;% pages(null, 'date') %>
 </code></pre>
             </div>
         </div>

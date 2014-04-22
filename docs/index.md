@@ -191,6 +191,8 @@ By using `&lt; set('key', 'value') %>` you are basically creating a variable for
 	// B.md
 	There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 
+If you need to get all the pages you could use [`pages`](#api) method.
+
 ## Master config
 
 There is a way to define variables that will be available for all the pages. Create a file `TechyFile.js` in the main project's directory. The directory where you run the `techy` command. Here is an example:
@@ -483,7 +485,7 @@ Get an access to another page
 
 .grid-column
 
-> pages()
+> pages(filter, sortby)
 
 Get an access to all the pages in the project. Returns an array.
 
@@ -491,8 +493,18 @@ Get an access to all the pages in the project. Returns an array.
 
 .grid-column
 
-	// page.md
-	&lt;% pages().length %>
+	// all the pages
+	&lt;% pages() %>
+
+	// all the pages in specific directory
+	&lt;% pages('articles/js') %>
+
+	// all the pages matching regex
+	&lt;% pages(/article\.(js|html)/) %>
+
+	// sorting by `date` property
+	&lt;% pages(null, 'date') %>
+	
 .
 
 .
