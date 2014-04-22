@@ -112,6 +112,8 @@ The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By defau
 		}
 	}
 
+You need to install `gulp-less` for the current project to get this working. So, simply run `npm install gulp-less`.
+
 #### SASS as CSS preprocessor
 
 [`gulp-sass`](https://github.com/dlmanning/gulp-sass) module is used.
@@ -124,6 +126,8 @@ The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By defau
 			}
 		}
 	}
+
+You need to install `gulp-sass` for the current project to get this working. So, simply run `npm install gulp-sass`.
 
 #### No CSS preprocessor, plain CSS files
 
