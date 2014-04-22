@@ -95,4 +95,6 @@ describe("Techy testing", function() {
 		expect(fs.existsSync(__dirname + '/markdown-partials/C.html')).to.equal(true);
 		done();
 	});
+	compare(__dirname + "/get-pages-from-dir", "should get pages from specific directory");
+	compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
 });
