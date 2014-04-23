@@ -15,12 +15,13 @@ In the content driven web site (like a blog for example) the writing should be r
 	Hello, my name is <% get('name') %>. I'm a web developer.
 
 is transformed to:
-
-	<h1 id="article-title">Article title</h1>
-	<blockquote>
-	    <p>author: Big Joe</p>
-	</blockquote>
-	<p>Hello, my name is Big Joe. I'm a web developer.</p>
+``` html
+<h1 id="article-title">Article title</h1>
+<blockquote>
+  <p>author: Big Joe</p>
+</blockquote>
+<p>Hello, my name is Big Joe. I'm a web developer.</p>
+```
 
 In other words, there are JavaScript expressions which you may write between `<%` and `%>` and basically fetch information based on other files in your codebase. For example generating a site map or showing the latest added Markdowns.
 
