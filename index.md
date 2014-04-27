@@ -1,5 +1,5 @@
 ---
-title: Techy - The geeky way of writing')
+title: Techy - The geeky way of writing
 ---
 
 <div class="full-img"></div>
