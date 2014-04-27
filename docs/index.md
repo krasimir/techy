@@ -491,7 +491,7 @@ Get an access to another page
 
 > pages(filter, sortby)
 
-Get an access to all the pages in the project. Returns an array.
+Get an access to all the pages in the project. Returns an array. The method doesn't return the pages which have `draft` property set to `yes`.
 
 .
 
