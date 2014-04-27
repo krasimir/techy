@@ -98,4 +98,5 @@ describe("Techy testing", function() {
 	});
 	compare(__dirname + "/get-pages-from-dir", "should get pages from specific directory");
 	compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
+	compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
 });
