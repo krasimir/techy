@@ -16,7 +16,7 @@ var deleteFolderRecursive = function(path) {
 	}
 };
 
-var compare = function(root, desc, asserts) {
+var compare = function(root, desc, asserts, ops) {
 	it(desc, function(done) {
 		deleteFolderRecursive(root + '/public');
 		deleteFolderRecursive(root + '/themes');
@@ -29,7 +29,7 @@ var compare = function(root, desc, asserts) {
 			} else {
 				done();
 			}
-		}, {noLogging: true});
+		}, ops || { noLogging: true });
 		// done();
 	});
 	it("should have js and css compiled", function(done) {
@@ -99,4 +99,5 @@ describe("Techy testing", function() {
 	compare(__dirname + "/get-pages-from-dir", "should get pages from specific directory");
 	compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
 	compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
+	compare(__dirname + "/custom-master-config", "techy should use custom master config", null, { noLogging: true, techyFile: __dirname + '/custom-master-config/options.js' });
 });
