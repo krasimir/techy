@@ -211,7 +211,8 @@ There is a way to define variables that will be available for all the pages. Cre
 	// page.md
 	The value of the global setting is &lt;% globalSetting %>.
 
-The function that is exported should return an object. The properties of that object are defined as global variables in your pages. If you don't want to use a file with name `TechyFile.js` you may pass `--config` parameter. Like for example
+The function that is exported should return an object. The properties of that object are defined as global variables in your pages. If you don't want to use a file with name `TechyFile.js` you may pass `--config`
+parameter. Like for example
 
 	techy --theme empty --config ./options.js
 
