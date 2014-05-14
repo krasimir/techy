@@ -8,7 +8,7 @@ title: Techy - The geeky way of writing
 
 # Hello, I'm Techy
 
-I love [Markdown](https://daringfireball.net/projects/markdown/) and I can turn it to a beautifully looking HTML layouts. I'm build and distributed as a [Node.js](http://nodejs.org) module. [Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/) 
+I love [Markdown](https://daringfireball.net/projects/markdown/) and I can turn it to a beautifully looking HTML layouts. I'm built and distributed as a [Node.js](http://nodejs.org) module. [Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/) 
 are the base that I'm staying on. If you do not want to use a database to store your content, I can help you. Write everything in Markdown format, and I'll convert it to HTML.
 
 ---
