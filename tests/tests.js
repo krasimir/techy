@@ -19,7 +19,9 @@ var deleteFolderRecursive = function(path) {
 var compare = function(root, desc, asserts, ops) {
 	it(desc, function(done) {
 		deleteFolderRecursive(root + '/public');
-		deleteFolderRecursive(root + '/themes');
+		if(!ops || !ops.preventThemeFolderDeletion) {
+			deleteFolderRecursive(root + '/themes');
+		}
 		Techy(root, 'empty', function() {
 			var exprected = fs.readFileSync(root + '/expected.html').toString('utf8').replace(/(\r|\n)/g, '');
 			var actual = fs.readFileSync(root + '/page.html').toString('utf8').replace(/(\r|\n)/g, '');
@@ -100,4 +102,5 @@ describe("Techy testing", function() {
 	compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
 	compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
 	compare(__dirname + "/custom-master-config", "techy should use custom master config", null, { noLogging: true, techyFile: __dirname + '/custom-master-config/options.js' });
+	compare(__dirname + "/master-config-theme", "pages should use master config in the theme folder", null, { noLogging: true, preventThemeFolderDeletion: true});
 });
