@@ -1,5 +1,5 @@
 module.exports = function() {
 	return {
-		thetitle: 'Some title'
+		thetitle: 'Hello Techy'
 	}
 }
