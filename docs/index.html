@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <title>Techy / Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../themes/techy/public/font-awesome-4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./../themes/techy/public/styles.css">
-    <link rel="stylesheet" href="./../themes/techy/public/prism/prism.css" />
+    <link rel="stylesheet" href="./../public/font-awesome-4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../public/styles.css">
+    <link rel="stylesheet" href="./../public/prism/prism.css" />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./../themes/techy/public/img/favicon.png" />
-    <meta property="og:image" content="http://krasimir.github.io/techy/themes/techy/public/img/techy.jpg" />
+    <link rel="shortcut icon" type="image/png" href="./../public/img/favicon.png" />
+    <meta property="og:image" content="http://krasimir.github.io/techy/public/img/techy.jpg" />
     <meta property="og:title" content="Techy - The geeky way of writing" />
     <meta property="og:url" content="http://krasimir.github.io/techy/" />
     <meta property="og:site_name" content="Techy - The geeky way of writing" />
@@ -23,6 +23,8 @@
         <div class="grid">
             <ul>
                 <li><a href="#how-it-works">How it works</a>
+                </li>
+                <li><a href="#input-and-output">Input and Output</a>
                 </li>
                 <li><a href="#theming">Theming</a>
                     <ul>
@@ -69,6 +71,53 @@
             replaced with an empty string. That's because <code class="language-javascript">page.md</code> is located in the root of the project. If it is a file in nesting folder then the path will be set properly.</p>
         <div class="how-it-works-img"></div>
 
+        <h2 id="input-and-output">Input and Output</h2>
+        <p>There are several arguments that you can pass to Techy. Two of them are <code class="language-javascript">--src</code> and <code class="language-javascript">--dest</code>. By default Techy checks if <code class="language-javascript">src</code> directory
+            is available and if yes then it starts watching for Markdown files there. If not then it uses the root or the project. The place where you run the <code class="language-javascript">techy</code> command in. The destination of the compiled files
+            is by default set to <code class="language-javascript">dest</code> directory. However, if you used an older version of Techy you may want to drop the resulted files next to the Markdown files. In order to do that just use <code class="language-javascript">techy --dest ./</code>.
+            Every <a href="#theming">theme</a> has its own <code class="language-javascript">public</code> directory which is copied in the root of the project. That's the place where the final CSS and JS go. Here is an short example. Let's say that we have
+            the following file structure:</p>
+        <pre><code class="language-javascript">/site
+  /pages
+    /inner
+      /A.md
+      /B.md
+    /index.md
+  /themes
+      /custom-theme
+        /css
+          /A.css
+          /B.css
+          /C.css
+        /js
+          /A.js
+          /B.js
+          /C.js
+        /public
+          /img
+          /fonts
+        /tpl
+</code></pre>
+        <p>If we run <code class="language-javascript">techy --src ./pages --theme custom-theme --dest ./site</code> we will get:</p>
+        <pre><code class="language-javascript">/site
+  /pages
+    /inner
+      /A.md
+      /B.md
+    /index.md
+  /public
+    /img
+    /fonts
+    /styles.css // <- contain A.css, B.css and C.css
+    /scripts.js // <- contain A.js, B.js and C.js
+  /themes
+    /custom-theme
+  /site
+    /inner
+       /A.html
+       /B.html
+    /index.html
+</code></pre>
         <h2 id="theming">Theming</h2>
         <p>Once you run <code class="language-javascript">techy</code> you get a <code class="language-javascript">themes</code> folder copied. It's located in the same directory which you run the command at. There are few themes available. The <code class="language-javascript">default</code> theme
             is used if you run Techy without any parameter. To specify another one:</p>
@@ -77,6 +126,11 @@
         <h3 id="layout">Layout</h3>
         <p>The layout is HTML file that contains the placeholder for the content coming from your Markdown files. You are able to specify a different layout by using the following expression:</p>
         <pre><code class="language-javascript">&lt;% set('layout', 'layouts/custom-layout.html') %> 
+</code></pre>
+        <p>or simly write the following at the top of the file:</p>
+        <pre><code class="language-javascript">---
+layout: layouts/custom-layout.html
+---
 </code></pre>
         <p>The available layouts are placed in <code class="language-javascript">/themes/[your theme]/tpl/layouts</code>. The default layout is <code class="language-javascript">empty.html</code> and it contains only the placeholder. I.e.:</p>
         <pre><code class="language-javascript">&lt;% get('content') %>
@@ -87,7 +141,9 @@
 &lt;/div>
 </code></pre>
         <p>And use it with the following Markdown:</p>
-        <pre><code class="language-javascript">&lt;% set('layout', 'layouts/custom-layout.html') %>
+        <pre><code class="language-javascript">---
+layout: layouts/custom-layout.html
+---
 
 # Some title
 
@@ -98,19 +154,6 @@ some text
     &lt;h1>Some tilte&lt;/h1>
     &lt;p>some text&lt;/p>
 &lt;/div>
-</code></pre>
-        <h3 id="css">CSS</h3>
-        <p>The CSS styles could be written with plain CSS, LESS, SASS or AbsurdJS. By default Techy chooses AbsurdJS as preprocessor. If you want to keep it then have in mind that the main file is <code class="language-javascript">/themes/[your theme]/css/styles.js</code>.
-            The compiled styles are always put in <code class="language-javascript">/themes/[your theme]/public</code> folder. If you want to change the default preprocessor you have to add <code class="language-javascript">TechyFile.js</code> file in the
-            main project's directory with the following content:</p>
-        <pre><code class="language-javascript">module.exports = function() {
-    return {
-        css: {
-            preprocessor: [type of the preprocessor],
-            index: [path to the main file, glob pattern or directory]
-        }
-    }
-}
 </code></pre>
         <h4 id="absurdjs-as-css-preprocessor">AbsurdJS as CSS preprocessor</h4>
         <p><a href="https://github.com/krasimir/gulp-absurd"><code class="language-javascript">gulp-absurd</code></a> module is used.</p>
@@ -159,14 +202,14 @@ some text
 }
 </code></pre>
         <h3 id="javascript">JavaScript</h3>
-        <p>Techy uses <em>gulp-concat</em> and <em>gulp-uglify</em> to produce the JavaScript needed for the pages. Just put your scripts in <code class="language-javascript">/themes/[your theme]/js</code> directory and they will be merged into <code class="language-javascript">/themes/[your theme]/public/scripts.js</code>
+        <p>Techy uses <em>gulp-concat</em> and <em>gulp-uglify</em> to produce the JavaScript needed for the pages. Just put your scripts in <code class="language-javascript">/themes/[your theme]/js</code> directory and they will be merged into <code class="language-javascript">[destination folder]/public/scripts.js</code>
         </p>
         <h3 id="templates">Templates</h3>
         <p>No matter what you do you will need some partial system. I.e. save a piece of code and inject it in several places. For such cases, Techy provides the <code class="language-javascript">template</code> method. The function searches for templates
             in <code class="language-javascript">/themes/[your theme]/tpl</code> directory. For example:</p>
         <pre><code class="language-javascript">&lt;% template('footer.html') %>
 </code></pre>
-        <p>Will check for <code class="language-javascript">/themes/[your theme]/tpl/footer.html</code> or just for <code class="language-javascript">/footer.html</code> and if it finds the file will import its content.</p>
+        <p>Will check for <code class="language-javascript">/themes/[your theme]/tpl/footer.html</code> or just for <code class="language-javascript">/footer.html</code> in the root directory and if it finds the file will import its content.</p>
         <h2 id="writing-html">Writing HTML</h2>
         <p>You may need to add a valid HTML markup to the page. But at the same time continue writing Markdown between your tags. Here is a limited feature that you could use.</p>
         <div class="grid grid-2">
@@ -188,7 +231,7 @@ Sample text here.
             </div>
         </div>
         <h2 id="accessing-another-page">Accessing another page</h2>
-        <p>By using <code class="language-javascript">&lt; set('key', 'value') %></code> you are basically creating a variable for the current page. If you give it a name, you are able to access all its properties from the other pages. For example:</p>
+        <p>By using <code class="language-javascript">&lt;% set('key', 'value') %></code> you are basically creating a variable for the current page. If you give it a name, you are able to access all its properties from the other pages. For example:</p>
         <pre><code class="language-javascript">// A.md
 &lt;% set('name', 'PageA') %>
 &lt;% set('numOfProducts', 42) %>
@@ -198,8 +241,7 @@ There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 </code></pre>
         <p>If you need to get all the pages you could use <a href="#api"><code class="language-javascript">pages</code></a> method.</p>
         <h2 id="master-config">Master config</h2>
-        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> in the main project's directory. The directory where you run the <code class="language-javascript">techy</code> command.
-            Here is an example:</p>
+        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> in the main project's directory or the theme's folder. Here is an example:</p>
         <pre><code class="language-javascript">// TechyFile.js
 module.exports = function() {
     return {
@@ -221,6 +263,8 @@ The value of the global setting is &lt;% globalSetting %>.
             <ul>
                 <li><code class="language-javascript">css</code> - it defines the used CSS preprocessor. Read more about this <a href="#css">here</a>.</li>
                 <li><code class="language-javascript">process</code> - gives you ability to process non-markdown files. More info <a href="#process-non-markdown-files">here</a>.</li>
+                <li><code class="language-javascript">src</code> - the source Markdown files for compilation</li>
+                <li><code class="language-javascript">dest</code> - the output directory</li>
             </ul>
         </div>
         <h2 id="writing-your-own-functions">Writing your own functions</h2>
@@ -268,7 +312,7 @@ I love &lt;% get('run')(get('pets')[1]) %>.
     run: function(a) { return a.toUpperCase(); }
 }
 </code></pre>
-        <p>And later all the properties of the above object are set as properties of the current page. That's why the result is:</p>
+        <p>And later all the properties of the above object are set as properties of the current page. That's the result:</p>
         <pre><code class="language-javascript">&lt;h1 id="hello-world">Hello world&lt;/h1>
 &lt;p>
     Hello, my name is Derek Worthen. 
@@ -503,10 +547,10 @@ scripts.js.tttt -> scripts.js
             </a>
         </p>
     </div>
-    <script src="./../themes/techy/public/prism/prism.js"></script>
-    <script src="./../themes/techy/public/absurd.organic.min.js"></script>
-    <script src="./../themes/techy/public/absurd.min.js"></script>
-    <script src="./../themes/techy/public/scripts.js"></script>
+    <script src="./../public/prism/prism.js"></script>
+    <script src="./../public/absurd.organic.min.js"></script>
+    <script src="./../public/absurd.min.js"></script>
+    <script src="./../public/scripts.js"></script>
 </body>
 
 </html>

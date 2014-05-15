@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <title>Techy / RSS generation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./../../themes/techy/public/font-awesome-4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./../../themes/techy/public/styles.css">
-    <link rel="stylesheet" href="./../../themes/techy/public/prism/prism.css" />
+    <link rel="stylesheet" href="./../../public/font-awesome-4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./../../public/styles.css">
+    <link rel="stylesheet" href="./../../public/prism/prism.css" />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./../../themes/techy/public/img/favicon.png" />
-    <meta property="og:image" content="http://krasimir.github.io/techy/themes/techy/public/img/techy.jpg" />
+    <link rel="shortcut icon" type="image/png" href="./../../public/img/favicon.png" />
+    <meta property="og:image" content="http://krasimir.github.io/techy/public/img/techy.jpg" />
     <meta property="og:title" content="Techy - The geeky way of writing" />
     <meta property="og:url" content="http://krasimir.github.io/techy/" />
     <meta property="og:site_name" content="Techy - The geeky way of writing" />
@@ -52,11 +52,11 @@ date: 22-02-2014
 # &lt;% get('title') %>
 </code></pre>
         <p>By using the <a href="/techy/docs/#using-yaml-front-matter">Yaml Front Matter</a> we are defining <code class="language-javascript">title</code> and <code class="language-javascript">date</code> properties for every page.</p>
-        <p>If we go to the <code class="language-javascript">blog</code> directory and run <code class="language-javascript">techy</code> command we will get three new files - <code class="language-javascript">A.html</code>, <code class="language-javascript">B.html</code> and
+        <p>If we go to the <code class="language-javascript">blog</code> directory and run <code class="language-javascript">techy --dest ./</code> command we will get three new files in the <code class="language-javascript">articles</code> directory - <code class="language-javascript">A.html</code>,
             <code
-            class="language-javascript">C.html</code>. So far so good. We have our pages generated and the users are able to see them. Now, we need to write our RSS. Let's create a new file in the <code class="language-javascript">blog</code> directory called <code class="language-javascript">feed.xml.source</code>.
-                It will act as a template for the final file. Its extension is not <code class="language-javascript">.md</code> so Techy will not process it by default. We have to additionally point that out in the <code class="language-javascript">TechyFile.js</code> of
-                the project:</p>
+            class="language-javascript">B.html</code>and <code class="language-javascript">C.html</code>. So far so good. We have our pages generated and the users are able to see them. Now, we need to write our RSS. Let's create a new file in the <code class="language-javascript">blog</code> folder
+                called <code class="language-javascript">feed.xml.source</code>. It will act as a template for the final file. Its extension is not <code class="language-javascript">.md</code> so Techy will not process it by default. We have to additionally
+                point that out in the <code class="language-javascript">TechyFile.js</code> of the project:</p>
         <pre><code class="language-javascript">// blog/TechyFile.js
 
 module.exports = function() {
@@ -67,9 +67,8 @@ module.exports = function() {
     }
 }
 </code></pre>
-        <p>Running <code class="language-javascript">techy</code> command again brings <code class="language-javascript">feed.xml</code> file. The next step is to fetch all the pages in the blog and fill the xml with their titles and links. Here is how
-            <code
-            class="language-javascript">feed.xml.source</code>may look like:</p>
+        <p>Running <code class="language-javascript">techy --dest ./</code> command again brings <code class="language-javascript">feed.xml</code> file. The next step is to fetch all the pages in the blog and fill the xml with their titles and links. Here is
+            how <code class="language-javascript">feed.xml.source</code> may look like:</p>
         <pre><code class="language-javascript">&lt;?xml version="1.0"?>
 &lt;rss version="2.0">
   &lt;channel>
@@ -119,6 +118,7 @@ module.exports = function() {
         /B.md
         /C.html
         /C.md
+    /public
     /themes
         // ... Techy's themes here
     /feed.xml
@@ -201,10 +201,10 @@ module.exports = function() {
             </a>
         </p>
     </div>
-    <script src="./../../themes/techy/public/prism/prism.js"></script>
-    <script src="./../../themes/techy/public/absurd.organic.min.js"></script>
-    <script src="./../../themes/techy/public/absurd.min.js"></script>
-    <script src="./../../themes/techy/public/scripts.js"></script>
+    <script src="./../../public/prism/prism.js"></script>
+    <script src="./../../public/absurd.organic.min.js"></script>
+    <script src="./../../public/absurd.min.js"></script>
+    <script src="./../../public/scripts.js"></script>
 </body>
 
 </html>

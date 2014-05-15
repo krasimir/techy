@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <title>Techy - The geeky way of writing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./themes/techy/public/font-awesome-4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="./themes/techy/public/styles.css">
-    <link rel="stylesheet" href="./themes/techy/public/prism/prism.css" />
+    <link rel="stylesheet" href="./public/font-awesome-4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./public/styles.css">
+    <link rel="stylesheet" href="./public/prism/prism.css" />
     <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,700' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./themes/techy/public/img/favicon.png" />
-    <meta property="og:image" content="http://krasimir.github.io/techy/themes/techy/public/img/techy.jpg" />
+    <link rel="shortcut icon" type="image/png" href="./public/img/favicon.png" />
+    <meta property="og:image" content="http://krasimir.github.io/techy/public/img/techy.jpg" />
     <meta property="og:title" content="Techy - The geeky way of writing" />
     <meta property="og:url" content="http://krasimir.github.io/techy/" />
     <meta property="og:site_name" content="Techy - The geeky way of writing" />
@@ -22,10 +22,8 @@
 
         <hr>
         <h1 id="hello-i-m-techy">Hello, I'm Techy</h1>
-        <p>I love <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and I can turn it to a beautifully looking HTML layouts. I'm build and distributed as a <a href="http://nodejs.org">Node.js</a> module. <a href="http://gulpjs.com/">Gulp.js</a> and
-            <a
-            href="http://absurdjs.com/">AbsurdJS</a>
-                are the base that I'm staying on. If you do not want to use a database to store your content, I can help you. Write everything in Markdown format, and I'll convert it to HTML.</p>
+        <p>I love <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and I can turn it to a beautifully looking HTML layouts. I'm build and distributed as a <a href="http://nodejs.org">Node.js</a> module. <a href="http://gulpjs.com/">Gulp.js</a> is
+            the base that I'm staying on. If you do not want to use a database to store your content, I can help you. Write everything in Markdown format, and I'll convert it to HTML.</p>
         <hr>
         <h2 id="the-concept">The concept</h2>
         <p>In the content driven website (like a blog for example), the writing should be easy and fluent. Markdown language gives us the simplicity that we need. However, sometimes converting <em>.md</em> files to <em>.html</em> files is not enough. Techy is
@@ -51,7 +49,8 @@ Hello, my name is &lt;% get('username') %>. I'm a web developer.
         <p>Install Techy from the command line by running the following:</p>
         <pre><code class="language-javascript">npm install -g techy
 </code></pre>
-        <p>Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type <code class="language-javascript">techy</code> in the same folder and press <em>Enter</em>, you will see all the materials converted to HTML.</p>
+        <p>Aaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type <code class="language-javascript">techy</code> in the same folder and press <em>Enter</em>, you will see all the materials converted to HTML. They will
+            be nicely placed inside a <code class="language-javascript">dest</code> folder.</p>
         <p>Techy is not only generating HTML markup. It puts your writings into a nicely formatted layout.</p>
         <hr>
         <p>Checkout the full documentaiton <a href="/techy/docs"><i class="fa fa-book"></i> here</a> or fork the Techy project <a href="https://github.com/krasimir/techy">in <i class="fa fa-github"></i> GitHub</a>.</p>
@@ -96,10 +95,10 @@ Hello, my name is &lt;% get('username') %>. I'm a web developer.
             alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png">
         </a>
     </div>
-    <script src="./themes/techy/public/prism/prism.js"></script>
-    <script src="./themes/techy/public/absurd.organic.min.js"></script>
-    <script src="./themes/techy/public/absurd.min.js"></script>
-    <script src="./themes/techy/public/scripts.js"></script>
+    <script src="./public/prism/prism.js"></script>
+    <script src="./public/absurd.organic.min.js"></script>
+    <script src="./public/absurd.min.js"></script>
+    <script src="./public/scripts.js"></script>
 </body>
 
 </html>
