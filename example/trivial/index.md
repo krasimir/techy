@@ -1,3 +1,8 @@
+---
+name: home
+desc: A home page
+---
+
 # That's a page title
 
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, pariatur, tenetur facere dolore numquam reiciendis itaque labore sequi animi laboriosam quisquam fugit sint dolores cupiditate minus quos dolorem iure fugiat.
