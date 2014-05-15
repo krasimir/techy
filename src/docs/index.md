@@ -26,6 +26,7 @@ title: Techy / Documentation
 	* [RSS reneration](/techy/examples/rss-generation)
 	* [Use Techy as Gulp plugin](/techy/examples/gulp-plugin)
 * [API](#api)
+* [Contribute](/techy/docs/contribute.html)
 
 .
 
