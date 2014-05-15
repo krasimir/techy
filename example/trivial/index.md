@@ -1,7 +1,5 @@
 # That's a page title
 
-## <% thetitle %>
-
 Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, pariatur, tenetur facere dolore numquam reiciendis itaque labore sequi animi laboriosam quisquam fugit sint dolores cupiditate minus quos dolorem iure fugiat.
 
 	// some code here
@@ -9,4 +7,4 @@ Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates, pariatur, 
 		console.log('function');
 	}
 
-[<i class='fa fa-check'></i> Go to inner page](inner/A)
+[<i class='fa fa-check'></i> Go to inner page](inner/A/A.html)

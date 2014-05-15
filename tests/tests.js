@@ -17,6 +17,7 @@ var deleteFolderRecursive = function(path) {
 };
 
 var compare = function(root, desc, asserts, ops) {
+	ops = ops || { noLogging: true };
 	it(desc, function(done) {
 		deleteFolderRecursive(root + '/public');
 		if(!ops || !ops.preventThemeFolderDeletion) {
@@ -24,14 +25,14 @@ var compare = function(root, desc, asserts, ops) {
 		}
 		Techy(root, 'empty', function() {
 			var exprected = fs.readFileSync(root + '/expected.html').toString('utf8').replace(/(\r|\n)/g, '');
-			var actual = fs.readFileSync(root + '/page.html').toString('utf8').replace(/(\r|\n)/g, '');
+			var actual = fs.readFileSync(root + '/dest/page.html').toString('utf8').replace(/(\r|\n)/g, '');
 			expect(exprected).to.be(actual);
 			if(asserts) {
 				asserts(done);
 			} else {
 				done();
 			}
-		}, ops || { noLogging: true });
+		}, ops);
 		// done();
 	});
 	it("should have js and css compiled", function(done) {
@@ -57,13 +58,13 @@ describe("Techy testing", function() {
 	compare(__dirname + "/linkto", "should use linkto");
 	compare(__dirname + "/css_absurd", "should use Absurd", function(done) {
 		var exprectedCSS = fs.readFileSync(__dirname + '/css_absurd/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-		var actualCSS = fs.readFileSync(__dirname + '/css_absurd/themes/empty/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_absurd/dest/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
 		expect(exprectedCSS).to.be(actualCSS);
 		done();
 	});
 	compare(__dirname + "/css_less", "should use LESS", function(done) {
 		var exprectedCSS = fs.readFileSync(__dirname + '/css_less/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-		var actualCSS = fs.readFileSync(__dirname + '/css_less/themes/empty/public/styling.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_less/dest/public/styling.css').toString('utf8').replace(/(\r|\n)/g, '');
 		expect(exprectedCSS).to.be(actualCSS);
 		done();
 	});
@@ -76,7 +77,7 @@ describe("Techy testing", function() {
 	// });
 	compare(__dirname + "/css_css", "should use plain css", function(done) {
 		var exprectedCSS = fs.readFileSync(__dirname + '/css_css/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-		var actualCSS = fs.readFileSync(__dirname + '/css_css/themes/empty/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
+		var actualCSS = fs.readFileSync(__dirname + '/css_css/dest/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
 		expect(exprectedCSS).to.be(actualCSS);
 		done();
 	});
@@ -103,4 +104,10 @@ describe("Techy testing", function() {
 	compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
 	compare(__dirname + "/custom-master-config", "techy should use custom master config", null, { noLogging: true, techyFile: __dirname + '/custom-master-config/options.js' });
 	compare(__dirname + "/master-config-theme", "pages should use master config in the theme folder", null, { noLogging: true, preventThemeFolderDeletion: true});
+	compare(__dirname + "/should-use-src-dest", "should use src and dest params", function(done) {
+		expect(fs.existsSync(__dirname + '/should-use-src-dest/dest/public/styles.css')).to.equal(true);
+		expect(fs.existsSync(__dirname + '/should-use-src-dest/dest/public/styles.css')).to.equal(true);
+		expect(fs.readFileSync(__dirname + '/should-use-src-dest/dest/A.html').toString('utf8')).to.equal('<h1 id="hello-world">Hello World</h1>\n');
+		done();
+	}, { noLogging: true, preventThemeFolderDeletion: true, src: __dirname + '/should-use-src-dest/pages/src', dest: __dirname + '/should-use-src-dest/dest'});
 });
