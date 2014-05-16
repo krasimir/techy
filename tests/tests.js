@@ -110,4 +110,8 @@ describe("Techy testing", function() {
 		expect(fs.readFileSync(__dirname + '/should-use-src-dest/dest/A.html').toString('utf8')).to.equal('<h1 id="hello-world">Hello World</h1>\n');
 		done();
 	}, { noLogging: true, preventThemeFolderDeletion: true, src: __dirname + '/should-use-src-dest/pages/src', dest: __dirname + '/should-use-src-dest/dest'});
+	compare(__dirname + "/template-look-in-src", "template function should look into the src dir", function(done) {
+		
+		done();
+	}, { noLogging: true, src: __dirname + '/template-look-in-src/pages'});
 });
