@@ -25,7 +25,7 @@ var compare = function(root, desc, asserts, ops) {
 		}
 		Techy(root, 'empty', function() {
 			var exprected = fs.readFileSync(root + '/expected.html').toString('utf8').replace(/(\r|\n)/g, '');
-			var actual = fs.readFileSync(root + '/dest/page.html').toString('utf8').replace(/(\r|\n)/g, '');
+			var actual = fs.readFileSync(this.config.dest + '/page.html').toString('utf8').replace(/(\r|\n)/g, '');
 			expect(exprected).to.be(actual);
 			if(asserts) {
 				asserts(done);
@@ -111,7 +111,9 @@ describe("Techy testing", function() {
 		done();
 	}, { noLogging: true, preventThemeFolderDeletion: true, src: __dirname + '/should-use-src-dest/pages/src', dest: __dirname + '/should-use-src-dest/dest'});
 	compare(__dirname + "/template-look-in-src", "template function should look into the src dir", function(done) {
-		
 		done();
 	}, { noLogging: true, src: __dirname + '/template-look-in-src/pages'});
+	compare(__dirname + "/master-config-with-dest-folder", "should put the public folder properly", function(done) {
+		done();
+	}, { noLogging: true });
 });
