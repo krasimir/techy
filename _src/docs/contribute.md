@@ -2,7 +2,7 @@
 title: Techy / Contribute
 ---
 
-# Contribute<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Documentation](/techy/docs)</small>
+# Contribute<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Documentation](./)</small>
 
 ---
 
@@ -22,16 +22,18 @@ There are few functions which are run one after each other in the following sequ
 
 .grid
 
-* `init` - copies the `theme` and `public` folders to the root of the project
+* `copyingDefaultFiles` - copies the `_css`, `_js`, `_tpl` and `public` folders to the root of the project
 * `setMasterConfig` - loads `TechyFile.js` file and reads the options inside
+* `creatingDestFolder` - making the destination directory (`dist` by default)
 * `compileCSS` - compiles the CSS to the `public` directory
 * `compileJS` - compiles the JS to the `public` directory
 * `compilePages` - fires compilation of the pages
+* `copyingPublicFiles` - copies all the non underscore prefixed folders to the destination directory
 * `watchFiles` - start watching for changes
 
 .
 
-There is a `lib/Factory.js` file. That's the file which contains the Gulp task which process the Markdowns. `processFile` function inside is the one which accepts every of the files. An instance of `lib/Page.js` class is created per Markdown. All the pages need to know about each other so there is a function `getInfo` which perform a quick reading of the available pages. So, in practice Techy process every file twice. The first time is just to get the defined variables inside and second time to generate the HTML file.
+There is a `lib/Factory.js` file. That's the file which contains the Gulp task which process the Markdowns. `processFile` function inside it is the one which accepts every of the files. An instance of `lib/Page.js` class is created per Markdown. All the pages need to know about each other so there is a function `getInfo` which perform a quick reading of the available pages. So, in practice Techy process every file twice. The first time is just to get the defined variables inside and second time to generate the HTML file.
 
 ## Defining build-in page methods
 
@@ -46,15 +48,15 @@ As we know there are some functions which we may use. Like for example `&lt;% pa
 
 ## Editing default CSS
 
-Techy by default uses plain CSS. It is in `lib/themes/[name of theme]/css`.
+Techy by default uses plain CSS. It is in `lib/themes/default/_css`.
 
 ## Editing default JavaScript
 
-It is in `lib/themes/[name of theme]/js`.
+It is in `lib/themes/default/_js`.
 
 ## Create your own theme
 
-Just create a new directory in `lib/themes`. There should be four sub-folders - `css`, `js`, `public`, `tpl`. Just use the `default` theme as a starting point.
+Just create a new directory in `lib/themes`. There should be four sub-folders - `_css`, `_js`, `public`, `_tpl`. Just use the `default` theme as a starting point.
 
 ## Running tests
 

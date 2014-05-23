@@ -2,7 +2,7 @@
 title: Techy / Documentation
 ---
 
-# Documentation<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Techy's home page](/techy)</small>
+# Documentation<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Techy's home page](../)</small>
 
 ---
 
@@ -23,10 +23,10 @@ title: Techy / Documentation
 * [Using Techy in Node.js script](#using-techy-in-node-js-script)
 * [Process non-markdown files](#process-non-markdown-files)
 * Examples
-	* [RSS reneration](/techy/examples/rss-generation)
-	* [Use Techy as Gulp plugin](/techy/examples/gulp-plugin)
+	* [RSS reneration](../examples/rss-generation)
+	* [Use Techy as Gulp plugin](../examples/gulp-plugin)
 * [API](#api)
-* [Contribute](/techy/docs/contribute.html)
+* [Contribute](./contribute.html)
 
 .
 
@@ -34,61 +34,68 @@ title: Techy / Documentation
 
 ## How it works
 
-First, Techy checks the current selected theme. It then converts your Markdown file to HTML. Gets the layout from the `tpl` directory and replaces `&lt;% get('content') %>` with your content. It also executes the expressions in the code. They work on both places - Markdown or HTML. Like for example, `&lt;% get('paths').root %>` in the `basic.html` is replaced with an empty string. That's because `page.md` is located in the root of the project. If it is a file in nesting folder then the path will be set properly.
+There are several steps that Techy goes through.
 
-<div class="how-it-works-img"></div>
+.grid
+
+* Copying the necessary files and directories for the basic look of your site. Like for example `_css`, `_js`, `_tpl` folders and so on.
+* Compiling the CSS 
+* Compiling the JavaScript
+* Searching for Markdowns and converting them to a beautifully looking web pages
+* Copying all the folders that are non underscore prefixed to the destination directory (by default `dist`).
+
+.
+
+Techy gets the layout for the documents from the `_tpl` directory and replaces `&lt;% get('content') %>` with your content. It also executes the expressions in the code. There are bunch of features that you may use. Like for example importing partials or executing your own methods. 
 
 ## Input and Output
 
-There are several arguments that you can pass to Techy. Two of them are `--src` and `--dest`. By default Techy checks if `src` directory is available and if yes then it starts watching for Markdown files there. If not then it uses the root or the project. The place where you run the `techy` command in. The destination of the compiled files is by default set to `dest` directory. However, if you used an older version of Techy you may want to drop the resulted files next to the Markdown files. In order to do that just use `techy --dest ./`. Every [theme](#theming) has its own `public` directory which is copied in the root of the project. That's the place where the final CSS and JS go. Here is an short example. Let's say that we have the following file structure:
+There are several arguments that you can pass to Techy. Two of them are `--src` and `--dest`. By the default the source directory is the one which you run the `techy` command from. The destination of the compiled files is by default set to `dist` directory. All the folders that start with underscore are not processed and they are not copied to the `dist` directory. The others are duplicated there. Techy automatically creates a `public` folder. That's the place where the CSS and JavaScript compiled files are stored.Here is an short example. Let's say that we have the following file structure:
 
 	/site
-	  /pages
+	  /_css
+	  /_js
+	  /_pages
 	    /inner
 	      /A.md
 	      /B.md
 	    /index.md
-	  /themes
-	  	/custom-theme
-	  	  /css
-	  	    /A.css
-	  	    /B.css
-	  	    /C.css
-	  	  /js
-	  	    /A.js
-	  	    /B.js
-	  	    /C.js
-	  	  /public
-	  	    /img
-	  	    /fonts
-	  	  /tpl
-
-If we run `techy --src ./pages --theme custom-theme --dest ./site` we will get:
-
-	/site
-	  /pages
-	    /inner
-	      /A.md
-	      /B.md
-	    /index.md
+	  /_tpl
 	  /public
-	    /img
-	    /fonts
-	    /styles.css // <- contain A.css, B.css and C.css
-	    /scripts.js // <- contain A.js, B.js and C.js
-	  /themes
-        /custom-theme
-	  /site
+	  	/img
+	  	/fonts
+	  	/...
+
+If we run `techy --src ./_pages we will get:
+
+	/site
+	  /_css
+	  /_js
+	  /_pages
+	    /inner
+	      /A.md
+	      /B.md
+	    /index.md
+	  /_tpl
+	  /dist
 	    /inner
 	       /A.html
 	       /B.html
+	    /public
+	  	/img
+	  	/fonts
+	  	/styles.css // <- contain A.css, B.css and C.css
+	    /scripts.js // <- contain A.js, B.js and C.js
+	  	/...
 	    /index.html
+	  /public
+	  	/img
+	  	/fonts
+	  	/...
 
-## Theming
+The idea is that `dist` folder contains the really final files which you need to upload on your server.	    
 
-Once you run `techy` you get a `themes` folder copied. It's located in the same directory which you run the command at. There are few themes available. The `default` theme is used if you run Techy without any parameter. To specify another one:
-
-	techy --theme [name of your theme]
+## Architecture
 
 ### Layout
 
@@ -102,11 +109,7 @@ or simly write the following at the top of the file:
 	layout: layouts/custom-layout.html
 	---
 
-The available layouts are placed in `/themes/[your theme]/tpl/layouts`. The default layout is `empty.html` and it contains only the placeholder. I.e.:
-
-	&lt;% get('content') %>
-
-If you create a `/themes/[your theme]/tpl/layouts/custom-layout.html` file with the following content:
+The available layout are placed in `/_tpl/layouts`. If you create a `/_tpl/layouts/custom-layout.html` file with the following content:
 
 	&lt;div class="content">
 		&lt;% get('content') %>
@@ -129,6 +132,21 @@ You will get:
 		&lt;p>some text&lt;/p>
 	&lt;/div>
 
+### CSS
+
+#### No CSS preprocessor, plain CSS files (the default one)
+
+The `index` property accepts glob pattern. All the files matching that pattern are concatenated.
+
+	module.exports = function() {
+		return {
+			css: {
+				preprocessor: 'none',
+				index: '_css/**/*.css'
+			}
+		}
+	}
+
 #### AbsurdJS as CSS preprocessor
 
 [`gulp-absurd`](https://github.com/krasimir/gulp-absurd) module is used.
@@ -137,7 +155,7 @@ You will get:
 		return {
 			css: {
 				preprocessor: 'absurd',
-				index: 'absurd/styles.js'
+				index: '_css/absurd/styles.js'
 			}
 		}
 	}
@@ -150,7 +168,7 @@ You will get:
 		return {
 			css: {
 				preprocessor: 'less',
-				index: 'less/styles.less'
+				index: '_css/less/styles.less'
 			}
 		}
 	}
@@ -165,37 +183,24 @@ You need to install `gulp-less` for the current project to get this working. So,
 		return {
 			css: {
 				preprocessor: 'sass',
-				index: 'sass/*.scss'
+				index: '_css/sass/*.scss'
 			}
 		}
 	}
 
 You need to install `gulp-sass` for the current project to get this working. So, simply run `npm install gulp-sass`.
 
-#### No CSS preprocessor, plain CSS files
-
-The `index` property accepts glob pattern. All the files matching that pattern are concatenated.
-
-	module.exports = function() {
-		return {
-			css: {
-				preprocessor: 'none',
-				index: 'css/**/*.css'
-			}
-		}
-	}
-
 ### JavaScript
 
-Techy uses *gulp-concat* and *gulp-uglify* to produce the JavaScript needed for the pages. Just put your scripts in `/themes/[your theme]/js` directory and they will be merged into `[destination folder]/public/scripts.js`
+Techy uses *gulp-concat* and *gulp-uglify* to produce the JavaScript needed for the pages. Just put your scripts in `/_js` directory and they will be merged into `[destination folder]/public/scripts.js`
 
 ### Templates
 
-No matter what you do you will need some partial system. I.e. save a piece of code and inject it in several places. For such cases, Techy provides the `template` method. The function searches for templates in `/themes/[your theme]/tpl` directory. For example:
+No matter what you do you will need some partial system. I.e. save a piece of code and inject it in several places. For such cases, Techy provides the `template` method. The function searches for templates in `/_tpl` directory. For example:
 
 	&lt;% template('footer.html') %>
 
-Will check for `/themes/[your theme]/tpl/footer.html` or just for `/footer.html` in the root directory and if it finds the file will import its content.
+Will check for `/_tpl/footer.html` or just for `/footer.html` in the root directory and if it finds the file will import its content.
 
 ## Writing HTML
 
@@ -257,7 +262,7 @@ There is a way to define variables that will be available for all the pages. Cre
 The function that is exported should return an object. The properties of that object are defined as global variables in your pages. If you don't want to use a file with name `TechyFile.js` you may pass `--config`
 parameter. Like for example
 
-	techy --theme empty --config ./options.js
+	techy --config ./options.js
 
 There are few properties which have special meaning. 
 
@@ -338,7 +343,7 @@ Add `techy` to your dependencies in the `package.json` file. After that simply i
 		this.watchFiles();
 	}, { myprop: 'my value' });
 
-`__dirname + '/docs'` is the directory which you want to be processed by Techy. `default` is the theme. 
+`__dirname + '/docs'` is the directory which you want to be processed by Techy. `default` is the theme (could be `empty` as well). 
 
 The third parameter is a function which is called once the module finishes its initial compilation. It's called with the context of the main's Techy class and there are few functions which you may use:
 

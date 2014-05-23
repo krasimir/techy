@@ -46,7 +46,7 @@ Techy is not only generating HTML markup. It puts your writings into a nicely fo
 
 ---
 
-Checkout the full documentaiton [<i class="fa fa-book"></i> here](/techy/docs) or fork the Techy project [in <i class="fa fa-github"></i> GitHub](https://github.com/krasimir/techy).
+Checkout the full documentaiton [<i class="fa fa-book"></i> here](./docs) or fork the Techy project [in <i class="fa fa-github"></i> GitHub](https://github.com/krasimir/techy).
 
 <% template('social') %>
 

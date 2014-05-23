@@ -2,12 +2,12 @@
 title: Techy / RSS generation
 ---
 
-# RSS generation<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Back to the documentation](/techy/docs)</small>
+# RSS generation<br /><small>[<i class="fa fa-arrow-circle-o-left"></i> Back to the documentation](../../docs)</small>
 
 Using Techy as a blog platform leads to the need of RSS feed. And because every page is actually a separate object we are able to generate RSS pretty easily. Let's say that we have the following file structure:
 
 	/blog
-		/articles
+		/_articles
 			/A.md
 			/B.md
 			/C.md
@@ -43,7 +43,7 @@ C.md
 
 By using the [Yaml Front Matter](/techy/docs/#using-yaml-front-matter) we are defining `title` and `date` properties for every page.
 
-If we go to the `blog` directory and run `techy --dest ./` command we will get three new files in the `articles` directory - `A.html`, `B.html` and `C.html`. So far so good. We have our pages generated and the users are able to see them. Now, we need to write our RSS. Let's create a new file in the `blog` folder called `feed.xml.source`. It will act as a template for the final file. Its extension is not `.md` so Techy will not process it by default. We have to additionally point that out in the `TechyFile.js` of the project:
+If we go to the `blog` directory and run `techy --src ./_articles` command we will get three new files in the `dist/articles` directory - `A.html`, `B.html` and `C.html`. So far so good. We have our pages generated and the users are able to see them. Now, we need to write our RSS. Let's create a new file in the `blog` folder called `feed.xml.source`. It will act as a template for the final file. Its extension is not `.md` so Techy will not process it by default. We have to additionally point that out in the `TechyFile.js` of the project:
 
 	// blog/TechyFile.js
 
@@ -55,7 +55,7 @@ If we go to the `blog` directory and run `techy --dest ./` command we will get t
 		}
 	}
 
-Running `techy --dest ./` command again brings `feed.xml` file. The next step is to fetch all the pages in the blog and fill the xml with their titles and links. Here is how `feed.xml.source` may look like:
+Running the same command command again brings `feed.xml` file. The next step is to fetch all the pages in the blog and fill the xml with their titles and links. Here is how `feed.xml.source` may look like:
 
 	&lt;?xml version="1.0"?>
 	&lt;rss version="2.0">
@@ -95,24 +95,6 @@ The actual generation of the items is happening in a custom function `rss`. Tech
 	}
 
 Notice that we are sorting the pages by the variable `date` which is defined in the Markdown files.
-
-The final files tree looks like that:
-
-	/blog
-		/articles
-			/A.html
-			/A.md
-			/B.html
-			/B.md
-			/C.html
-			/C.md
-		/public
-		/themes
-			// ... Techy's themes here
-		/feed.xml
-		/feed.xml.source
-		/rss.techy.js
-		/TechyFile.js
 
 The resulted `feed.xml` contains all the three articles sorted by date:
 
