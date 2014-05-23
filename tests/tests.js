@@ -121,7 +121,6 @@ describe("Techy testing", function() {
 		expect(fs.existsSync(__dirname + '/jekyll-style-structure/_tpl')).to.be.equal(true);
 		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist')).to.be.equal(true);
 		expect(fs.existsSync(__dirname + '/jekyll-style-structure/public')).to.be.equal(true);
-		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/empty_dir')).to.be.equal(true);
 		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/public')).to.be.equal(true);
 		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/page.html')).to.be.equal(true);
 		done();

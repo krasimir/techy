@@ -29,7 +29,8 @@
     "yaml-front-matter": "3.0.1"
   },
   "devDependencies": {
-    "expect.js": "0.3.1"
+    "expect.js": "0.3.1",
+    "gulp-less": "1.2.3"
   },
   "keywords": [
     "flat",
