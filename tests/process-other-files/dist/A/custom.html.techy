@@ -1,0 +1,9 @@
+---
+title: Markdown
+text: Lorem ipsum
+---
+# Custom page
+
+which is not a <% get('title') %>.
+
+<% get('text') %>

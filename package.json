@@ -1,6 +1,6 @@
 {
   "name": "techy",
-  "version": "1.0.3",
+  "version": "1.1.0",
   "homepage": "http://krasimir.github.io/techy",
   "description": "Flat CMS based on Gulp and AbsurdJS",
   "main": "./lib/index.js",
@@ -23,13 +23,13 @@
     "minimist": "0.0.8",
     "html-entities": "1.0.10",
     "glob": "3.2.9",
+    "glob-expand": "*",
     "ncp": "0.5.0",
     "colors": "0.6.2",
-    "expect.js": "0.3.1",
     "yaml-front-matter": "3.0.1"
   },
   "devDependencies": {
-    
+    "expect.js": "0.3.1"
   },
   "keywords": [
     "flat",

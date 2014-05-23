@@ -36,8 +36,8 @@ var compare = function(root, desc, asserts, ops) {
 		// done();
 	});
 	it("should have js and css compiled", function(done) {
-		expect(fs.existsSync(root + '/themes/empty/public/scripts.js')).to.be.equal(true);
-		expect(fs.existsSync(root + '/themes/empty/public/styles.css')).to.be.equal(true);
+		expect(fs.existsSync(root + '/public/scripts.js')).to.be.equal(true);
+		expect(fs.existsSync(root + '/public/styles.css')).to.be.equal(true);
 		done();
 	});
 }
@@ -103,7 +103,6 @@ describe("Techy testing", function() {
 	compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
 	compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
 	compare(__dirname + "/custom-master-config", "techy should use custom master config", null, { noLogging: true, techyFile: __dirname + '/custom-master-config/options.js' });
-	compare(__dirname + "/master-config-theme", "pages should use master config in the theme folder", null, { noLogging: true, preventThemeFolderDeletion: true});
 	compare(__dirname + "/should-use-src-dest", "should use src and dest params", function(done) {
 		expect(fs.existsSync(__dirname + '/should-use-src-dest/dest/public/styles.css')).to.equal(true);
 		expect(fs.existsSync(__dirname + '/should-use-src-dest/dest/public/styles.css')).to.equal(true);
@@ -114,6 +113,17 @@ describe("Techy testing", function() {
 		done();
 	}, { noLogging: true, src: __dirname + '/template-look-in-src/pages'});
 	compare(__dirname + "/master-config-with-dest-folder", "should put the public folder properly", function(done) {
+		done();
+	}, { noLogging: true });
+	compare(__dirname + "/jekyll-style-structure", "jekyll style structure", function(done) {
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/_css')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/_js')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/_tpl')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/public')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/empty_dir')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/public')).to.be.equal(true);
+		expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/page.html')).to.be.equal(true);
 		done();
 	}, { noLogging: true });
 });
