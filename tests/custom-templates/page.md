@@ -2,4 +2,4 @@
 
 Here is a custom template:
 
-<% template('/data/custom/part') %>
+<% template('_data/custom/part') %>

@@ -30,8 +30,19 @@ var run = function(root, desc, asserts, ops) {
 	});
 }
 
-var compareFileContent = function(a, b) {
-	expect(fs.readFileSync(a).toString()).to.be(fs.readFileSync(b).toString());
+var compareFileContent = function(a, b, ignoreNewLinesAndTabs) {
+	if(ignoreNewLinesAndTabs) {
+		expect(fs.readFileSync(a).toString().replace(/\n|\r|\t/g, '')).to.be(fs.readFileSync(b).toString().replace(/\n|\r|\t/g, ''));
+	} else {
+		expect(fs.readFileSync(a).toString()).to.be(fs.readFileSync(b).toString());
+	}
+}
+
+var compare = function(root, desc, ops) {
+	run(root, desc, function(done) {
+		compareFileContent(root + '/_dist/page.html', root + '/expected.html');
+		done();
+	}, ops);
 }
 
 describe("Techy testing", function() {
@@ -44,31 +55,26 @@ describe("Techy testing", function() {
 		compareFileContent(__dirname + '/basic/_dist/page.html', __dirname + '/basic/_expects/page.html');
 		done();
 	});
-	// compare(__dirname + "/md-to-html", "should compile markdown file to HTML");
-	// compare(__dirname + "/with-layout", "should use layout");
-	// compare(__dirname + "/set-get", "should use get and set");
-	// compare(__dirname + "/custom-templates", "should use custom templates");
-	// compare(__dirname + "/custom-layout", "should use custom layout");
-	// compare(__dirname + "/custom-method", "should use a custom method");
-	// compare(__dirname + "/num-of-pages", "should use numofpages method");
-	// compare(__dirname + "/using-path", "should use path method");
-	// compare(__dirname + "/access-page-by-name", "should get a page by name");
-	// compare(__dirname + "/master-config", "should use a master config");
-	// compare(__dirname + "/html-usage", "should use html");
-	// compare(__dirname + "/skip-node_modules", "should skip node_modules");
-	// compare(__dirname + "/linkto", "should use linkto");
-	// compare(__dirname + "/css_absurd", "should use Absurd", function(done) {
-	// 	var exprectedCSS = fs.readFileSync(__dirname + '/css_absurd/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-	// 	var actualCSS = fs.readFileSync(__dirname + '/css_absurd/dist/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-	// 	expect(exprectedCSS).to.be(actualCSS);
-	// 	done();
-	// });
-	// compare(__dirname + "/css_less", "should use LESS", function(done) {
-	// 	var exprectedCSS = fs.readFileSync(__dirname + '/css_less/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-	// 	var actualCSS = fs.readFileSync(__dirname + '/css_less/dist/public/styling.css').toString('utf8').replace(/(\r|\n)/g, '');
-	// 	expect(exprectedCSS).to.be(actualCSS);
-	// 	done();
-	// });
+	compare(__dirname + "/md-to-html", "should compile markdown file to HTML");
+	compare(__dirname + "/with-layout", "should use layout");
+	compare(__dirname + "/set-get", "should use get and set");
+	compare(__dirname + "/custom-templates", "should use custom templates");
+	compare(__dirname + "/custom-layout", "should use custom layout");
+	compare(__dirname + "/custom-method", "should use a custom method");
+	compare(__dirname + "/num-of-pages", "should use numofpages method");
+	compare(__dirname + "/using-path", "should use path method");
+	compare(__dirname + "/access-page-by-name", "should get a page by name");
+	compare(__dirname + "/master-config", "should use a master config");
+	compare(__dirname + "/html-usage", "should use html");
+	compare(__dirname + "/linkto", "should use linkto");
+	run(__dirname + "/css_absurd", "should use Absurd", function(done) {
+		compareFileContent(__dirname + '/css_absurd/expected_styles.css', __dirname + '/css_absurd/_dist/css/styles.css');
+		done();
+	});
+	run(__dirname + "/css_less", "should use LESS", function(done) {
+		compareFileContent(__dirname + '/css_less/expected_styles.css', __dirname + '/css_less/_dist/css/styling.css');
+		done();
+	});
 	// // the test is commented because gulp-sass can not be installed properly at the moment
 	// // compare(__dirname + "/css_sass", "should use SASS", function(done) {
 	// // 	var exprectedCSS = fs.readFileSync(__dirname + '/css_sass/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
@@ -76,54 +82,38 @@ describe("Techy testing", function() {
 	// // 	expect(exprectedCSS).to.be(actualCSS);
 	// // 	done();
 	// // });
-	// compare(__dirname + "/css_css", "should use plain css", function(done) {
-	// 	var exprectedCSS = fs.readFileSync(__dirname + '/css_css/expected_styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-	// 	var actualCSS = fs.readFileSync(__dirname + '/css_css/dist/public/styles.css').toString('utf8').replace(/(\r|\n)/g, '');
-	// 	expect(exprectedCSS).to.be(actualCSS);
-	// 	done();
-	// });
-	// compare(__dirname + "/master-config-TechyFile.js", "should use a master config with TechyFile.js");
-	// compare(__dirname + "/using-yaml", "should use yaml");
-	// compare(__dirname + "/process-other-files", "should process other type of files", function(done) {
-	// 	var actual = fs.readFileSync(__dirname + "/process-other-files/A/C/styles.css").toString('utf8');
-	// 	var expected = fs.readFileSync(__dirname + "/process-other-files/A/C/styles.css.expected").toString('utf8');
-	// 	expect(actual).to.be(expected);
-	// 	actual = fs.readFileSync(__dirname + "/process-other-files/A/custom.html").toString('utf8');
-	// 	expected = fs.readFileSync(__dirname + "/process-other-files/A/custom.html.expected").toString('utf8');
-	// 	expect(actual).to.be(expected);
-	// 	done();
-	// });
-	// compare(__dirname + "/using-none-as-layout", "should use none as layout");
-	// compare(__dirname + "/markdown-partials", "should use markdown as partial", function(done) {
-	// 	expect(fs.existsSync(__dirname + '/markdown-partials/A.html')).to.equal(false);
-	// 	expect(fs.existsSync(__dirname + '/markdown-partials/B.html')).to.equal(false);
-	// 	expect(fs.existsSync(__dirname + '/markdown-partials/C.html')).to.equal(true);
-	// 	done();
-	// });
-	// compare(__dirname + "/get-pages-from-dir", "should get pages from specific directory");
-	// compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
-	// compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
-	// compare(__dirname + "/custom-master-config", "techy should use custom master config", null, { noLogging: true, techyFile: __dirname + '/custom-master-config/options.js' });
-	// compare(__dirname + "/should-use-src-dest", "should use src and dest params", function(done) {
-	// 	expect(fs.existsSync(__dirname + '/should-use-src-dest/dest/public/styles.css')).to.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/should-use-src-dest/dest/public/styles.css')).to.equal(true);
-	// 	expect(fs.readFileSync(__dirname + '/should-use-src-dest/dest/A.html').toString('utf8')).to.equal('<h1 id="hello-world">Hello World</h1>\n');
-	// 	done();
-	// }, { noLogging: true, preventThemeFolderDeletion: true, src: __dirname + '/should-use-src-dest/pages/src', dest: __dirname + '/should-use-src-dest/dest'});
-	// compare(__dirname + "/template-look-in-src", "template function should look into the src dir", function(done) {
-	// 	done();
-	// }, { noLogging: true, src: __dirname + '/template-look-in-src/pages'});
-	// compare(__dirname + "/master-config-with-dest-folder", "should put the public folder properly", function(done) {
-	// 	done();
-	// }, { noLogging: true });
-	// compare(__dirname + "/jekyll-style-structure", "jekyll style structure", function(done) {
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/_css')).to.be.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/_js')).to.be.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/_tpl')).to.be.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist')).to.be.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/public')).to.be.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/public')).to.be.equal(true);
-	// 	expect(fs.existsSync(__dirname + '/jekyll-style-structure/dist/page.html')).to.be.equal(true);
-	// 	done();
-	// }, { noLogging: true });
+	run(__dirname + "/css_css", "should use plain css", function(done) {
+		compareFileContent(__dirname + '/css_css/expected_styles.css', __dirname + '/css_css/_dist/css/styles.css', true);
+		done();
+	});
+	compare(__dirname + "/using-yaml", "should use yaml");
+	run(__dirname + "/process-other-files", "should process other type of files", function(done) {
+		compareFileContent(__dirname + "/process-other-files/_dist/A/C/styles.css", __dirname + "/process-other-files/_dist/A/C/styles.css.expected", true);
+		compareFileContent(__dirname + "/process-other-files/_dist/A/custom.html", __dirname + "/process-other-files/_dist/A/custom.html.expected", true);
+		done();
+	});
+	compare(__dirname + "/markdown-partials", "should use markdown as partial", function(done) {
+		expect(fs.existsSync(__dirname + '/markdown-partials/A.html')).to.equal(false);
+		expect(fs.existsSync(__dirname + '/markdown-partials/B.html')).to.equal(false);
+		expect(fs.existsSync(__dirname + '/markdown-partials/C.html')).to.equal(true);
+		done();
+	});
+	compare(__dirname + "/get-pages-from-dir", "should get pages from specific directory");
+	compare(__dirname + "/sort-by", "should get pages from specific directory sorted");
+	compare(__dirname + "/draft-pages", "pages should not return those which have draft: yes");
+	compare(__dirname + "/custom-master-config", "techy should use custom master config", { noLogging: true, techyFile: __dirname + '/custom-master-config/options.js' });
+	run(__dirname + "/should-use-src-dest", "should use src and dest params", function(done) {
+		expect(fs.existsSync(__dirname + '/should-use-src-dest/_out/A.html')).to.equal(true);
+		expect(fs.existsSync(__dirname + '/should-use-src-dest/_out/page.html')).to.equal(true);
+		expect(fs.readFileSync(__dirname + '/should-use-src-dest/_out/A.html').toString('utf8')).to.equal('<h1 id="hello-world">Hello World</h1>\n');
+		done();
+	}, { noLogging: true, src: __dirname + '/should-use-src-dest/_pages/src', dest: __dirname + '/should-use-src-dest/_out'});
+	run(__dirname + "/master-config-with-dest-folder", "should put the public folder properly", function(done) {
+		expect(fs.readFileSync(__dirname + '/master-config-with-dest-folder/_out/page.html').toString('utf8')).to.equal('<h1 id="hello-world">Hello world</h1>\n');
+		done();
+	}, { noLogging: true });
+	run(__dirname + "/using-theme", "should use a theme", function(done) {
+		
+		done();
+	}, { noLogging: true });
 });

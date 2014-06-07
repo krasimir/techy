@@ -1,6 +1,6 @@
 module.exports = function() {
     return {
-        src: './in',
-        dest: './out'
+        src: './_in',
+        dest: './_out'
     }
 }
