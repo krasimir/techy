@@ -71,21 +71,21 @@
         <p>There are several steps that Techy goes through.</p>
         <div class="grid">
             <ul>
-                <li>Copying the necessary files and directories for the basic look of your site. Like for example <code class="language-javascript">_css</code>, <code class="language-javascript">_js</code>, <code class="language-javascript">_tpl</code> folders
-                    and so on.</li>
-                <li>Compiling the CSS</li>
-                <li>Compiling the JavaScript</li>
+                <li>If you use themes it copies the necessary files and directories for the basic look of your site (<code class="language-javascript">_tpl</code> and <code class="language-javascript">_dist/public</code>)</li>
+                <li>Compiling/Concatenating CSS</li>
+                <li>Compiling/Concatenating the JavaScript</li>
                 <li>Searching for Markdowns and converting them to a beautifully looking web pages</li>
-                <li>Copying all the folders that are non underscore prefixed to the destination directory (by default <code class="language-javascript">dist</code>).</li>
+                <li>Copying all the folders that are non underscore prefixed to the destination directory (by default <code class="language-javascript">_dist</code>).</li>
             </ul>
         </div>
-        <p>Techy gets the layout for the documents from the <code class="language-javascript">_tpl</code> directory and replaces <code class="language-javascript">&lt;% get('content') %></code> with your content. It also executes the expressions in the code.
-            There are bunch of features that you may use. Like for example importing partials or executing your own methods.</p>
+        <p>If set the <code class="language-javascript">layout</code> varialbe, Techy reads the file and replaces <code class="language-javascript">&lt;% get('content') %></code> with your content. It also executes the expressions in the code. There are bunch
+            of features that you may use. Like for example importing partials or executing your own methods.</p>
+        <p>By default Techy doesn't provide any visual look of your markdown files. But if you want to have one use <code class="language-javascript">techy --theme default</code> which will place the needed files in your <code class="language-javascript">_dist</code> directory.
+            After that you have to set <code class="language-javascript">layout: _tpl/layout.html</code> in your markdowns in order to get the default HTML markup applied.</p>
         <h2 id="input-and-output">Input and Output</h2>
         <p>There are several arguments that you can pass to Techy. Two of them are <code class="language-javascript">--src</code> and <code class="language-javascript">--dest</code>. By the default the source directory is the one which you run the <code class="language-javascript">techy</code> command
-            from. The destination of the compiled files is by default set to <code class="language-javascript">dist</code> directory. All the folders that start with underscore are not processed and they are not copied to the <code class="language-javascript">dist</code> directory.
-            The others are duplicated there. Techy automatically creates a <code class="language-javascript">public</code> folder. That's the place where the CSS and JavaScript compiled files are stored.Here is an short example. Let's say that we have the
-            following file structure:</p>
+            from. The destination of the compiled files is by default set to <code class="language-javascript">_dist</code> directory. All the folders that start with underscore are not processed and they are not copied to the <code class="language-javascript">_dist</code> directory.
+            The others are duplicated there. Here is an short example. Let's say that we have the following file structure:</p>
         <pre><code class="language-javascript">/site
   /_css
   /_js
@@ -110,23 +110,21 @@
       /B.md
     /index.md
   /_tpl
-  /dist
+  /_dist
     /inner
        /A.html
        /B.html
     /public
-      /img
-      /fonts
-      /styles.css // <- contain A.css, B.css and C.css
-    /scripts.js // <- contain A.js, B.js and C.js
-      /...
+          /img
+          /fonts
+          /...
     /index.html
   /public
       /img
       /fonts
       /...
 </code></pre>
-        <p>The idea is that <code class="language-javascript">dist</code> folder contains the really final files which you need to upload on your server.</p>
+        <p>The idea is that <code class="language-javascript">_dist</code> folder contains the really final files which you need to upload on your server.</p>
         <h2 id="architecture">Architecture</h2>
         <h3 id="layout">Layout</h3>
         <p>The layout is HTML file that contains the placeholder for the content coming from your Markdown files. You are able to specify a different layout by using the following expression:</p>
@@ -134,10 +132,10 @@
 </code></pre>
         <p>or simly write the following at the top of the file:</p>
         <pre><code class="language-javascript">---
-layout: layouts/custom-layout.html
+layout: _tpl/_layouts/custom-layout.html
 ---
 </code></pre>
-        <p>The available layout are placed in <code class="language-javascript">/_tpl/layouts</code>. If you create a <code class="language-javascript">/_tpl/layouts/custom-layout.html</code> file with the following content:</p>
+        <p>If you create a <code class="language-javascript">_tpl/layouts/custom-layout.html</code> file with the following content:</p>
         <pre><code class="language-javascript">&lt;div class="content">
     &lt;% get('content') %>
 &lt;/div>
@@ -158,7 +156,7 @@ some text
 &lt;/div>
 </code></pre>
         <h3 id="css">CSS</h3>
-        <h4 id="no-css-preprocessor-plain-css-files-the-default-one-">No CSS preprocessor, plain CSS files (the default one)</h4>
+        <h4 id="no-css-preprocessor-plain-css-files">No CSS preprocessor, plain CSS files</h4>
         <p>The <code class="language-javascript">index</code> property accepts glob pattern. All the files matching that pattern are concatenated.</p>
         <pre><code class="language-javascript">module.exports = function() {
     return {
@@ -205,14 +203,21 @@ some text
 </code></pre>
         <p>You need to install <code class="language-javascript">gulp-sass</code> for the current project to get this working. So, simply run <code class="language-javascript">npm install gulp-sass</code>.</p>
         <h3 id="javascript">JavaScript</h3>
-        <p>Techy uses <em>gulp-concat</em> and <em>gulp-uglify</em> to produce the JavaScript needed for the pages. Just put your scripts in <code class="language-javascript">/_js</code> directory and they will be merged into <code class="language-javascript">[destination folder]/public/scripts.js</code>
-        </p>
+        <p>Techy uses <em>gulp-concat</em> to produce the JavaScript needed for the pages. You should define the JavaScript preferences in your <code class="language-javascript">TechyFile.js</code>.</p>
+        <pre><code class="language-javascript">module.exports = function() {
+    return {
+        js: {
+            src: '_src/js/**/*.js',
+            dest: '_dist/public/myscripts.js'
+        }
+    }
+}
+</code></pre>
         <h3 id="templates">Templates</h3>
-        <p>No matter what you do you will need some partial system. I.e. save a piece of code and inject it in several places. For such cases, Techy provides the <code class="language-javascript">template</code> method. The function searches for templates
-            in <code class="language-javascript">/_tpl</code> directory. For example:</p>
+        <p>No matter what you do you will need some partial system. I.e. save a piece of code and inject it in several places. For such cases, Techy provides the <code class="language-javascript">template</code> method. For example:</p>
         <pre><code class="language-javascript">&lt;% template('footer.html') %>
 </code></pre>
-        <p>Will check for <code class="language-javascript">/_tpl/footer.html</code> or just for <code class="language-javascript">/footer.html</code> in the root directory and if it finds the file will import its content.</p>
+        <p>Will check for <code class="language-javascript">/footer.html</code> in the root directory and if it finds the file will import its content.</p>
         <h2 id="writing-html">Writing HTML</h2>
         <p>You may need to add a valid HTML markup to the page. But at the same time continue writing Markdown between your tags. Here is a limited feature that you could use.</p>
         <div class="grid grid-2">
@@ -244,7 +249,7 @@ There are &lt;% page('PageA').get('numOfProducts') %> products in total.
 </code></pre>
         <p>If you need to get all the pages you could use <a href="#api"><code class="language-javascript">pages</code></a> method.</p>
         <h2 id="master-config">Master config</h2>
-        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> in the main project's directory or the theme's folder. Here is an example:</p>
+        <p>There is a way to define variables that will be available for all the pages. Create a file <code class="language-javascript">TechyFile.js</code> in the main project's directory. Here is an example:</p>
         <pre><code class="language-javascript">// TechyFile.js
 module.exports = function() {
     return {
@@ -265,14 +270,15 @@ The value of the global setting is &lt;% globalSetting %>.
         <div class="grid">
             <ul>
                 <li><code class="language-javascript">css</code> - it defines the used CSS preprocessor. Read more about this <a href="#css">here</a>.</li>
+                <li><code class="language-javascript">js</code> - it defines the JavaScript preferences. Read more about this <a href="#javascript">here</a>.</li>
                 <li><code class="language-javascript">process</code> - gives you ability to process non-markdown files. More info <a href="#process-non-markdown-files">here</a>.</li>
                 <li><code class="language-javascript">src</code> - the source Markdown files for compilation</li>
                 <li><code class="language-javascript">dest</code> - the output directory</li>
             </ul>
         </div>
         <h2 id="writing-your-own-functions">Writing your own functions</h2>
-        <p>Every JavaScript file which ends on <code class="language-javascript">techyFile.js</code> is considered as a Techy function. For example:</p>
-        <pre><code class="language-javascript">// myown.techyFile.js
+        <p>Every JavaScript file which ends on <code class="language-javascript">techy.js</code> is considered as a Techy function. For example:</p>
+        <pre><code class="language-javascript">// myown.techy.js
 module.exports = function() {
     return 'My Name is ' + this.get('username');
 }
@@ -326,12 +332,12 @@ I love &lt;% get('run')(get('pets')[1]) %>.
         <h2 id="using-techy-in-node-js-script">Using Techy in Node.js script</h2>
         <p>Add <code class="language-javascript">techy</code> to your dependencies in the <code class="language-javascript">package.json</code> file. After that simply initialize the module. For example:</p>
         <pre><code class="language-javascript">var Techy = require('techy');
-Techy(__dirname + '/docs', 'default', function() {
+Techy(__dirname + '/docs', function() {
     this.watchFiles();
 }, { myprop: 'my value' });
 </code></pre>
-        <p><code class="language-javascript">__dirname + '/docs'</code> is the directory which you want to be processed by Techy. <code class="language-javascript">default</code> is the theme (could be <code class="language-javascript">empty</code> as well).</p>
-        <p>The third parameter is a function which is called once the module finishes its initial compilation. It's called with the context of the main's Techy class and there are few functions which you may use:</p>
+        <p><code class="language-javascript">__dirname + '/docs'</code> is the directory which you want to be processed by Techy.</p>
+        <p>The second parameter is a function which is called once the module finishes its initial compilation. It's called with the context of the main's Techy class and there are few functions which you may use:</p>
         <div class="grid">
             <ul>
                 <li><code class="language-javascript">watchFiles</code>

@@ -52,7 +52,7 @@ date: 22-02-2014
 # &lt;% get('title') %>
 </code></pre>
         <p>By using the <a href="/techy/docs/#using-yaml-front-matter">Yaml Front Matter</a> we are defining <code class="language-javascript">title</code> and <code class="language-javascript">date</code> properties for every page.</p>
-        <p>If we go to the <code class="language-javascript">blog</code> directory and run <code class="language-javascript">techy --src ./_articles</code> command we will get three new files in the <code class="language-javascript">dist/articles</code> directory
+        <p>If we go to the <code class="language-javascript">blog</code> directory and run <code class="language-javascript">techy --src ./_articles</code> command we will get three new files in the <code class="language-javascript">_dist/articles</code> directory
             - <code class="language-javascript">A.html</code>, <code class="language-javascript">B.html</code> and <code class="language-javascript">C.html</code>. So far so good. We have our pages generated and the users are able to see them. Now, we need
             to write our RSS. Let's create a new file in the <code class="language-javascript">blog</code> folder called <code class="language-javascript">feed.xml.source</code>. It will act as a template for the final file. Its extension is not <code class="language-javascript">.md</code> so
             Techy will not process it by default. We have to additionally point that out in the <code class="language-javascript">TechyFile.js</code> of the project:</p>
