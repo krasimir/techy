@@ -1,3 +1,6 @@
+---
+layout: _tpl/layout
+---
 # That's an inner page B
 
 Go to <a href="<% get('paths').root %>"><i class="fa fa-check"></i> home page</a>.<br />

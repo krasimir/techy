@@ -112,8 +112,8 @@ describe("Techy testing", function() {
 		expect(fs.readFileSync(__dirname + '/master-config-with-dest-folder/_out/page.html').toString('utf8')).to.equal('<h1 id="hello-world">Hello world</h1>\n');
 		done();
 	}, { noLogging: true });
-	run(__dirname + "/using-theme", "should use a theme", function(done) {
-		
+	run(__dirname + "/js", "should concatenates JavaScript", function(done) {
+		compareFileContent(__dirname + "/js/expected.js", __dirname + "/js/_dist/public/js/file.js");
 		done();
 	}, { noLogging: true });
 });

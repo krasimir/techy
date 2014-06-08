@@ -1,6 +1,7 @@
 ---
 name: home
 desc: A home page
+layout: _tpl/layout
 ---
 
 # That's a page title
