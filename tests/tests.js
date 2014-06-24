@@ -116,4 +116,12 @@ describe("Techy testing", function() {
 		compareFileContent(__dirname + "/js/expected.js", __dirname + "/js/_dist/public/js/file.js");
 		done();
 	}, { noLogging: true });
+	run(__dirname + "/copy-non-underscore", "should copy only non-underscore folders", function(done) {
+		var path = __dirname + "/copy-non-underscore/";
+		expect(fs.existsSync(path + '_dist/copythis/somefile.txt')).to.equal(true);
+		expect(fs.existsSync(path + '_dist/copythis/_copyme.html')).to.equal(true);
+		expect(fs.existsSync(path + '_dist/copythis/_butnotthis')).to.equal(false);
+		expect(fs.existsSync(path + '_dist/page.html')).to.equal(true);
+		done();
+	}, { noLogging: true });
 });
