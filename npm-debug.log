@@ -1,0 +1,1446 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'publish' ]
+2 info using npm@1.3.24
+3 info using node@v0.10.25
+4 verbose node symlink /usr/bin/node
+5 verbose publish [ '.' ]
+6 verbose cache add [ '.', null ]
+7 verbose cache add name=undefined spec="." args=[".",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: '.',
+8 verbose parsed url   path: '.',
+8 verbose parsed url   href: '.' }
+9 silly lockFile 3a52ce78- .
+10 verbose lock . /home/ubuntu/.npm/3a52ce78-.lock
+11 verbose tar pack [ '/home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz',
+11 verbose tar pack   '.' ]
+12 verbose tarball /home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+13 verbose folder .
+14 info prepublish techy@1.2.2
+15 silly lockFile 1f1177db-tar tar://.
+16 verbose lock tar://. /home/ubuntu/.npm/1f1177db-tar.lock
+17 silly lockFile 04f8daa1-8415-0-24536281521432102-tmp-tgz tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+18 verbose lock tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz /home/ubuntu/.npm/04f8daa1-8415-0-24536281521432102-tmp-tgz.lock
+19 silly lockFile 1f1177db-tar tar://.
+20 silly lockFile 1f1177db-tar tar://.
+21 silly lockFile 04f8daa1-8415-0-24536281521432102-tmp-tgz tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+22 silly lockFile 04f8daa1-8415-0-24536281521432102-tmp-tgz tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+23 verbose tar unpack /home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+24 silly lockFile d5b3a1ed-8415-0-24536281521432102-package tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+25 verbose lock tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package /home/ubuntu/.npm/d5b3a1ed-8415-0-24536281521432102-package.lock
+26 silly lockFile 04f8daa1-8415-0-24536281521432102-tmp-tgz tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+27 verbose lock tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz /home/ubuntu/.npm/04f8daa1-8415-0-24536281521432102-tmp-tgz.lock
+28 silly gunzTarPerm modes [ '755', '644' ]
+29 silly gunzTarPerm extractEntry package.json
+30 silly gunzTarPerm modified mode [ 'package.json', 436, 420 ]
+31 silly gunzTarPerm extractEntry .npmignore
+32 silly gunzTarPerm modified mode [ '.npmignore', 436, 420 ]
+33 silly gunzTarPerm extractEntry README.md
+34 silly gunzTarPerm modified mode [ 'README.md', 436, 420 ]
+35 silly gunzTarPerm extractEntry LICENSE
+36 silly gunzTarPerm modified mode [ 'LICENSE', 436, 420 ]
+37 silly gunzTarPerm extractEntry .nojekyll
+38 silly gunzTarPerm modified mode [ '.nojekyll', 436, 420 ]
+39 silly gunzTarPerm extractEntry example/as-gulp-plugin/package.json
+40 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/package.json', 436, 420 ]
+41 silly gunzTarPerm extractEntry example/as-gulp-plugin/.npmignore
+42 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/.npmignore', 436, 420 ]
+43 silly gunzTarPerm extractEntry example/as-gulp-plugin/custommethod.techy.js
+44 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/custommethod.techy.js', 436, 420 ]
+45 silly gunzTarPerm extractEntry example/as-gulp-plugin/gulpfile.js
+46 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/gulpfile.js', 436, 420 ]
+47 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/A/lorem.html
+48 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/dest/A/lorem.html', 436, 420 ]
+49 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/B/lipsum.html
+50 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/dest/B/lipsum.html', 436, 420 ]
+51 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/feed.xml
+52 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/dest/feed.xml', 436, 420 ]
+53 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/index.html
+54 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/dest/index.html', 436, 420 ]
+55 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/A/lorem.md
+56 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/src/A/lorem.md', 436, 420 ]
+57 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/B/lipsum.md
+58 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/src/B/lipsum.md', 436, 420 ]
+59 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/feed.xml.rss
+60 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/src/feed.xml.rss', 436, 420 ]
+61 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/index.md
+62 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/src/index.md', 436, 420 ]
+63 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/basic.js
+64 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/basic.js',
+64 silly gunzTarPerm   436,
+64 silly gunzTarPerm   420 ]
+65 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/styles.js
+66 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/styles.js',
+66 silly gunzTarPerm   436,
+66 silly gunzTarPerm   420 ]
+67 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/base.js
+68 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/common/base.js',
+68 silly gunzTarPerm   436,
+68 silly gunzTarPerm   420 ]
+69 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/code.js
+70 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/common/code.js',
+70 silly gunzTarPerm   436,
+70 silly gunzTarPerm   420 ]
+71 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/grids.js
+72 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/common/grids.js',
+72 silly gunzTarPerm   436,
+72 silly gunzTarPerm   420 ]
+73 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/list.js
+74 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/common/list.js',
+74 silly gunzTarPerm   436,
+74 silly gunzTarPerm   420 ]
+75 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/scroller.js
+76 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/common/scroller.js',
+76 silly gunzTarPerm   436,
+76 silly gunzTarPerm   420 ]
+77 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/titles.js
+78 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/css/common/titles.js',
+78 silly gunzTarPerm   436,
+78 silly gunzTarPerm   420 ]
+79 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/js/scripts.js
+80 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/js/scripts.js',
+80 silly gunzTarPerm   436,
+80 silly gunzTarPerm   420 ]
+81 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/absurd.min.js
+82 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/absurd.min.js',
+82 silly gunzTarPerm   436,
+82 silly gunzTarPerm   420 ]
+83 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/absurd.organic.min.js
+84 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/absurd.organic.min.js',
+84 silly gunzTarPerm   436,
+84 silly gunzTarPerm   420 ]
+85 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/scripts.js
+86 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/scripts.js',
+86 silly gunzTarPerm   436,
+86 silly gunzTarPerm   420 ]
+87 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/css/font-awesome.css
+88 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/css/font-awesome.css',
+88 silly gunzTarPerm   436,
+88 silly gunzTarPerm   420 ]
+89 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/css/font-awesome.min.css
+90 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/css/font-awesome.min.css',
+90 silly gunzTarPerm   436,
+90 silly gunzTarPerm   420 ]
+91 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+92 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/FontAwesome.otf',
+92 silly gunzTarPerm   436,
+92 silly gunzTarPerm   420 ]
+93 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+94 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot',
+94 silly gunzTarPerm   436,
+94 silly gunzTarPerm   420 ]
+95 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+96 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg',
+96 silly gunzTarPerm   436,
+96 silly gunzTarPerm   420 ]
+97 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+98 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf',
+98 silly gunzTarPerm   436,
+98 silly gunzTarPerm   420 ]
+99 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+100 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff',
+100 silly gunzTarPerm   436,
+100 silly gunzTarPerm   420 ]
+101 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/list.less
+102 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/list.less',
+102 silly gunzTarPerm   436,
+102 silly gunzTarPerm   420 ]
+103 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/bordered-pulled.less
+104 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/bordered-pulled.less',
+104 silly gunzTarPerm   436,
+104 silly gunzTarPerm   420 ]
+105 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/fixed-width.less
+106 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/fixed-width.less',
+106 silly gunzTarPerm   436,
+106 silly gunzTarPerm   420 ]
+107 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/font-awesome.less
+108 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/font-awesome.less',
+108 silly gunzTarPerm   436,
+108 silly gunzTarPerm   420 ]
+109 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/icons.less
+110 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/icons.less',
+110 silly gunzTarPerm   436,
+110 silly gunzTarPerm   420 ]
+111 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/larger.less
+112 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/larger.less',
+112 silly gunzTarPerm   436,
+112 silly gunzTarPerm   420 ]
+113 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/core.less
+114 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/core.less',
+114 silly gunzTarPerm   436,
+114 silly gunzTarPerm   420 ]
+115 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/mixins.less
+116 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/mixins.less',
+116 silly gunzTarPerm   436,
+116 silly gunzTarPerm   420 ]
+117 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/path.less
+118 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/path.less',
+118 silly gunzTarPerm   436,
+118 silly gunzTarPerm   420 ]
+119 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/rotated-flipped.less
+120 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/rotated-flipped.less',
+120 silly gunzTarPerm   436,
+120 silly gunzTarPerm   420 ]
+121 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/spinning.less
+122 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/spinning.less',
+122 silly gunzTarPerm   436,
+122 silly gunzTarPerm   420 ]
+123 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/stacked.less
+124 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/stacked.less',
+124 silly gunzTarPerm   436,
+124 silly gunzTarPerm   420 ]
+125 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/variables.less
+126 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/variables.less',
+126 silly gunzTarPerm   436,
+126 silly gunzTarPerm   420 ]
+127 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_mixins.scss
+128 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_mixins.scss',
+128 silly gunzTarPerm   436,
+128 silly gunzTarPerm   420 ]
+129 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+130 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_bordered-pulled.scss',
+130 silly gunzTarPerm   436,
+130 silly gunzTarPerm   420 ]
+131 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_fixed-width.scss
+132 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_fixed-width.scss',
+132 silly gunzTarPerm   436,
+132 silly gunzTarPerm   420 ]
+133 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_icons.scss
+134 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_icons.scss',
+134 silly gunzTarPerm   436,
+134 silly gunzTarPerm   420 ]
+135 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_larger.scss
+136 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_larger.scss',
+136 silly gunzTarPerm   436,
+136 silly gunzTarPerm   420 ]
+137 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_list.scss
+138 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_list.scss',
+138 silly gunzTarPerm   436,
+138 silly gunzTarPerm   420 ]
+139 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_core.scss
+140 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_core.scss',
+140 silly gunzTarPerm   436,
+140 silly gunzTarPerm   420 ]
+141 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_path.scss
+142 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_path.scss',
+142 silly gunzTarPerm   436,
+142 silly gunzTarPerm   420 ]
+143 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+144 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_rotated-flipped.scss',
+144 silly gunzTarPerm   436,
+144 silly gunzTarPerm   420 ]
+145 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_spinning.scss
+146 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_spinning.scss',
+146 silly gunzTarPerm   436,
+146 silly gunzTarPerm   420 ]
+147 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_stacked.scss
+148 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_stacked.scss',
+148 silly gunzTarPerm   436,
+148 silly gunzTarPerm   420 ]
+149 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_variables.scss
+150 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_variables.scss',
+150 silly gunzTarPerm   436,
+150 silly gunzTarPerm   420 ]
+151 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/font-awesome.scss
+152 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/font-awesome.scss',
+152 silly gunzTarPerm   436,
+152 silly gunzTarPerm   420 ]
+153 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/prism/prism.js
+154 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/prism/prism.js',
+154 silly gunzTarPerm   436,
+154 silly gunzTarPerm   420 ]
+155 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/prism/prism.css
+156 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/prism/prism.css',
+156 silly gunzTarPerm   436,
+156 silly gunzTarPerm   420 ]
+157 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/styles.css
+158 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/public/styles.css',
+158 silly gunzTarPerm   436,
+158 silly gunzTarPerm   420 ]
+159 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/tpl/layouts/basic.html
+160 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/default/tpl/layouts/basic.html',
+160 silly gunzTarPerm   436,
+160 silly gunzTarPerm   420 ]
+161 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/css/basic.js
+162 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/empty/css/basic.js', 436, 420 ]
+163 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/css/styles.js
+164 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/empty/css/styles.js', 436, 420 ]
+165 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/js/scripts.js
+166 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/empty/js/scripts.js', 436, 420 ]
+167 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/public/scripts.js
+168 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/empty/public/scripts.js',
+168 silly gunzTarPerm   436,
+168 silly gunzTarPerm   420 ]
+169 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/public/styles.css
+170 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/empty/public/styles.css',
+170 silly gunzTarPerm   436,
+170 silly gunzTarPerm   420 ]
+171 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/tpl/layouts/basic.html
+172 silly gunzTarPerm modified mode [ 'example/as-gulp-plugin/themes/empty/tpl/layouts/basic.html',
+172 silly gunzTarPerm   436,
+172 silly gunzTarPerm   420 ]
+173 silly gunzTarPerm extractEntry example/trivial/_tpl/layout.html
+174 silly gunzTarPerm modified mode [ 'example/trivial/_tpl/layout.html', 436, 420 ]
+175 silly gunzTarPerm extractEntry example/trivial/index.md
+176 silly gunzTarPerm modified mode [ 'example/trivial/index.md', 436, 420 ]
+177 silly gunzTarPerm extractEntry example/trivial/inner/A/A.md
+178 silly gunzTarPerm modified mode [ 'example/trivial/inner/A/A.md', 436, 420 ]
+179 silly gunzTarPerm extractEntry example/trivial/inner/B/B.md
+180 silly gunzTarPerm modified mode [ 'example/trivial/inner/B/B.md', 436, 420 ]
+181 silly gunzTarPerm extractEntry example/trivial/public/absurd.min.js
+182 silly gunzTarPerm modified mode [ 'example/trivial/public/absurd.min.js', 436, 420 ]
+183 silly gunzTarPerm extractEntry example/trivial/public/absurd.organic.min.js
+184 silly gunzTarPerm modified mode [ 'example/trivial/public/absurd.organic.min.js', 436, 420 ]
+185 silly gunzTarPerm extractEntry example/trivial/public/css/styles.css
+186 silly gunzTarPerm modified mode [ 'example/trivial/public/css/styles.css', 436, 420 ]
+187 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/css/font-awesome.css
+188 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/css/font-awesome.css',
+188 silly gunzTarPerm   436,
+188 silly gunzTarPerm   420 ]
+189 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/css/font-awesome.min.css
+190 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/css/font-awesome.min.css',
+190 silly gunzTarPerm   436,
+190 silly gunzTarPerm   420 ]
+191 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+192 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/fonts/FontAwesome.otf',
+192 silly gunzTarPerm   436,
+192 silly gunzTarPerm   420 ]
+193 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+194 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot',
+194 silly gunzTarPerm   436,
+194 silly gunzTarPerm   420 ]
+195 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+196 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg',
+196 silly gunzTarPerm   436,
+196 silly gunzTarPerm   420 ]
+197 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+198 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf',
+198 silly gunzTarPerm   436,
+198 silly gunzTarPerm   420 ]
+199 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+200 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff',
+200 silly gunzTarPerm   436,
+200 silly gunzTarPerm   420 ]
+201 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/list.less
+202 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/list.less',
+202 silly gunzTarPerm   436,
+202 silly gunzTarPerm   420 ]
+203 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/bordered-pulled.less
+204 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/bordered-pulled.less',
+204 silly gunzTarPerm   436,
+204 silly gunzTarPerm   420 ]
+205 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/fixed-width.less
+206 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/fixed-width.less',
+206 silly gunzTarPerm   436,
+206 silly gunzTarPerm   420 ]
+207 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/font-awesome.less
+208 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/font-awesome.less',
+208 silly gunzTarPerm   436,
+208 silly gunzTarPerm   420 ]
+209 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/icons.less
+210 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/icons.less',
+210 silly gunzTarPerm   436,
+210 silly gunzTarPerm   420 ]
+211 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/larger.less
+212 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/larger.less',
+212 silly gunzTarPerm   436,
+212 silly gunzTarPerm   420 ]
+213 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/core.less
+214 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/core.less',
+214 silly gunzTarPerm   436,
+214 silly gunzTarPerm   420 ]
+215 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/mixins.less
+216 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/mixins.less',
+216 silly gunzTarPerm   436,
+216 silly gunzTarPerm   420 ]
+217 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/path.less
+218 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/path.less',
+218 silly gunzTarPerm   436,
+218 silly gunzTarPerm   420 ]
+219 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/rotated-flipped.less
+220 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/rotated-flipped.less',
+220 silly gunzTarPerm   436,
+220 silly gunzTarPerm   420 ]
+221 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/spinning.less
+222 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/spinning.less',
+222 silly gunzTarPerm   436,
+222 silly gunzTarPerm   420 ]
+223 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/stacked.less
+224 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/stacked.less',
+224 silly gunzTarPerm   436,
+224 silly gunzTarPerm   420 ]
+225 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/variables.less
+226 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/less/variables.less',
+226 silly gunzTarPerm   436,
+226 silly gunzTarPerm   420 ]
+227 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_mixins.scss
+228 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_mixins.scss',
+228 silly gunzTarPerm   436,
+228 silly gunzTarPerm   420 ]
+229 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+230 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_bordered-pulled.scss',
+230 silly gunzTarPerm   436,
+230 silly gunzTarPerm   420 ]
+231 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_fixed-width.scss
+232 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_fixed-width.scss',
+232 silly gunzTarPerm   436,
+232 silly gunzTarPerm   420 ]
+233 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_icons.scss
+234 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_icons.scss',
+234 silly gunzTarPerm   436,
+234 silly gunzTarPerm   420 ]
+235 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_larger.scss
+236 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_larger.scss',
+236 silly gunzTarPerm   436,
+236 silly gunzTarPerm   420 ]
+237 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_list.scss
+238 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_list.scss',
+238 silly gunzTarPerm   436,
+238 silly gunzTarPerm   420 ]
+239 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_core.scss
+240 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_core.scss',
+240 silly gunzTarPerm   436,
+240 silly gunzTarPerm   420 ]
+241 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_path.scss
+242 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_path.scss',
+242 silly gunzTarPerm   436,
+242 silly gunzTarPerm   420 ]
+243 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+244 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_rotated-flipped.scss',
+244 silly gunzTarPerm   436,
+244 silly gunzTarPerm   420 ]
+245 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_spinning.scss
+246 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_spinning.scss',
+246 silly gunzTarPerm   436,
+246 silly gunzTarPerm   420 ]
+247 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_stacked.scss
+248 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_stacked.scss',
+248 silly gunzTarPerm   436,
+248 silly gunzTarPerm   420 ]
+249 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_variables.scss
+250 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/_variables.scss',
+250 silly gunzTarPerm   436,
+250 silly gunzTarPerm   420 ]
+251 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/font-awesome.scss
+252 silly gunzTarPerm modified mode [ 'example/trivial/public/font-awesome-4.0.3/scss/font-awesome.scss',
+252 silly gunzTarPerm   436,
+252 silly gunzTarPerm   420 ]
+253 silly gunzTarPerm extractEntry example/trivial/public/img/favicon.png
+254 silly gunzTarPerm modified mode [ 'example/trivial/public/img/favicon.png', 436, 420 ]
+255 silly gunzTarPerm extractEntry example/trivial/public/js/scripts.js
+256 silly gunzTarPerm modified mode [ 'example/trivial/public/js/scripts.js', 436, 420 ]
+257 silly gunzTarPerm extractEntry example/trivial/public/prism/prism.js
+258 silly gunzTarPerm modified mode [ 'example/trivial/public/prism/prism.js', 436, 420 ]
+259 silly gunzTarPerm extractEntry example/trivial/public/prism/prism.css
+260 silly gunzTarPerm modified mode [ 'example/trivial/public/prism/prism.css', 436, 420 ]
+261 silly gunzTarPerm extractEntry lib/Factory.js
+262 silly gunzTarPerm modified mode [ 'lib/Factory.js', 436, 420 ]
+263 silly gunzTarPerm extractEntry lib/GulpEnd.js
+264 silly gunzTarPerm modified mode [ 'lib/GulpEnd.js', 436, 420 ]
+265 silly gunzTarPerm extractEntry lib/Page.js
+266 silly gunzTarPerm modified mode [ 'lib/Page.js', 436, 420 ]
+267 silly gunzTarPerm extractEntry lib/index.js
+268 silly gunzTarPerm modified mode [ 'lib/index.js', 436, 420 ]
+269 silly gunzTarPerm extractEntry lib/api/linkto.techy.js
+270 silly gunzTarPerm modified mode [ 'lib/api/linkto.techy.js', 436, 420 ]
+271 silly gunzTarPerm extractEntry lib/api/numofpages.techy.js
+272 silly gunzTarPerm modified mode [ 'lib/api/numofpages.techy.js', 436, 420 ]
+273 silly gunzTarPerm extractEntry lib/api/page.techy.js
+274 silly gunzTarPerm modified mode [ 'lib/api/page.techy.js', 436, 420 ]
+275 silly gunzTarPerm extractEntry lib/api/pages.techy.js
+276 silly gunzTarPerm modified mode [ 'lib/api/pages.techy.js', 436, 420 ]
+277 silly gunzTarPerm extractEntry lib/api/template.techy.js
+278 silly gunzTarPerm modified mode [ 'lib/api/template.techy.js', 436, 420 ]
+279 silly gunzTarPerm extractEntry lib/helpers/extend.js
+280 silly gunzTarPerm modified mode [ 'lib/helpers/extend.js', 436, 420 ]
+281 silly gunzTarPerm extractEntry lib/helpers/queue.js
+282 silly gunzTarPerm modified mode [ 'lib/helpers/queue.js', 436, 420 ]
+283 silly gunzTarPerm extractEntry lib/themes/default/_tpl/layout.html
+284 silly gunzTarPerm modified mode [ 'lib/themes/default/_tpl/layout.html', 436, 420 ]
+285 silly gunzTarPerm extractEntry lib/themes/default/public/absurd.min.js
+286 silly gunzTarPerm modified mode [ 'lib/themes/default/public/absurd.min.js', 436, 420 ]
+287 silly gunzTarPerm extractEntry lib/themes/default/public/absurd.organic.min.js
+288 silly gunzTarPerm modified mode [ 'lib/themes/default/public/absurd.organic.min.js', 436, 420 ]
+289 silly gunzTarPerm extractEntry lib/themes/default/public/css/styles.css
+290 silly gunzTarPerm modified mode [ 'lib/themes/default/public/css/styles.css', 436, 420 ]
+291 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/css/font-awesome.css
+292 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/css/font-awesome.css',
+292 silly gunzTarPerm   436,
+292 silly gunzTarPerm   420 ]
+293 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/css/font-awesome.min.css
+294 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/css/font-awesome.min.css',
+294 silly gunzTarPerm   436,
+294 silly gunzTarPerm   420 ]
+295 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+296 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/fonts/FontAwesome.otf',
+296 silly gunzTarPerm   436,
+296 silly gunzTarPerm   420 ]
+297 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+298 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot',
+298 silly gunzTarPerm   436,
+298 silly gunzTarPerm   420 ]
+299 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+300 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg',
+300 silly gunzTarPerm   436,
+300 silly gunzTarPerm   420 ]
+301 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+302 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf',
+302 silly gunzTarPerm   436,
+302 silly gunzTarPerm   420 ]
+303 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+304 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff',
+304 silly gunzTarPerm   436,
+304 silly gunzTarPerm   420 ]
+305 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/list.less
+306 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/list.less',
+306 silly gunzTarPerm   436,
+306 silly gunzTarPerm   420 ]
+307 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/bordered-pulled.less
+308 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/bordered-pulled.less',
+308 silly gunzTarPerm   436,
+308 silly gunzTarPerm   420 ]
+309 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/fixed-width.less
+310 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/fixed-width.less',
+310 silly gunzTarPerm   436,
+310 silly gunzTarPerm   420 ]
+311 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/font-awesome.less
+312 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/font-awesome.less',
+312 silly gunzTarPerm   436,
+312 silly gunzTarPerm   420 ]
+313 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/icons.less
+314 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/icons.less',
+314 silly gunzTarPerm   436,
+314 silly gunzTarPerm   420 ]
+315 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/larger.less
+316 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/larger.less',
+316 silly gunzTarPerm   436,
+316 silly gunzTarPerm   420 ]
+317 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/core.less
+318 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/core.less',
+318 silly gunzTarPerm   436,
+318 silly gunzTarPerm   420 ]
+319 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/mixins.less
+320 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/mixins.less',
+320 silly gunzTarPerm   436,
+320 silly gunzTarPerm   420 ]
+321 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/path.less
+322 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/path.less',
+322 silly gunzTarPerm   436,
+322 silly gunzTarPerm   420 ]
+323 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/rotated-flipped.less
+324 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/rotated-flipped.less',
+324 silly gunzTarPerm   436,
+324 silly gunzTarPerm   420 ]
+325 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/spinning.less
+326 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/spinning.less',
+326 silly gunzTarPerm   436,
+326 silly gunzTarPerm   420 ]
+327 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/stacked.less
+328 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/stacked.less',
+328 silly gunzTarPerm   436,
+328 silly gunzTarPerm   420 ]
+329 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/variables.less
+330 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/less/variables.less',
+330 silly gunzTarPerm   436,
+330 silly gunzTarPerm   420 ]
+331 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_mixins.scss
+332 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_mixins.scss',
+332 silly gunzTarPerm   436,
+332 silly gunzTarPerm   420 ]
+333 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+334 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_bordered-pulled.scss',
+334 silly gunzTarPerm   436,
+334 silly gunzTarPerm   420 ]
+335 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_fixed-width.scss
+336 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_fixed-width.scss',
+336 silly gunzTarPerm   436,
+336 silly gunzTarPerm   420 ]
+337 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_icons.scss
+338 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_icons.scss',
+338 silly gunzTarPerm   436,
+338 silly gunzTarPerm   420 ]
+339 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_larger.scss
+340 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_larger.scss',
+340 silly gunzTarPerm   436,
+340 silly gunzTarPerm   420 ]
+341 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_list.scss
+342 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_list.scss',
+342 silly gunzTarPerm   436,
+342 silly gunzTarPerm   420 ]
+343 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_core.scss
+344 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_core.scss',
+344 silly gunzTarPerm   436,
+344 silly gunzTarPerm   420 ]
+345 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_path.scss
+346 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_path.scss',
+346 silly gunzTarPerm   436,
+346 silly gunzTarPerm   420 ]
+347 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+348 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_rotated-flipped.scss',
+348 silly gunzTarPerm   436,
+348 silly gunzTarPerm   420 ]
+349 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_spinning.scss
+350 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_spinning.scss',
+350 silly gunzTarPerm   436,
+350 silly gunzTarPerm   420 ]
+351 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_stacked.scss
+352 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_stacked.scss',
+352 silly gunzTarPerm   436,
+352 silly gunzTarPerm   420 ]
+353 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_variables.scss
+354 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/_variables.scss',
+354 silly gunzTarPerm   436,
+354 silly gunzTarPerm   420 ]
+355 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/font-awesome.scss
+356 silly gunzTarPerm modified mode [ 'lib/themes/default/public/font-awesome-4.0.3/scss/font-awesome.scss',
+356 silly gunzTarPerm   436,
+356 silly gunzTarPerm   420 ]
+357 silly gunzTarPerm extractEntry lib/themes/default/public/img/favicon.png
+358 silly gunzTarPerm modified mode [ 'lib/themes/default/public/img/favicon.png', 436, 420 ]
+359 silly gunzTarPerm extractEntry lib/themes/default/public/js/scripts.js
+360 silly gunzTarPerm modified mode [ 'lib/themes/default/public/js/scripts.js', 436, 420 ]
+361 silly gunzTarPerm extractEntry lib/themes/default/public/prism/prism.js
+362 silly gunzTarPerm modified mode [ 'lib/themes/default/public/prism/prism.js', 436, 420 ]
+363 silly gunzTarPerm extractEntry lib/themes/default/public/prism/prism.css
+364 silly gunzTarPerm modified mode [ 'lib/themes/default/public/prism/prism.css', 436, 420 ]
+365 silly gunzTarPerm extractEntry tests/tests.js
+366 silly gunzTarPerm modified mode [ 'tests/tests.js', 436, 420 ]
+367 silly gunzTarPerm extractEntry tests/markdown-partials/A.md
+368 silly gunzTarPerm modified mode [ 'tests/markdown-partials/A.md', 436, 420 ]
+369 silly gunzTarPerm extractEntry tests/markdown-partials/B.md
+370 silly gunzTarPerm modified mode [ 'tests/markdown-partials/B.md', 436, 420 ]
+371 silly gunzTarPerm extractEntry tests/markdown-partials/C.md
+372 silly gunzTarPerm modified mode [ 'tests/markdown-partials/C.md', 436, 420 ]
+373 silly gunzTarPerm extractEntry tests/markdown-partials/expected.html
+374 silly gunzTarPerm modified mode [ 'tests/markdown-partials/expected.html', 436, 420 ]
+375 silly gunzTarPerm extractEntry tests/markdown-partials/page.md
+376 silly gunzTarPerm modified mode [ 'tests/markdown-partials/page.md', 436, 420 ]
+377 silly gunzTarPerm extractEntry tests/css_absurd/TechyFile.js
+378 silly gunzTarPerm modified mode [ 'tests/css_absurd/TechyFile.js', 436, 420 ]
+379 silly gunzTarPerm extractEntry tests/css_absurd/_absurd/styles.js
+380 silly gunzTarPerm modified mode [ 'tests/css_absurd/_absurd/styles.js', 436, 420 ]
+381 silly gunzTarPerm extractEntry tests/css_absurd/expected_styles.css
+382 silly gunzTarPerm modified mode [ 'tests/css_absurd/expected_styles.css', 436, 420 ]
+383 silly gunzTarPerm extractEntry tests/css_css/TechyFile.js
+384 silly gunzTarPerm modified mode [ 'tests/css_css/TechyFile.js', 436, 420 ]
+385 silly gunzTarPerm extractEntry tests/css_css/_css/a.css
+386 silly gunzTarPerm modified mode [ 'tests/css_css/_css/a.css', 436, 420 ]
+387 silly gunzTarPerm extractEntry tests/css_css/_css/b.css
+388 silly gunzTarPerm modified mode [ 'tests/css_css/_css/b.css', 436, 420 ]
+389 silly gunzTarPerm extractEntry tests/css_css/_css/custom/c.css
+390 silly gunzTarPerm modified mode [ 'tests/css_css/_css/custom/c.css', 436, 420 ]
+391 silly gunzTarPerm extractEntry tests/css_css/expected_styles.css
+392 silly gunzTarPerm modified mode [ 'tests/css_css/expected_styles.css', 436, 420 ]
+393 silly gunzTarPerm extractEntry tests/css_less/TechyFile.js
+394 silly gunzTarPerm modified mode [ 'tests/css_less/TechyFile.js', 436, 420 ]
+395 silly gunzTarPerm extractEntry tests/css_less/_less/styling.less
+396 silly gunzTarPerm modified mode [ 'tests/css_less/_less/styling.less', 436, 420 ]
+397 silly gunzTarPerm extractEntry tests/css_less/expected_styles.css
+398 silly gunzTarPerm modified mode [ 'tests/css_less/expected_styles.css', 436, 420 ]
+399 silly gunzTarPerm extractEntry tests/custom-layout/_my-templates/footer.html
+400 silly gunzTarPerm modified mode [ 'tests/custom-layout/_my-templates/footer.html', 436, 420 ]
+401 silly gunzTarPerm extractEntry tests/custom-layout/_my-templates/layout.html
+402 silly gunzTarPerm modified mode [ 'tests/custom-layout/_my-templates/layout.html', 436, 420 ]
+403 silly gunzTarPerm extractEntry tests/custom-layout/expected.html
+404 silly gunzTarPerm modified mode [ 'tests/custom-layout/expected.html', 436, 420 ]
+405 silly gunzTarPerm extractEntry tests/custom-layout/page.md
+406 silly gunzTarPerm modified mode [ 'tests/custom-layout/page.md', 436, 420 ]
+407 silly gunzTarPerm extractEntry tests/custom-master-config/options.js
+408 silly gunzTarPerm modified mode [ 'tests/custom-master-config/options.js', 436, 420 ]
+409 silly gunzTarPerm extractEntry tests/custom-master-config/expected.html
+410 silly gunzTarPerm modified mode [ 'tests/custom-master-config/expected.html', 436, 420 ]
+411 silly gunzTarPerm extractEntry tests/custom-master-config/page.md
+412 silly gunzTarPerm modified mode [ 'tests/custom-master-config/page.md', 436, 420 ]
+413 silly gunzTarPerm extractEntry tests/custom-method/_libs/myown.techy.js
+414 silly gunzTarPerm modified mode [ 'tests/custom-method/_libs/myown.techy.js', 436, 420 ]
+415 silly gunzTarPerm extractEntry tests/custom-method/expected.html
+416 silly gunzTarPerm modified mode [ 'tests/custom-method/expected.html', 436, 420 ]
+417 silly gunzTarPerm extractEntry tests/custom-method/page.md
+418 silly gunzTarPerm modified mode [ 'tests/custom-method/page.md', 436, 420 ]
+419 silly gunzTarPerm extractEntry tests/custom-templates/_data/custom/part.html
+420 silly gunzTarPerm modified mode [ 'tests/custom-templates/_data/custom/part.html', 436, 420 ]
+421 silly gunzTarPerm extractEntry tests/custom-templates/expected.html
+422 silly gunzTarPerm modified mode [ 'tests/custom-templates/expected.html', 436, 420 ]
+423 silly gunzTarPerm extractEntry tests/custom-templates/page.md
+424 silly gunzTarPerm modified mode [ 'tests/custom-templates/page.md', 436, 420 ]
+425 silly gunzTarPerm extractEntry tests/draft-pages/A.md
+426 silly gunzTarPerm modified mode [ 'tests/draft-pages/A.md', 436, 420 ]
+427 silly gunzTarPerm extractEntry tests/draft-pages/B.md
+428 silly gunzTarPerm modified mode [ 'tests/draft-pages/B.md', 436, 420 ]
+429 silly gunzTarPerm extractEntry tests/draft-pages/C.md
+430 silly gunzTarPerm modified mode [ 'tests/draft-pages/C.md', 436, 420 ]
+431 silly gunzTarPerm extractEntry tests/draft-pages/expected.html
+432 silly gunzTarPerm modified mode [ 'tests/draft-pages/expected.html', 436, 420 ]
+433 silly gunzTarPerm extractEntry tests/draft-pages/page.md
+434 silly gunzTarPerm modified mode [ 'tests/draft-pages/page.md', 436, 420 ]
+435 silly gunzTarPerm extractEntry tests/get-pages-from-dir/D.md
+436 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/D.md', 436, 420 ]
+437 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/C.md
+438 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/articles/C.md', 436, 420 ]
+439 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/awesome.article.300.md
+440 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/articles/awesome.article.300.md',
+440 silly gunzTarPerm   436,
+440 silly gunzTarPerm   420 ]
+441 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/A.html
+442 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/articles/today/A.html', 436, 420 ]
+443 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/A.md
+444 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/articles/today/A.md', 436, 420 ]
+445 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/B.html
+446 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/articles/today/B.html', 436, 420 ]
+447 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/B.md
+448 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/articles/today/B.md', 436, 420 ]
+449 silly gunzTarPerm extractEntry tests/get-pages-from-dir/expected.html
+450 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/expected.html', 436, 420 ]
+451 silly gunzTarPerm extractEntry tests/get-pages-from-dir/page.md
+452 silly gunzTarPerm modified mode [ 'tests/get-pages-from-dir/page.md', 436, 420 ]
+453 silly gunzTarPerm extractEntry tests/html-usage/expected.html
+454 silly gunzTarPerm modified mode [ 'tests/html-usage/expected.html', 436, 420 ]
+455 silly gunzTarPerm extractEntry tests/html-usage/page.md
+456 silly gunzTarPerm modified mode [ 'tests/html-usage/page.md', 436, 420 ]
+457 silly gunzTarPerm extractEntry tests/js/TechyFile.js
+458 silly gunzTarPerm modified mode [ 'tests/js/TechyFile.js', 436, 420 ]
+459 silly gunzTarPerm extractEntry tests/js/expected.js
+460 silly gunzTarPerm modified mode [ 'tests/js/expected.js', 436, 420 ]
+461 silly gunzTarPerm extractEntry tests/js/_src/A.js
+462 silly gunzTarPerm modified mode [ 'tests/js/_src/A.js', 436, 420 ]
+463 silly gunzTarPerm extractEntry tests/js/_src/B.js
+464 silly gunzTarPerm modified mode [ 'tests/js/_src/B.js', 436, 420 ]
+465 silly gunzTarPerm extractEntry tests/linkto/A/B/custom-page.html
+466 silly gunzTarPerm modified mode [ 'tests/linkto/A/B/custom-page.html', 436, 420 ]
+467 silly gunzTarPerm extractEntry tests/linkto/A/B/custom-page.md
+468 silly gunzTarPerm modified mode [ 'tests/linkto/A/B/custom-page.md', 436, 420 ]
+469 silly gunzTarPerm extractEntry tests/linkto/C/D/d-page.html
+470 silly gunzTarPerm modified mode [ 'tests/linkto/C/D/d-page.html', 436, 420 ]
+471 silly gunzTarPerm extractEntry tests/linkto/C/D/d-page.md
+472 silly gunzTarPerm modified mode [ 'tests/linkto/C/D/d-page.md', 436, 420 ]
+473 silly gunzTarPerm extractEntry tests/linkto/expected.html
+474 silly gunzTarPerm modified mode [ 'tests/linkto/expected.html', 436, 420 ]
+475 silly gunzTarPerm extractEntry tests/linkto/page.md
+476 silly gunzTarPerm modified mode [ 'tests/linkto/page.md', 436, 420 ]
+477 silly gunzTarPerm extractEntry tests/basic/_donttouch/file.txt
+478 silly gunzTarPerm modified mode [ 'tests/basic/_donttouch/file.txt', 436, 420 ]
+479 silly gunzTarPerm extractEntry tests/basic/_expects/A.html
+480 silly gunzTarPerm modified mode [ 'tests/basic/_expects/A.html', 436, 420 ]
+481 silly gunzTarPerm extractEntry tests/basic/_expects/page.html
+482 silly gunzTarPerm modified mode [ 'tests/basic/_expects/page.html', 436, 420 ]
+483 silly gunzTarPerm extractEntry tests/basic/_lib/awesome.techy.js
+484 silly gunzTarPerm modified mode [ 'tests/basic/_lib/awesome.techy.js', 436, 420 ]
+485 silly gunzTarPerm extractEntry tests/basic/_tpl/layout.html
+486 silly gunzTarPerm modified mode [ 'tests/basic/_tpl/layout.html', 436, 420 ]
+487 silly gunzTarPerm extractEntry tests/basic/css/styles.css
+488 silly gunzTarPerm modified mode [ 'tests/basic/css/styles.css', 436, 420 ]
+489 silly gunzTarPerm extractEntry tests/basic/inner/A.md
+490 silly gunzTarPerm modified mode [ 'tests/basic/inner/A.md', 436, 420 ]
+491 silly gunzTarPerm extractEntry tests/basic/js/scripts.js
+492 silly gunzTarPerm modified mode [ 'tests/basic/js/scripts.js', 436, 420 ]
+493 silly gunzTarPerm extractEntry tests/basic/page.md
+494 silly gunzTarPerm modified mode [ 'tests/basic/page.md', 436, 420 ]
+495 silly gunzTarPerm extractEntry tests/master-config/TechyFile.js
+496 silly gunzTarPerm modified mode [ 'tests/master-config/TechyFile.js', 436, 420 ]
+497 silly gunzTarPerm extractEntry tests/master-config/expected.html
+498 silly gunzTarPerm modified mode [ 'tests/master-config/expected.html', 436, 420 ]
+499 silly gunzTarPerm extractEntry tests/master-config/page.md
+500 silly gunzTarPerm modified mode [ 'tests/master-config/page.md', 436, 420 ]
+501 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/.npmignore
+502 silly gunzTarPerm modified mode [ 'tests/master-config-with-dest-folder/.npmignore', 436, 420 ]
+503 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/TechyFile.js
+504 silly gunzTarPerm modified mode [ 'tests/master-config-with-dest-folder/TechyFile.js', 436, 420 ]
+505 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/_in/page.md
+506 silly gunzTarPerm modified mode [ 'tests/master-config-with-dest-folder/_in/page.md', 436, 420 ]
+507 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/_out/page.html
+508 silly gunzTarPerm modified mode [ 'tests/master-config-with-dest-folder/_out/page.html',
+508 silly gunzTarPerm   436,
+508 silly gunzTarPerm   420 ]
+509 silly gunzTarPerm extractEntry tests/md-to-html/expected.html
+510 silly gunzTarPerm modified mode [ 'tests/md-to-html/expected.html', 436, 420 ]
+511 silly gunzTarPerm extractEntry tests/md-to-html/page.md
+512 silly gunzTarPerm modified mode [ 'tests/md-to-html/page.md', 436, 420 ]
+513 silly gunzTarPerm extractEntry tests/num-of-pages/expected.html
+514 silly gunzTarPerm modified mode [ 'tests/num-of-pages/expected.html', 436, 420 ]
+515 silly gunzTarPerm extractEntry tests/num-of-pages/page.md
+516 silly gunzTarPerm modified mode [ 'tests/num-of-pages/page.md', 436, 420 ]
+517 silly gunzTarPerm extractEntry tests/num-of-pages/posts/article99.md
+518 silly gunzTarPerm modified mode [ 'tests/num-of-pages/posts/article99.md', 436, 420 ]
+519 silly gunzTarPerm extractEntry tests/process-other-files/TechyFile.js
+520 silly gunzTarPerm modified mode [ 'tests/process-other-files/TechyFile.js', 436, 420 ]
+521 silly gunzTarPerm extractEntry tests/process-other-files/A/C/noprocess.css
+522 silly gunzTarPerm modified mode [ 'tests/process-other-files/A/C/noprocess.css', 436, 420 ]
+523 silly gunzTarPerm extractEntry tests/process-other-files/A/C/styles.css.expected
+524 silly gunzTarPerm modified mode [ 'tests/process-other-files/A/C/styles.css.expected', 436, 420 ]
+525 silly gunzTarPerm extractEntry tests/process-other-files/A/C/styles.css.ttt
+526 silly gunzTarPerm modified mode [ 'tests/process-other-files/A/C/styles.css.ttt', 436, 420 ]
+527 silly gunzTarPerm extractEntry tests/process-other-files/A/custom.html.expected
+528 silly gunzTarPerm modified mode [ 'tests/process-other-files/A/custom.html.expected', 436, 420 ]
+529 silly gunzTarPerm extractEntry tests/process-other-files/A/custom.html.techy
+530 silly gunzTarPerm modified mode [ 'tests/process-other-files/A/custom.html.techy', 436, 420 ]
+531 silly gunzTarPerm extractEntry tests/process-other-files/B/log.txt.blah
+532 silly gunzTarPerm modified mode [ 'tests/process-other-files/B/log.txt.blah', 436, 420 ]
+533 silly gunzTarPerm extractEntry tests/process-other-files/rss.xml.techy
+534 silly gunzTarPerm modified mode [ 'tests/process-other-files/rss.xml.techy', 436, 420 ]
+535 silly gunzTarPerm extractEntry tests/set-get/.npmignore
+536 silly gunzTarPerm modified mode [ 'tests/set-get/.npmignore', 436, 420 ]
+537 silly gunzTarPerm extractEntry tests/set-get/expected.html
+538 silly gunzTarPerm modified mode [ 'tests/set-get/expected.html', 436, 420 ]
+539 silly gunzTarPerm extractEntry tests/set-get/page.md
+540 silly gunzTarPerm modified mode [ 'tests/set-get/page.md', 436, 420 ]
+541 silly gunzTarPerm extractEntry tests/should-use-src-dest/.npmignore
+542 silly gunzTarPerm modified mode [ 'tests/should-use-src-dest/.npmignore', 436, 420 ]
+543 silly gunzTarPerm extractEntry tests/should-use-src-dest/_out/A.html
+544 silly gunzTarPerm modified mode [ 'tests/should-use-src-dest/_out/A.html', 436, 420 ]
+545 silly gunzTarPerm extractEntry tests/should-use-src-dest/_out/page.html
+546 silly gunzTarPerm modified mode [ 'tests/should-use-src-dest/_out/page.html', 436, 420 ]
+547 silly gunzTarPerm extractEntry tests/should-use-src-dest/_pages/src/A.md
+548 silly gunzTarPerm modified mode [ 'tests/should-use-src-dest/_pages/src/A.md', 436, 420 ]
+549 silly gunzTarPerm extractEntry tests/should-use-src-dest/_pages/src/page.md
+550 silly gunzTarPerm modified mode [ 'tests/should-use-src-dest/_pages/src/page.md', 436, 420 ]
+551 silly gunzTarPerm extractEntry tests/should-use-src-dest/expected.html
+552 silly gunzTarPerm modified mode [ 'tests/should-use-src-dest/expected.html', 436, 420 ]
+553 silly gunzTarPerm extractEntry tests/sort-by/showsorting.techy.js
+554 silly gunzTarPerm modified mode [ 'tests/sort-by/showsorting.techy.js', 436, 420 ]
+555 silly gunzTarPerm extractEntry tests/sort-by/D.md
+556 silly gunzTarPerm modified mode [ 'tests/sort-by/D.md', 436, 420 ]
+557 silly gunzTarPerm extractEntry tests/sort-by/articles/C.html
+558 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/C.html', 436, 420 ]
+559 silly gunzTarPerm extractEntry tests/sort-by/articles/C.md
+560 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/C.md', 436, 420 ]
+561 silly gunzTarPerm extractEntry tests/sort-by/articles/awesome.article.300.html
+562 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/awesome.article.300.html', 436, 420 ]
+563 silly gunzTarPerm extractEntry tests/sort-by/articles/awesome.article.300.md
+564 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/awesome.article.300.md', 436, 420 ]
+565 silly gunzTarPerm extractEntry tests/sort-by/articles/today/A.html
+566 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/today/A.html', 436, 420 ]
+567 silly gunzTarPerm extractEntry tests/sort-by/articles/today/A.md
+568 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/today/A.md', 436, 420 ]
+569 silly gunzTarPerm extractEntry tests/sort-by/articles/today/B.html
+570 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/today/B.html', 436, 420 ]
+571 silly gunzTarPerm extractEntry tests/sort-by/articles/today/B.md
+572 silly gunzTarPerm modified mode [ 'tests/sort-by/articles/today/B.md', 436, 420 ]
+573 silly gunzTarPerm extractEntry tests/sort-by/expected.html
+574 silly gunzTarPerm modified mode [ 'tests/sort-by/expected.html', 436, 420 ]
+575 silly gunzTarPerm extractEntry tests/sort-by/page.md
+576 silly gunzTarPerm modified mode [ 'tests/sort-by/page.md', 436, 420 ]
+577 silly gunzTarPerm extractEntry tests/access-page-by-name/A/index.md
+578 silly gunzTarPerm modified mode [ 'tests/access-page-by-name/A/index.md', 436, 420 ]
+579 silly gunzTarPerm extractEntry tests/access-page-by-name/B/index.md
+580 silly gunzTarPerm modified mode [ 'tests/access-page-by-name/B/index.md', 436, 420 ]
+581 silly gunzTarPerm extractEntry tests/access-page-by-name/expected.html
+582 silly gunzTarPerm modified mode [ 'tests/access-page-by-name/expected.html', 436, 420 ]
+583 silly gunzTarPerm extractEntry tests/access-page-by-name/page.md
+584 silly gunzTarPerm modified mode [ 'tests/access-page-by-name/page.md', 436, 420 ]
+585 silly gunzTarPerm extractEntry tests/using-path/expected.html
+586 silly gunzTarPerm modified mode [ 'tests/using-path/expected.html', 436, 420 ]
+587 silly gunzTarPerm extractEntry tests/using-path/inner/A/index.md
+588 silly gunzTarPerm modified mode [ 'tests/using-path/inner/A/index.md', 436, 420 ]
+589 silly gunzTarPerm extractEntry tests/using-path/inner/index.md
+590 silly gunzTarPerm modified mode [ 'tests/using-path/inner/index.md', 436, 420 ]
+591 silly gunzTarPerm extractEntry tests/using-path/page.md
+592 silly gunzTarPerm modified mode [ 'tests/using-path/page.md', 436, 420 ]
+593 silly gunzTarPerm extractEntry tests/using-theme/TechyFile.js
+594 silly gunzTarPerm modified mode [ 'tests/using-theme/TechyFile.js', 436, 420 ]
+595 silly gunzTarPerm extractEntry tests/using-theme/_tpl/layout.html
+596 silly gunzTarPerm modified mode [ 'tests/using-theme/_tpl/layout.html', 436, 420 ]
+597 silly gunzTarPerm extractEntry tests/using-theme/expected.html
+598 silly gunzTarPerm modified mode [ 'tests/using-theme/expected.html', 436, 420 ]
+599 silly gunzTarPerm extractEntry tests/using-theme/page.md
+600 silly gunzTarPerm modified mode [ 'tests/using-theme/page.md', 436, 420 ]
+601 silly gunzTarPerm extractEntry tests/using-theme/public/absurd.min.js
+602 silly gunzTarPerm modified mode [ 'tests/using-theme/public/absurd.min.js', 436, 420 ]
+603 silly gunzTarPerm extractEntry tests/using-theme/public/absurd.organic.min.js
+604 silly gunzTarPerm modified mode [ 'tests/using-theme/public/absurd.organic.min.js', 436, 420 ]
+605 silly gunzTarPerm extractEntry tests/using-theme/public/css/styles.css
+606 silly gunzTarPerm modified mode [ 'tests/using-theme/public/css/styles.css', 436, 420 ]
+607 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/css/font-awesome.css
+608 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/css/font-awesome.css',
+608 silly gunzTarPerm   436,
+608 silly gunzTarPerm   420 ]
+609 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/css/font-awesome.min.css
+610 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/css/font-awesome.min.css',
+610 silly gunzTarPerm   436,
+610 silly gunzTarPerm   420 ]
+611 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+612 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/fonts/FontAwesome.otf',
+612 silly gunzTarPerm   436,
+612 silly gunzTarPerm   420 ]
+613 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+614 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot',
+614 silly gunzTarPerm   436,
+614 silly gunzTarPerm   420 ]
+615 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+616 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg',
+616 silly gunzTarPerm   436,
+616 silly gunzTarPerm   420 ]
+617 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+618 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf',
+618 silly gunzTarPerm   436,
+618 silly gunzTarPerm   420 ]
+619 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+620 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff',
+620 silly gunzTarPerm   436,
+620 silly gunzTarPerm   420 ]
+621 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/list.less
+622 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/list.less',
+622 silly gunzTarPerm   436,
+622 silly gunzTarPerm   420 ]
+623 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/bordered-pulled.less
+624 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/bordered-pulled.less',
+624 silly gunzTarPerm   436,
+624 silly gunzTarPerm   420 ]
+625 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/fixed-width.less
+626 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/fixed-width.less',
+626 silly gunzTarPerm   436,
+626 silly gunzTarPerm   420 ]
+627 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/font-awesome.less
+628 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/font-awesome.less',
+628 silly gunzTarPerm   436,
+628 silly gunzTarPerm   420 ]
+629 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/icons.less
+630 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/icons.less',
+630 silly gunzTarPerm   436,
+630 silly gunzTarPerm   420 ]
+631 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/larger.less
+632 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/larger.less',
+632 silly gunzTarPerm   436,
+632 silly gunzTarPerm   420 ]
+633 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/core.less
+634 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/core.less',
+634 silly gunzTarPerm   436,
+634 silly gunzTarPerm   420 ]
+635 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/mixins.less
+636 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/mixins.less',
+636 silly gunzTarPerm   436,
+636 silly gunzTarPerm   420 ]
+637 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/path.less
+638 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/path.less',
+638 silly gunzTarPerm   436,
+638 silly gunzTarPerm   420 ]
+639 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/rotated-flipped.less
+640 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/rotated-flipped.less',
+640 silly gunzTarPerm   436,
+640 silly gunzTarPerm   420 ]
+641 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/spinning.less
+642 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/spinning.less',
+642 silly gunzTarPerm   436,
+642 silly gunzTarPerm   420 ]
+643 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/stacked.less
+644 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/stacked.less',
+644 silly gunzTarPerm   436,
+644 silly gunzTarPerm   420 ]
+645 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/variables.less
+646 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/less/variables.less',
+646 silly gunzTarPerm   436,
+646 silly gunzTarPerm   420 ]
+647 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_mixins.scss
+648 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_mixins.scss',
+648 silly gunzTarPerm   436,
+648 silly gunzTarPerm   420 ]
+649 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+650 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_bordered-pulled.scss',
+650 silly gunzTarPerm   436,
+650 silly gunzTarPerm   420 ]
+651 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_fixed-width.scss
+652 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_fixed-width.scss',
+652 silly gunzTarPerm   436,
+652 silly gunzTarPerm   420 ]
+653 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_icons.scss
+654 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_icons.scss',
+654 silly gunzTarPerm   436,
+654 silly gunzTarPerm   420 ]
+655 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_larger.scss
+656 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_larger.scss',
+656 silly gunzTarPerm   436,
+656 silly gunzTarPerm   420 ]
+657 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_list.scss
+658 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_list.scss',
+658 silly gunzTarPerm   436,
+658 silly gunzTarPerm   420 ]
+659 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_core.scss
+660 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_core.scss',
+660 silly gunzTarPerm   436,
+660 silly gunzTarPerm   420 ]
+661 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_path.scss
+662 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_path.scss',
+662 silly gunzTarPerm   436,
+662 silly gunzTarPerm   420 ]
+663 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+664 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_rotated-flipped.scss',
+664 silly gunzTarPerm   436,
+664 silly gunzTarPerm   420 ]
+665 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_spinning.scss
+666 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_spinning.scss',
+666 silly gunzTarPerm   436,
+666 silly gunzTarPerm   420 ]
+667 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_stacked.scss
+668 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_stacked.scss',
+668 silly gunzTarPerm   436,
+668 silly gunzTarPerm   420 ]
+669 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_variables.scss
+670 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/_variables.scss',
+670 silly gunzTarPerm   436,
+670 silly gunzTarPerm   420 ]
+671 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/font-awesome.scss
+672 silly gunzTarPerm modified mode [ 'tests/using-theme/public/font-awesome-4.0.3/scss/font-awesome.scss',
+672 silly gunzTarPerm   436,
+672 silly gunzTarPerm   420 ]
+673 silly gunzTarPerm extractEntry tests/using-theme/public/img/favicon.png
+674 silly gunzTarPerm modified mode [ 'tests/using-theme/public/img/favicon.png', 436, 420 ]
+675 silly gunzTarPerm extractEntry tests/using-theme/public/js/scripts.js
+676 silly gunzTarPerm modified mode [ 'tests/using-theme/public/js/scripts.js', 436, 420 ]
+677 silly gunzTarPerm extractEntry tests/using-theme/public/prism/prism.js
+678 silly gunzTarPerm modified mode [ 'tests/using-theme/public/prism/prism.js', 436, 420 ]
+679 silly gunzTarPerm extractEntry tests/using-theme/public/prism/prism.css
+680 silly gunzTarPerm modified mode [ 'tests/using-theme/public/prism/prism.css', 436, 420 ]
+681 silly gunzTarPerm extractEntry tests/using-yaml/A/a.md
+682 silly gunzTarPerm modified mode [ 'tests/using-yaml/A/a.md', 436, 420 ]
+683 silly gunzTarPerm extractEntry tests/using-yaml/expected.html
+684 silly gunzTarPerm modified mode [ 'tests/using-yaml/expected.html', 436, 420 ]
+685 silly gunzTarPerm extractEntry tests/using-yaml/page.md
+686 silly gunzTarPerm modified mode [ 'tests/using-yaml/page.md', 436, 420 ]
+687 silly gunzTarPerm extractEntry tests/with-layout/custom-layout.html
+688 silly gunzTarPerm modified mode [ 'tests/with-layout/custom-layout.html', 436, 420 ]
+689 silly gunzTarPerm extractEntry tests/with-layout/expected.html
+690 silly gunzTarPerm modified mode [ 'tests/with-layout/expected.html', 436, 420 ]
+691 silly gunzTarPerm extractEntry tests/with-layout/page.md
+692 silly gunzTarPerm modified mode [ 'tests/with-layout/page.md', 436, 420 ]
+693 silly lockFile d5b3a1ed-8415-0-24536281521432102-package tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+694 silly lockFile d5b3a1ed-8415-0-24536281521432102-package tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+695 silly lockFile 04f8daa1-8415-0-24536281521432102-tmp-tgz tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+696 silly lockFile 04f8daa1-8415-0-24536281521432102-tmp-tgz tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/tmp.tgz
+697 verbose tar pack [ '/home/ubuntu/.npm/techy/1.2.2/package.tgz',
+697 verbose tar pack   '/home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package' ]
+698 verbose tarball /home/ubuntu/.npm/techy/1.2.2/package.tgz
+699 verbose folder /home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+700 silly lockFile d5b3a1ed-8415-0-24536281521432102-package tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+701 verbose lock tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package /home/ubuntu/.npm/d5b3a1ed-8415-0-24536281521432102-package.lock
+702 silly lockFile 098a402f-untu-npm-techy-1-2-2-package-tgz tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz
+703 verbose lock tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz /home/ubuntu/.npm/098a402f-untu-npm-techy-1-2-2-package-tgz.lock
+704 silly lockFile d5b3a1ed-8415-0-24536281521432102-package tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+705 silly lockFile d5b3a1ed-8415-0-24536281521432102-package tar:///home/ubuntu/tmp/npm-4939-P37ITIwV/1403644688415-0.24536281521432102/package
+706 silly lockFile 098a402f-untu-npm-techy-1-2-2-package-tgz tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz
+707 silly lockFile 098a402f-untu-npm-techy-1-2-2-package-tgz tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz
+708 silly lockFile 50f7502a-e-ubuntu-npm-techy-1-2-2-package /home/ubuntu/.npm/techy/1.2.2/package
+709 verbose lock /home/ubuntu/.npm/techy/1.2.2/package /home/ubuntu/.npm/50f7502a-e-ubuntu-npm-techy-1-2-2-package.lock
+710 silly lockFile 50f7502a-e-ubuntu-npm-techy-1-2-2-package /home/ubuntu/.npm/techy/1.2.2/package
+711 silly lockFile 50f7502a-e-ubuntu-npm-techy-1-2-2-package /home/ubuntu/.npm/techy/1.2.2/package
+712 verbose tar unpack /home/ubuntu/.npm/techy/1.2.2/package.tgz
+713 silly lockFile e1abcb02-e-ubuntu-npm-techy-1-2-2-package tar:///home/ubuntu/.npm/techy/1.2.2/package
+714 verbose lock tar:///home/ubuntu/.npm/techy/1.2.2/package /home/ubuntu/.npm/e1abcb02-e-ubuntu-npm-techy-1-2-2-package.lock
+715 silly lockFile 098a402f-untu-npm-techy-1-2-2-package-tgz tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz
+716 verbose lock tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz /home/ubuntu/.npm/098a402f-untu-npm-techy-1-2-2-package-tgz.lock
+717 silly gunzTarPerm modes [ '755', '644' ]
+718 silly gunzTarPerm extractEntry package.json
+719 silly gunzTarPerm extractEntry .npmignore
+720 silly gunzTarPerm extractEntry README.md
+721 silly gunzTarPerm extractEntry LICENSE
+722 silly gunzTarPerm extractEntry .nojekyll
+723 silly gunzTarPerm extractEntry example/as-gulp-plugin/package.json
+724 silly gunzTarPerm extractEntry example/as-gulp-plugin/.npmignore
+725 silly gunzTarPerm extractEntry example/as-gulp-plugin/custommethod.techy.js
+726 silly gunzTarPerm extractEntry example/as-gulp-plugin/gulpfile.js
+727 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/A/lorem.html
+728 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/B/lipsum.html
+729 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/feed.xml
+730 silly gunzTarPerm extractEntry example/as-gulp-plugin/dest/index.html
+731 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/A/lorem.md
+732 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/B/lipsum.md
+733 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/feed.xml.rss
+734 silly gunzTarPerm extractEntry example/as-gulp-plugin/src/index.md
+735 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/basic.js
+736 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/styles.js
+737 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/base.js
+738 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/code.js
+739 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/grids.js
+740 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/list.js
+741 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/scroller.js
+742 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/css/common/titles.js
+743 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/js/scripts.js
+744 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/absurd.min.js
+745 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/absurd.organic.min.js
+746 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/scripts.js
+747 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/css/font-awesome.css
+748 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/css/font-awesome.min.css
+749 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+750 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+751 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+752 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+753 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+754 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/list.less
+755 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/bordered-pulled.less
+756 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/fixed-width.less
+757 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/font-awesome.less
+758 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/icons.less
+759 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/larger.less
+760 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/core.less
+761 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/mixins.less
+762 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/path.less
+763 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/rotated-flipped.less
+764 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/spinning.less
+765 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/stacked.less
+766 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/less/variables.less
+767 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_mixins.scss
+768 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+769 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_fixed-width.scss
+770 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_icons.scss
+771 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_larger.scss
+772 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_list.scss
+773 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_core.scss
+774 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_path.scss
+775 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+776 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_spinning.scss
+777 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_stacked.scss
+778 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/_variables.scss
+779 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/font-awesome-4.0.3/scss/font-awesome.scss
+780 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/prism/prism.js
+781 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/prism/prism.css
+782 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/public/styles.css
+783 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/default/tpl/layouts/basic.html
+784 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/css/basic.js
+785 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/css/styles.js
+786 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/js/scripts.js
+787 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/public/scripts.js
+788 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/public/styles.css
+789 silly gunzTarPerm extractEntry example/as-gulp-plugin/themes/empty/tpl/layouts/basic.html
+790 silly gunzTarPerm extractEntry example/trivial/_tpl/layout.html
+791 silly gunzTarPerm extractEntry example/trivial/index.md
+792 silly gunzTarPerm extractEntry example/trivial/inner/A/A.md
+793 silly gunzTarPerm extractEntry example/trivial/inner/B/B.md
+794 silly gunzTarPerm extractEntry example/trivial/public/absurd.min.js
+795 silly gunzTarPerm extractEntry example/trivial/public/absurd.organic.min.js
+796 silly gunzTarPerm extractEntry example/trivial/public/css/styles.css
+797 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/css/font-awesome.css
+798 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/css/font-awesome.min.css
+799 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+800 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+801 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+802 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+803 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+804 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/list.less
+805 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/bordered-pulled.less
+806 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/fixed-width.less
+807 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/font-awesome.less
+808 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/icons.less
+809 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/larger.less
+810 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/core.less
+811 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/mixins.less
+812 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/path.less
+813 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/rotated-flipped.less
+814 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/spinning.less
+815 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/stacked.less
+816 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/less/variables.less
+817 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_mixins.scss
+818 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+819 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_fixed-width.scss
+820 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_icons.scss
+821 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_larger.scss
+822 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_list.scss
+823 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_core.scss
+824 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_path.scss
+825 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+826 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_spinning.scss
+827 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_stacked.scss
+828 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/_variables.scss
+829 silly gunzTarPerm extractEntry example/trivial/public/font-awesome-4.0.3/scss/font-awesome.scss
+830 silly gunzTarPerm extractEntry example/trivial/public/img/favicon.png
+831 silly gunzTarPerm extractEntry example/trivial/public/js/scripts.js
+832 silly gunzTarPerm extractEntry example/trivial/public/prism/prism.js
+833 silly gunzTarPerm extractEntry example/trivial/public/prism/prism.css
+834 silly gunzTarPerm extractEntry lib/Factory.js
+835 silly gunzTarPerm extractEntry lib/GulpEnd.js
+836 silly gunzTarPerm extractEntry lib/Page.js
+837 silly gunzTarPerm extractEntry lib/index.js
+838 silly gunzTarPerm extractEntry lib/api/linkto.techy.js
+839 silly gunzTarPerm extractEntry lib/api/numofpages.techy.js
+840 silly gunzTarPerm extractEntry lib/api/page.techy.js
+841 silly gunzTarPerm extractEntry lib/api/pages.techy.js
+842 silly gunzTarPerm extractEntry lib/api/template.techy.js
+843 silly gunzTarPerm extractEntry lib/helpers/extend.js
+844 silly gunzTarPerm extractEntry lib/helpers/queue.js
+845 silly gunzTarPerm extractEntry lib/themes/default/_tpl/layout.html
+846 silly gunzTarPerm extractEntry lib/themes/default/public/absurd.min.js
+847 silly gunzTarPerm extractEntry lib/themes/default/public/absurd.organic.min.js
+848 silly gunzTarPerm extractEntry lib/themes/default/public/css/styles.css
+849 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/css/font-awesome.css
+850 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/css/font-awesome.min.css
+851 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+852 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+853 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+854 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+855 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+856 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/list.less
+857 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/bordered-pulled.less
+858 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/fixed-width.less
+859 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/font-awesome.less
+860 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/icons.less
+861 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/larger.less
+862 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/core.less
+863 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/mixins.less
+864 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/path.less
+865 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/rotated-flipped.less
+866 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/spinning.less
+867 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/stacked.less
+868 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/less/variables.less
+869 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_mixins.scss
+870 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+871 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_fixed-width.scss
+872 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_icons.scss
+873 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_larger.scss
+874 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_list.scss
+875 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_core.scss
+876 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_path.scss
+877 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+878 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_spinning.scss
+879 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_stacked.scss
+880 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/_variables.scss
+881 silly gunzTarPerm extractEntry lib/themes/default/public/font-awesome-4.0.3/scss/font-awesome.scss
+882 silly gunzTarPerm extractEntry lib/themes/default/public/img/favicon.png
+883 silly gunzTarPerm extractEntry lib/themes/default/public/js/scripts.js
+884 silly gunzTarPerm extractEntry lib/themes/default/public/prism/prism.js
+885 silly gunzTarPerm extractEntry lib/themes/default/public/prism/prism.css
+886 silly gunzTarPerm extractEntry tests/tests.js
+887 silly gunzTarPerm extractEntry tests/markdown-partials/A.md
+888 silly gunzTarPerm extractEntry tests/markdown-partials/B.md
+889 silly gunzTarPerm extractEntry tests/markdown-partials/C.md
+890 silly gunzTarPerm extractEntry tests/markdown-partials/expected.html
+891 silly gunzTarPerm extractEntry tests/markdown-partials/page.md
+892 silly gunzTarPerm extractEntry tests/css_absurd/TechyFile.js
+893 silly gunzTarPerm extractEntry tests/css_absurd/_absurd/styles.js
+894 silly gunzTarPerm extractEntry tests/css_absurd/expected_styles.css
+895 silly gunzTarPerm extractEntry tests/css_css/TechyFile.js
+896 silly gunzTarPerm extractEntry tests/css_css/_css/a.css
+897 silly gunzTarPerm extractEntry tests/css_css/_css/b.css
+898 silly gunzTarPerm extractEntry tests/css_css/_css/custom/c.css
+899 silly gunzTarPerm extractEntry tests/css_css/expected_styles.css
+900 silly gunzTarPerm extractEntry tests/css_less/TechyFile.js
+901 silly gunzTarPerm extractEntry tests/css_less/_less/styling.less
+902 silly gunzTarPerm extractEntry tests/css_less/expected_styles.css
+903 silly gunzTarPerm extractEntry tests/custom-layout/_my-templates/footer.html
+904 silly gunzTarPerm extractEntry tests/custom-layout/_my-templates/layout.html
+905 silly gunzTarPerm extractEntry tests/custom-layout/expected.html
+906 silly gunzTarPerm extractEntry tests/custom-layout/page.md
+907 silly gunzTarPerm extractEntry tests/custom-master-config/options.js
+908 silly gunzTarPerm extractEntry tests/custom-master-config/expected.html
+909 silly gunzTarPerm extractEntry tests/custom-master-config/page.md
+910 silly gunzTarPerm extractEntry tests/custom-method/_libs/myown.techy.js
+911 silly gunzTarPerm extractEntry tests/custom-method/expected.html
+912 silly gunzTarPerm extractEntry tests/custom-method/page.md
+913 silly gunzTarPerm extractEntry tests/custom-templates/_data/custom/part.html
+914 silly gunzTarPerm extractEntry tests/custom-templates/expected.html
+915 silly gunzTarPerm extractEntry tests/custom-templates/page.md
+916 silly gunzTarPerm extractEntry tests/draft-pages/A.md
+917 silly gunzTarPerm extractEntry tests/draft-pages/B.md
+918 silly gunzTarPerm extractEntry tests/draft-pages/C.md
+919 silly gunzTarPerm extractEntry tests/draft-pages/expected.html
+920 silly gunzTarPerm extractEntry tests/draft-pages/page.md
+921 silly gunzTarPerm extractEntry tests/get-pages-from-dir/D.md
+922 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/C.md
+923 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/awesome.article.300.md
+924 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/A.html
+925 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/A.md
+926 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/B.html
+927 silly gunzTarPerm extractEntry tests/get-pages-from-dir/articles/today/B.md
+928 silly gunzTarPerm extractEntry tests/get-pages-from-dir/expected.html
+929 silly gunzTarPerm extractEntry tests/get-pages-from-dir/page.md
+930 silly gunzTarPerm extractEntry tests/html-usage/expected.html
+931 silly gunzTarPerm extractEntry tests/html-usage/page.md
+932 silly gunzTarPerm extractEntry tests/js/TechyFile.js
+933 silly gunzTarPerm extractEntry tests/js/expected.js
+934 silly gunzTarPerm extractEntry tests/js/_src/A.js
+935 silly gunzTarPerm extractEntry tests/js/_src/B.js
+936 silly gunzTarPerm extractEntry tests/linkto/A/B/custom-page.html
+937 silly gunzTarPerm extractEntry tests/linkto/A/B/custom-page.md
+938 silly gunzTarPerm extractEntry tests/linkto/C/D/d-page.html
+939 silly gunzTarPerm extractEntry tests/linkto/C/D/d-page.md
+940 silly gunzTarPerm extractEntry tests/linkto/expected.html
+941 silly gunzTarPerm extractEntry tests/linkto/page.md
+942 silly gunzTarPerm extractEntry tests/basic/_donttouch/file.txt
+943 silly gunzTarPerm extractEntry tests/basic/_expects/A.html
+944 silly gunzTarPerm extractEntry tests/basic/_expects/page.html
+945 silly gunzTarPerm extractEntry tests/basic/_lib/awesome.techy.js
+946 silly gunzTarPerm extractEntry tests/basic/_tpl/layout.html
+947 silly gunzTarPerm extractEntry tests/basic/css/styles.css
+948 silly gunzTarPerm extractEntry tests/basic/inner/A.md
+949 silly gunzTarPerm extractEntry tests/basic/js/scripts.js
+950 silly gunzTarPerm extractEntry tests/basic/page.md
+951 silly gunzTarPerm extractEntry tests/master-config/TechyFile.js
+952 silly gunzTarPerm extractEntry tests/master-config/expected.html
+953 silly gunzTarPerm extractEntry tests/master-config/page.md
+954 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/.npmignore
+955 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/TechyFile.js
+956 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/_in/page.md
+957 silly gunzTarPerm extractEntry tests/master-config-with-dest-folder/_out/page.html
+958 silly gunzTarPerm extractEntry tests/md-to-html/expected.html
+959 silly gunzTarPerm extractEntry tests/md-to-html/page.md
+960 silly gunzTarPerm extractEntry tests/num-of-pages/expected.html
+961 silly gunzTarPerm extractEntry tests/num-of-pages/page.md
+962 silly gunzTarPerm extractEntry tests/num-of-pages/posts/article99.md
+963 silly gunzTarPerm extractEntry tests/process-other-files/TechyFile.js
+964 silly gunzTarPerm extractEntry tests/process-other-files/A/C/noprocess.css
+965 silly gunzTarPerm extractEntry tests/process-other-files/A/C/styles.css.expected
+966 silly gunzTarPerm extractEntry tests/process-other-files/A/C/styles.css.ttt
+967 silly gunzTarPerm extractEntry tests/process-other-files/A/custom.html.expected
+968 silly gunzTarPerm extractEntry tests/process-other-files/A/custom.html.techy
+969 silly gunzTarPerm extractEntry tests/process-other-files/B/log.txt.blah
+970 silly gunzTarPerm extractEntry tests/process-other-files/rss.xml.techy
+971 silly gunzTarPerm extractEntry tests/set-get/.npmignore
+972 silly gunzTarPerm extractEntry tests/set-get/expected.html
+973 silly gunzTarPerm extractEntry tests/set-get/page.md
+974 silly gunzTarPerm extractEntry tests/should-use-src-dest/.npmignore
+975 silly gunzTarPerm extractEntry tests/should-use-src-dest/_out/A.html
+976 silly gunzTarPerm extractEntry tests/should-use-src-dest/_out/page.html
+977 silly gunzTarPerm extractEntry tests/should-use-src-dest/_pages/src/A.md
+978 silly gunzTarPerm extractEntry tests/should-use-src-dest/_pages/src/page.md
+979 silly gunzTarPerm extractEntry tests/should-use-src-dest/expected.html
+980 silly gunzTarPerm extractEntry tests/sort-by/showsorting.techy.js
+981 silly gunzTarPerm extractEntry tests/sort-by/D.md
+982 silly gunzTarPerm extractEntry tests/sort-by/articles/C.html
+983 silly gunzTarPerm extractEntry tests/sort-by/articles/C.md
+984 silly gunzTarPerm extractEntry tests/sort-by/articles/awesome.article.300.html
+985 silly gunzTarPerm extractEntry tests/sort-by/articles/awesome.article.300.md
+986 silly gunzTarPerm extractEntry tests/sort-by/articles/today/A.html
+987 silly gunzTarPerm extractEntry tests/sort-by/articles/today/A.md
+988 silly gunzTarPerm extractEntry tests/sort-by/articles/today/B.html
+989 silly gunzTarPerm extractEntry tests/sort-by/articles/today/B.md
+990 silly gunzTarPerm extractEntry tests/sort-by/expected.html
+991 silly gunzTarPerm extractEntry tests/sort-by/page.md
+992 silly gunzTarPerm extractEntry tests/access-page-by-name/A/index.md
+993 silly gunzTarPerm extractEntry tests/access-page-by-name/B/index.md
+994 silly gunzTarPerm extractEntry tests/access-page-by-name/expected.html
+995 silly gunzTarPerm extractEntry tests/access-page-by-name/page.md
+996 silly gunzTarPerm extractEntry tests/using-path/expected.html
+997 silly gunzTarPerm extractEntry tests/using-path/inner/A/index.md
+998 silly gunzTarPerm extractEntry tests/using-path/inner/index.md
+999 silly gunzTarPerm extractEntry tests/using-path/page.md
+1000 silly gunzTarPerm extractEntry tests/using-theme/TechyFile.js
+1001 silly gunzTarPerm extractEntry tests/using-theme/_tpl/layout.html
+1002 silly gunzTarPerm extractEntry tests/using-theme/expected.html
+1003 silly gunzTarPerm extractEntry tests/using-theme/page.md
+1004 silly gunzTarPerm extractEntry tests/using-theme/public/absurd.min.js
+1005 silly gunzTarPerm extractEntry tests/using-theme/public/absurd.organic.min.js
+1006 silly gunzTarPerm extractEntry tests/using-theme/public/css/styles.css
+1007 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/css/font-awesome.css
+1008 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/css/font-awesome.min.css
+1009 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/FontAwesome.otf
+1010 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.eot
+1011 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.svg
+1012 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.ttf
+1013 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/fonts/fontawesome-webfont.woff
+1014 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/list.less
+1015 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/bordered-pulled.less
+1016 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/fixed-width.less
+1017 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/font-awesome.less
+1018 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/icons.less
+1019 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/larger.less
+1020 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/core.less
+1021 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/mixins.less
+1022 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/path.less
+1023 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/rotated-flipped.less
+1024 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/spinning.less
+1025 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/stacked.less
+1026 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/less/variables.less
+1027 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_mixins.scss
+1028 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_bordered-pulled.scss
+1029 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_fixed-width.scss
+1030 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_icons.scss
+1031 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_larger.scss
+1032 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_list.scss
+1033 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_core.scss
+1034 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_path.scss
+1035 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_rotated-flipped.scss
+1036 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_spinning.scss
+1037 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_stacked.scss
+1038 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/_variables.scss
+1039 silly gunzTarPerm extractEntry tests/using-theme/public/font-awesome-4.0.3/scss/font-awesome.scss
+1040 silly gunzTarPerm extractEntry tests/using-theme/public/img/favicon.png
+1041 silly gunzTarPerm extractEntry tests/using-theme/public/js/scripts.js
+1042 silly gunzTarPerm extractEntry tests/using-theme/public/prism/prism.js
+1043 silly gunzTarPerm extractEntry tests/using-theme/public/prism/prism.css
+1044 silly gunzTarPerm extractEntry tests/using-yaml/A/a.md
+1045 silly gunzTarPerm extractEntry tests/using-yaml/expected.html
+1046 silly gunzTarPerm extractEntry tests/using-yaml/page.md
+1047 silly gunzTarPerm extractEntry tests/with-layout/custom-layout.html
+1048 silly gunzTarPerm extractEntry tests/with-layout/expected.html
+1049 silly gunzTarPerm extractEntry tests/with-layout/page.md
+1050 silly lockFile e1abcb02-e-ubuntu-npm-techy-1-2-2-package tar:///home/ubuntu/.npm/techy/1.2.2/package
+1051 silly lockFile e1abcb02-e-ubuntu-npm-techy-1-2-2-package tar:///home/ubuntu/.npm/techy/1.2.2/package
+1052 silly lockFile 098a402f-untu-npm-techy-1-2-2-package-tgz tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz
+1053 silly lockFile 098a402f-untu-npm-techy-1-2-2-package-tgz tar:///home/ubuntu/.npm/techy/1.2.2/package.tgz
+1054 verbose chmod /home/ubuntu/.npm/techy/1.2.2/package.tgz 644
+1055 verbose chown /home/ubuntu/.npm/techy/1.2.2/package.tgz [ 1000, 1000 ]
+1056 silly lockFile 3a52ce78- .
+1057 silly lockFile 3a52ce78- .
+1058 silly publish { name: 'techy',
+1058 silly publish   version: '1.2.2',
+1058 silly publish   homepage: 'http://krasimir.github.io/techy',
+1058 silly publish   description: 'Flat CMS based on Gulp and AbsurdJS',
+1058 silly publish   main: './lib/index.js',
+1058 silly publish   author:
+1058 silly publish    { name: 'Krasimir Tsonev',
+1058 silly publish      email: 'info@krasimirtsonev.com',
+1058 silly publish      url: 'http://krasimirtsonev.com' },
+1058 silly publish   license: 'MIT',
+1058 silly publish   dependencies:
+1058 silly publish    { absurd: '~0.3.146',
+1058 silly publish      gulp: '3.6.0',
+1058 silly publish      'gulp-absurd': '0.0.1',
+1058 silly publish      'gulp-concat': '2.2.0',
+1058 silly publish      'gulp-jshint': '1.5.3',
+1058 silly publish      'gulp-uglify': '0.2.1',
+1058 silly publish      through2: '0.4.1',
+1058 silly publish      'gulp-util': '2.2.14',
+1058 silly publish      marked: '0.3.1',
+1058 silly publish      minimist: '0.0.8',
+1058 silly publish      'html-entities': '1.0.10',
+1058 silly publish      glob: '3.2.9',
+1058 silly publish      'glob-expand': '*',
+1058 silly publish      ncp: '0.5.0',
+1058 silly publish      colors: '0.6.2',
+1058 silly publish      'yaml-front-matter': '3.0.1' },
+1058 silly publish   devDependencies: { 'expect.js': '0.3.1', 'gulp-less': '1.2.3' },
+1058 silly publish   keywords: [ 'flat', 'cms', 'gulp', 'absurdjs' ],
+1058 silly publish   repository: { type: 'git', url: 'https://github.com/krasimir/techy.git' },
+1058 silly publish   bin: { techy: './lib/index.js' },
+1058 silly publish   scripts: { test: 'mocha ./tests --reporter spec' },
+1058 silly publish   readme: '# Hello, I\'m Techy<br /><small>The geeky way of writing</small>\n\nI\'m a super simple Flat CMS based on [Node.js](http://nodejs.org) ([Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/)). If you don\'t want to use a database to store your content I could help you. Write everything in [Markdown](https://daringfireball.net/projects/markdown/) format and I\'ll convert it to HTML.\n\n## The concept\n\nIn the content driven web site (like a blog for example) the writing should be really easy. Markdown language gives us the simplicity which we need. However, sometimes converting *.md* files to *.html* files is not enough. Techy is an instrument which uses Markdown as a base but also makes your pages programmable. For example:\n\n\t<% set(\'name\', \'Big Joe\') %>\n\n\t# Article title\n\n\t> author: <% get(\'name\') %>\n\n\tHello, my name is <% get(\'name\') %>. I\'m a web developer.\n\nis transformed to:\n``` html\n<h1 id="article-title">Article title</h1>\n<blockquote>\n  <p>author: Big Joe</p>\n</blockquote>\n<p>Hello, my name is Big Joe. I\'m a web developer.</p>\n```\n\nIn other words, there are JavaScript expressions which you may write between `<%` and `%>` and basically fetch information based on other files in your codebase. For example generating a site map or showing the latest added Markdowns.\n\n## Simple usage\n\nInstall Techy from the command line onto your system by running the following command:\n\n\tnpm install -g techy\n\nAaaand ... that\'s it. Create an empty directory and put your Markdown files inside. If you type `techy` and press *Enter* in the same folder you will see all the materials converted to HTML.\n\nTechy is not only generating HTML markup. It puts your writings into a nicely formatted layout.\n\n---\n\nCheckout the full documentation [here](http://krasimir.github.io/techy/docs).\n',
+1058 silly publish   readmeFilename: 'README.md',
+1058 silly publish   bugs: { url: 'https://github.com/krasimir/techy/issues' },
+1058 silly publish   _id: 'techy@1.2.2',
+1058 silly publish   dist: { shasum: '6cef35ea4771d103da1a28795387f38a1c1dd4e5' },
+1058 silly publish   _from: '.' }
+1059 verbose url raw techy
+1060 verbose url resolving [ 'https://registry.npmjs.org/', './techy' ]
+1061 verbose url resolved https://registry.npmjs.org/techy
+1062 info trying registry request attempt 1 at 17:18:15
+1063 http PUT https://registry.npmjs.org/techy
+1064 http 403 https://registry.npmjs.org/techy
+1065 info trying registry request attempt 1 at 17:18:22
+1066 http PUT https://registry.npmjs.org/techy
+1067 http 403 https://registry.npmjs.org/techy
+1068 error publish Failed PUT 403
+1069 error Error: forbidden cannot modify pre-existing version: 1.2.2
+1069 error old={"name":"techy","version":"1.2.2","homepage":"http://krasimir.github.io/techy","description":"Flat CMS based on Gulp and AbsurdJS","main":"./lib/index.js","author":{"name":"Krasimir Tsonev","email":"info@krasimirtsonev.com","url":"http://krasimirtsonev.com"},"license":"MIT","dependencies":{"absurd":"~0.3.146","gulp":"3.6.0","gulp-absurd":"0.0.1","gulp-concat":"2.2.0","gulp-jshint":"1.5.3","gulp-uglify":"0.2.1","through2":"0.4.1","gulp-util":"2.2.14","marked":"0.3.1","minimist":"0.0.8","html-entities":"1.0.10","glob":"3.2.9","glob-expand":"*","ncp":"0.5.0","colors":"0.6.2","yaml-front-matter":"3.0.1"},"devDependencies":{"expect.js":"0.3.1","gulp-less":"1.2.3"},"keywords":["flat","cms","gulp","absurdjs"],"repository":{"type":"git","url":"https://github.com/krasimir/techy.git"},"bin":{"techy":"./lib/index.js"},"scripts":{"test":"mocha ./tests --reporter spec"},"bugs":{"url":"https://github.com/krasimir/techy/issues"},"_id":"techy@1.2.2","dist":{"shasum":"535c4cd6d71f3e4b9271119873c7b9d58e631579","tarball":"http://registry.npmjs.org/techy/-/techy-1.2.2.tgz"},"_from":".","_npmVersion":"1.3.24","_npmUser":{"name":"krasimir","email":"krasimir@outset.ws"},"maintainers":[{"name":"krasimir","email":"krasimir@outset.ws"}]}
+1069 error new={"name":"techy","version":"1.2.2","homepage":"http://krasimir.github.io/techy","description":"Flat CMS based on Gulp and AbsurdJS","main":"./lib/index.js","author":{"name":"Krasimir Tsonev","email":"info@krasimirtsonev.com","url":"http://krasimirtsonev.com"},"license":"MIT","dependencies":{"absurd":"~0.3.146","gulp":"3.6.0","gulp-absurd":"0.0.1","gulp-concat":"2.2.0","gulp-jshint":"1.5.3","gulp-uglify":"0.2.1","through2":"0.4.1","gulp-util":"2.2.14","marked":"0.3.1","minimist":"0.0.8","html-entities":"1.0.10","glob":"3.2.9","glob-expand":"*","ncp":"0.5.0","colors":"0.6.2","yaml-front-matter":"3.0.1"},"devDependencies":{"expect.js":"0.3.1","gulp-less":"1.2.3"},"keywords":["flat","cms","gulp","absurdjs"],"repository":{"type":"git","url":"https://github.com/krasimir/techy.git"},"bin":{"techy":"./lib/index.js"},"scripts":{"test":"mocha ./tests --reporter spec"},"readme":"# Hello, I'm Techy<br /><small>The geeky way of writing</small>\u000a\u000aI'm a super simple Flat CMS based on [Node.js](http://nodejs.org) ([Gulp.js](http://gulpjs.com/) and [AbsurdJS](http://absurdjs.com/)). If you don't want to use a database to store your content I could help you. Write everything in [Markdown](https://daringfireball.net/projects/markdown/) format and I'll convert it to HTML.\u000a\u000a## The concept\u000a\u000aIn the content driven web site (like a blog for example) the writing should be really easy. Markdown language gives us the simplicity which we need. However, sometimes converting *.md* files to *.html* files is not enough. Techy is an instrument which uses Markdown as a base but also makes your pages programmable. For example:\u000a\u000a\u0009<% set('name', 'Big Joe') %>\u000a\u000a\u0009# Article title\u000a\u000a\u0009> author: <% get('name') %>\u000a\u000a\u0009Hello, my name is <% get('name') %>. I'm a web developer.\u000a\u000ais transformed to:\u000a``` html\u000a<h1 id=\"article-title\">Article title</h1>\u000a<blockquote>\u000a  <p>author: Big Joe</p>\u000a</blockquote>\u000a<p>Hello, my name is Big Joe. I'm a web developer.</p>\u000a```\u000a\u000aIn other words, there are JavaScript expressions which you may write between `<%` and `%>` and basically fetch information based on other files in your codebase. For example generating a site map or showing the latest added Markdowns.\u000a\u000a## Simple usage\u000a\u000aInstall Techy from the command line onto your system by running the following command:\u000a\u000a\u0009npm install -g techy\u000a\u000aAaaand ... that's it. Create an empty directory and put your Markdown files inside. If you type `techy` and press *Enter* in the same folder you will see all the materials converted to HTML.\u000a\u000aTechy is not only generating HTML markup. It puts your writings into a nicely formatted layout.\u000a\u000a---\u000a\u000aCheckout the full documentation [here](http://krasimir.github.io/techy/docs).\u000a","readmeFilename":"README.md","bugs":{"url":"https://github.com/krasimir/techy/issues"},"_id":"techy@1.2.2","dist":{"shasum":"6cef35ea4771d103da1a28795387f38a1c1dd4e5","tarball":"http://registry.npmjs.org/techy/-/techy-1.2.2.tgz"},"_from":".","_npmVersion":"1.3.24","_npmUser":{"name":"krasimir","email":"krasimir@outset.ws"},"maintainers":[{"name":"krasimir","email":"krasimir@outset.ws"}]}: techy
+1069 error     at RegClient.<anonymous> (/usr/lib/node_modules/npm/node_modules/npm-registry-client/lib/request.js:275:14)
+1069 error     at Request.self.callback (/usr/lib/node_modules/npm/node_modules/request/request.js:123:22)
+1069 error     at Request.EventEmitter.emit (events.js:98:17)
+1069 error     at Request.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:893:14)
+1069 error     at Request.EventEmitter.emit (events.js:117:20)
+1069 error     at IncomingMessage.<anonymous> (/usr/lib/node_modules/npm/node_modules/request/request.js:844:12)
+1069 error     at IncomingMessage.EventEmitter.emit (events.js:117:20)
+1069 error     at _stream_readable.js:920:16
+1069 error     at process._tickCallback (node.js:415:13)
+1070 error If you need help, you may report this *entire* log,
+1070 error including the npm and node versions, at:
+1070 error     <http://github.com/isaacs/npm/issues>
+1071 error System Linux 3.8.0-19-generic
+1072 error command "/usr/bin/node" "/usr/bin/npm" "publish"
+1073 error cwd /home/ubuntu/Projects/GitHub/techy
+1074 error node -v v0.10.25
+1075 error npm -v 1.3.24
+1076 verbose exit [ 1, true ]
