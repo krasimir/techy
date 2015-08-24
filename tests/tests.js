@@ -16,11 +16,13 @@ var deleteFolderRecursive = function(path) {
 	}
 };
 
-var run = function(root, desc, asserts, ops) {
+var run = function(root, desc, asserts, ops, addToTechyCb) {
 	ops = ops || { noLogging: true };
+	addToTechyCb = addToTechyCb || function(){};
 	it(desc, function(done) {
 		deleteFolderRecursive(root + '/_dist');
 		Techy(root, function() {
+			addToTechyCb.call(this);
 			if(asserts) {
 				asserts(done);
 			} else {
@@ -124,4 +126,46 @@ describe("Techy testing", function() {
 		expect(fs.existsSync(path + '_dist/page.html')).to.equal(true);
 		done();
 	}, { noLogging: true });
+
+	context("Watch files", function()
+	{
+		this.timeout(5000); // need to use some setTimeouts
+		var lessWatchCb = function(){};
+		after(function()
+		{
+			lessWatchCb();
+		});
+
+		run(__dirname + "/css_less_watch_dir", "should watch LESS directory", function(done)
+		{
+			// first: test imports
+			compareFileContent(__dirname + '/css_less_watch_dir/expected_style.css', __dirname + '/css_less_watch_dir/_dist/css/style.css');
+			// second: test watch changes
+			setTimeout(function()
+			{ 
+				var imported1File = __dirname + '/css_less_watch_dir/_less/include/other.less',
+					imported2File = __dirname + '/css_less_watch_dir/_less/other.less',
+					imported1Contents = fs.readFileSync( imported1File ).toString('utf8').replace(/(\r|\n)/g, ''),
+					imported2Contents = fs.readFileSync( imported2File ).toString('utf8').replace(/(\r|\n)/g, ''),
+					imported1 = fs.openSync( imported1File, 'w+'), 
+					imported2 = fs.openSync( imported2File, 'w+');
+
+				// set files back to original contents;
+				lessWatchCb = function()
+				{
+					fs.writeSync(imported1, imported1Contents, 0);
+					fs.writeSync(imported2, imported2Contents, 0);
+				};
+				// write new values in the included files
+				fs.writeSync(imported1, "@color1: #000000;");
+				fs.writeSync(imported2, "@color2: #ffffff;");
+				// check new values applied to new compiled style
+				setTimeout(function()
+				{
+					compareFileContent(__dirname + '/css_less_watch_dir/expected_style_changed.css', __dirname + '/css_less_watch_dir/_dist/css/style.css');
+					done();
+				}, 200);
+			}, 100);
+		}, { noLogging: true }, function(){ this.watchFiles(); });
+	});
 });
